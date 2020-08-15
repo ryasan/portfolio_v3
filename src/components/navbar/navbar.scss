@@ -1,0 +1,55 @@
+@import '../globals';
+
+.nav {
+  align-items: center;
+  background: $darker;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 8rem;
+}
+
+.nav__nav-list {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.nav__nav-item {
+  cursor: pointer;
+  padding: 2rem 0;
+  text-align: center;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $teal;
+  }
+}
+
+.nav__logo-container {
+  align-items: center;
+  background: $darkest;
+  color: $teal;
+  display: flex;
+  flex-direction: column;
+  height: 8rem;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.nav__logo-svg {
+  height: 100%;
+  width: 100%;
+}
+
+.nav__logo-text {
+  font-size: 1.5rem;
+}

@@ -1,0 +1,89 @@
+@import '../globals';
+
+.hero {
+  background: $dark;
+  color: white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  * {
+    outline: 1px solid red;
+  }
+}
+
+.hero__inner-container {
+  display: flex;
+  width: $max_width;
+}
+
+.hero__column {
+  height: 100vh;
+  width: 50%;
+
+  &--left {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &--right {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.hero__text-container {
+  font-weight: 300;
+  transform: translateY(-5rem);
+  width: 100%;
+}
+
+.hero__title {
+  font-size: 5rem;
+  font-weight: inherit;
+  position: relative;
+
+  &::before {
+    color: $charcoal;
+    content: '<h1>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    left: -4rem;
+    position: absolute;
+    top: 3.5rem;
+  }
+
+  &::after {
+    bottom: 0;
+    color: $charcoal;
+    content: '</h1>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    position: absolute;
+    right: -5rem;
+  }
+}
+
+.hero__title-newline {
+  display: block;
+  text-align: right;
+}
+
+.hero__title-ampersand {
+  color: $teal;
+  font-size: 3rem;
+  font-weight: inherit;
+  margin-left: 10rem;
+}
+
+.hero__subtitle {
+  font-size: 3rem;
+  font-weight: inherit;
+  margin-left: 5rem;
+}
+
+.hero__svg-container {
+  transform: translateY(5rem);
+}

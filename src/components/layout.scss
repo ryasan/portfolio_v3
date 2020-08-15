@@ -1,0 +1,25 @@
+@import './globals';
+
+.layout {
+  position: relative;
+
+  &::before {
+    color: $charcoal;
+    content: '<body>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    left: 4rem;
+    position: absolute;
+    top: 3.5rem;
+  }
+
+  &::after {
+    bottom: 3.5rem;
+    color: $charcoal;
+    content: '</body>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    left: 4rem;
+    position: absolute;
+  }
+}
