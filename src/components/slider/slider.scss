@@ -1,7 +1,7 @@
 @import '../globals';
 
 .slider {
-  align-items: center;
+  align-items: flex-end;
   background: $darker;
   display: flex;
   height: 100%;
@@ -28,9 +28,9 @@
 .slider__button {
   align-items: center;
   background: $dark;
-  border: 0.2rem solid white;
+  border: 0.2rem solid $teal;
   border-radius: 50%;
-  color: white;
+  color: $teal;
   cursor: pointer;
   display: flex;
   font-size: 3rem;

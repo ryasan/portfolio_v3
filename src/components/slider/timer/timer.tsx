@@ -8,10 +8,10 @@ interface Props {
 
 const TimerComponent: React.FC<Props> = ({ pct }) => {
   const styles = {
-    borderBottomColor: pct >= 50 ? '#7c7c7c' : 'transparent',
-    borderLeftColor: pct >= 75 ? '#7c7c7c' : 'transparent',
-    borderRightColor: pct >= 25 ? '#7c7c7c' : 'transparent',
-    borderTopColor: pct >= 100 ? '#7c7c7c' : 'transparent'
+    borderBottomColor: pct >= 50 ? '#0cfdd7' : 'transparent',
+    borderLeftColor: pct >= 75 ? '#0cfdd7' : 'transparent',
+    borderRightColor: pct >= 25 ? '#0cfdd7' : 'transparent',
+    borderTopColor: pct >= 100 ? '#0cfdd7' : 'transparent'
   }
 
   return (

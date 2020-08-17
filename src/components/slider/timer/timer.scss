@@ -1,12 +1,12 @@
 @import '../../globals';
 
 .timer {
-  margin-top: 2rem;
+  margin: 2rem 0 8rem;
   position: relative;
 }
 
 .timer__bg {
-  background: $charcoal;
+  background: $teal;
   border-radius: 50%;
   content: '';
   height: 2.5rem;

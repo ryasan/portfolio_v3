@@ -93,10 +93,6 @@ const SliderComponent: React.FC = () => {
       if (pct === 100) handleNextClick()
   }, [pct])
 
-  useEffect(() => {
-    console.log(currentIdx)
-  }, [currentIdx])
-
   return (
     <div className='slider'>
       <div className='slider__container'>

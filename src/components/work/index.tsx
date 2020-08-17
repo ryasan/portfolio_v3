@@ -9,13 +9,14 @@ type Props = {
 
 const WorkComponent: React.FC<Props> = ({ classNames }) => {
   return (
-    <div className={`work section ${classNames}`}>
+    <section className={`work section ${classNames}`}>
       <div className='parallax-wrapper'>
         <div className='work__inner'>
+          <h1 className='work__title'>Works</h1>
           <Slider />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -8,8 +8,9 @@ import Hero from '../components/hero'
 import About from '../components/about'
 import Skills from '../components/skills/index'
 import Work from '../components/work'
+import Contact from '../components/contact'
 
-const components = [Hero, About, Skills, Work]
+const components = [Hero, About, Skills, Work, Contact]
 const slideDurationSetting: number = 600
 const scrollSensitivitySetting: number = 30
 
@@ -31,9 +32,7 @@ const IndexPage: React.FC = () => {
   })
 
   const scrollDown = () => {
-    setCurrentSlideNumber(prev => {
-      return prev + 1
-    })
+    setCurrentSlideNumber(prev => prev + 1)
   }
 
   const scrollUp = () => {

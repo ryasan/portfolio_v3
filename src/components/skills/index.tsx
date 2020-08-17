@@ -6,7 +6,7 @@ interface Props {
   classNames: string
 }
 
-const SkillsComponent: React.FC<props> = ({ classNames }) => (
+const SkillsComponent: React.FC<Props> = ({ classNames }) => (
   <section className={`skills section ${classNames}`}>
     <div className='parallax-wrapper'>
       <div className='skills__outer'>
