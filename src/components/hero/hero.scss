@@ -7,6 +7,11 @@
   justify-content: center;
   position: fixed;
   width: 100%;
+  outline: 1px solid red;
+
+  * {
+    outline: 1px solid red;
+  }
 }
 
 .hero__inner {
@@ -16,6 +21,10 @@
   justify-content: center;
   max-width: $max_width;
   width: 100%;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 .hero__column {
@@ -26,12 +35,19 @@
 
   &--left {
     position: relative;
+    outline: 1px solid red;
   }
 
   &--right {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    outline: 1px solid blue;
+  }
+
+  @media (max-width: $mobile) {
+    height: 50%;
+    width: 100%;
   }
 }
 
@@ -95,7 +111,19 @@
 }
 
 .hero__svg-container {
+  border: 50px solid yellow;
   transform: translateY(5rem);
+  width: 100%;
+
+  @media (max-width: $mobile) {
+    transform: initial;
+
+    svg {
+      // height: 10rem;
+      object-fit: contain;
+      // width: 10rem;
+    }
+  }
 }
 
 .hero__btn {
