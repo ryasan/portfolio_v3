@@ -11,7 +11,7 @@
     left: 4rem;
     position: fixed;
     top: 3.5rem;
-    z-index: 5;
+    z-index: 10;
   }
 
   &::after {
@@ -22,6 +22,6 @@
     font-size: 2rem;
     left: 4rem;
     position: fixed;
-    z-index: 5;
+    z-index: 10;
   }
 }

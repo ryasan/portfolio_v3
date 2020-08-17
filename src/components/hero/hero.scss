@@ -7,11 +7,6 @@
   justify-content: center;
   position: fixed;
   width: 100%;
-  outline: 1px solid red;
-
-  * {
-    outline: 1px solid red;
-  }
 }
 
 .hero__inner {
@@ -35,14 +30,12 @@
 
   &--left {
     position: relative;
-    outline: 1px solid red;
   }
 
   &--right {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    outline: 1px solid blue;
   }
 
   @media (max-width: $mobile) {
@@ -82,11 +75,21 @@
     position: absolute;
     right: -5rem;
   }
+
+  @media (max-width: $mobile) {
+    font-size: 3rem;
+    text-align: center;
+  }
 }
 
 .hero__title-newline {
   display: block;
   text-align: right;
+
+  @media (max-width: $mobile) {
+    font-size: 3rem;
+    text-align: center;
+  }
 }
 
 .hero__name {
@@ -95,9 +98,16 @@
 
 .hero__title-ampersand {
   color: $teal;
+  display: block;
   font-size: 3rem;
   font-weight: inherit;
   margin-left: 10rem;
+
+  @media (max-width: $mobile) {
+    font-size: 2.5rem;
+    margin: 0;
+    text-align: center;
+  }
 }
 
 .hero__subtitle {
@@ -108,21 +118,27 @@
   margin-bottom: 0;
   margin-left: 5rem;
   white-space: nowrap;
+
+  @media (max-width: $mobile) {
+    font-size: 1.1rem;
+    text-align: center;
+  }
 }
 
 .hero__svg-container {
-  border: 50px solid yellow;
   transform: translateY(5rem);
   width: 100%;
 
   @media (max-width: $mobile) {
-    transform: initial;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 35rem;
+  }
 
-    svg {
-      // height: 10rem;
-      object-fit: contain;
-      // width: 10rem;
-    }
+  svg {
+    width: 100%;
   }
 }
 
