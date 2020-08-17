@@ -11,13 +11,14 @@ import Work from '../components/work'
 import Contact from '../components/contact'
 
 const components = [Hero, About, Skills, Work, Contact]
-const slideDurationSetting: number = 600
-const scrollSensitivitySetting: number = 30
+const transitionDuration: number = 600
+const scrollSensitivity: number = 30
 
 const IndexPage: React.FC = () => {
   const [ticking, setTicking] = useState(false)
   const [delta, setDelta] = useState<number>(0)
-  const [currentSlideNumber, setCurrentSlideNumber] = useState<number>(0)
+  const [isWheelingDown, setWheeling] = useState<boolean | null>(null)
+  const [slideIdx, setSlideIdx] = useState<number>(0)
   const totalSlideNumber = components.length
 
   const slideDurationTimeout = (slideDuration: number) => {
@@ -26,37 +27,32 @@ const IndexPage: React.FC = () => {
     }, slideDuration)
   }
 
-  const parallaxScroll = throttle((evt: React.WheelEvent<HTMLDivElement>) => {
-    const deltaY = evt.deltaY * -120
+  const parallaxScroll = throttle((e: React.WheelEvent<HTMLDivElement>) => {
+    const deltaY = e.deltaY * -120
     setDelta(deltaY)
+
+    const isWheelingDown = -e.deltaY <= 0
+
+    if (isWheelingDown && !ticking) {
+      setTicking(true)
+      if (slideIdx !== totalSlideNumber - 1) {
+        scrollDown()
+      }
+      slideDurationTimeout(transitionDuration)
+    }
+
+    if (!isWheelingDown && !ticking) {
+      setTicking(true)
+      if (slideIdx !== 0) {
+        scrollUp()
+      }
+      slideDurationTimeout(transitionDuration)
+    }
   })
 
-  const scrollDown = () => {
-    setCurrentSlideNumber(prev => prev + 1)
-  }
+  const scrollDown = (): void => setSlideIdx(prevIdx => prevIdx + 1)
 
-  const scrollUp = () => {
-    setCurrentSlideNumber(prev => prev - 1)
-  }
-
-  useEffect(() => {
-    if (ticking !== true) {
-      if (delta <= -scrollSensitivitySetting) {
-        setTicking(true)
-        if (currentSlideNumber !== totalSlideNumber - 1) {
-          scrollDown()
-        }
-        slideDurationTimeout(slideDurationSetting)
-      }
-      if (delta >= scrollSensitivitySetting) {
-        setTicking(true)
-        if (currentSlideNumber !== 0) {
-          scrollUp()
-        }
-        slideDurationTimeout(slideDurationSetting)
-      }
-    }
-  }, [delta])
+  const scrollUp = (): void => setSlideIdx(prevIdx => prevIdx - 1)
 
   return (
     <Layout>
@@ -65,8 +61,8 @@ const IndexPage: React.FC = () => {
         {components.map((Component: React.ReactType, i) => {
           const classNames = [
             'background',
-            i <= currentSlideNumber - 1 ? 'down-scroll' : '',
-            (i !== totalSlideNumber - 1) && (i >= currentSlideNumber) && (delta >= scrollSensitivitySetting) ? 'up-scroll' : '' // prettier-ignore
+            i <= slideIdx - 1 ? 'down-scroll' : '',
+            i !== totalSlideNumber - 1 && i >= slideIdx ? 'up-scroll' : ''
           ]
 
           return <Component key={i} classNames={classNames.join(' ').trim()} />
