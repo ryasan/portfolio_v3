@@ -8,9 +8,6 @@
 }
 
 .skills__background {
-  background: url('../../static/code-bg.png') center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -84,21 +81,23 @@
     width: 100%;
 
     &::before {
+      bottom: 1rem;
       color: $charcoal;
       content: '<h3>';
       font-family: 'La Belle Aurore', cursive;
       font-size: 2rem;
       position: absolute;
-      transform: translateX(-5rem);
+      transform: translateX(-6rem);
     }
 
     &::after {
-      bottom: -1.5rem;
+      bottom: 1rem;
       color: $charcoal;
       content: '</h3>';
       font-family: 'La Belle Aurore', cursive;
       font-size: 2rem;
       position: absolute;
+      transform: translateX(-1rem);
     }
   }
 }

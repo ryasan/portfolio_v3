@@ -1,0 +1,26 @@
+@import '../../globals';
+
+.timer {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.timer__bg {
+  background: $charcoal;
+  border-radius: 50%;
+  content: '';
+  height: 2.5rem;
+  opacity: 0.2;
+  width: 2.5rem;
+}
+
+.timer__clock {
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1rem;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}

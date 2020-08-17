@@ -84,7 +84,7 @@ const IconComponent: React.FC<IconProps> = props => {
       return <PersonAddIcon {...props} />
     case 'right-arrow':
       return <RightArrowIcon {...props} />
-    case 'settings:':
+    case 'settings':
       return <SettingsIcon {...props} />
     case 'shopping-bag':
       return <ShoppingBagIcon {...props} />

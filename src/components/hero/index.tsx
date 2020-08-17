@@ -3,13 +3,13 @@ import React from 'react'
 import SvgImage from '../svgs'
 import './hero.scss'
 
-type HeroProps = {
+interface Props {
   classNames: string
 }
 
-const HeroComponent: React.FC<HeroProps> = ({ classNames }) => (
+const HeroComponent: React.FC<Props> = ({ classNames }) => (
   <section className={`hero section ${classNames}`}>
-    <div className='content-wrapper'>
+    <div className='parallax-wrapper'>
       <div className='hero__inner'>
         <div className='hero__column hero__column--left'>
           <div className='hero__svg-container'>

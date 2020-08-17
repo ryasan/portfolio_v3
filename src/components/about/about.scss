@@ -1,15 +1,11 @@
 @import '../globals';
 
 .about {
-  background: $dark;
+  background: $darker;
   display: flex;
   justify-content: center;
   overflow: hidden;
   position: fixed;
-
-  // * {
-  //   outline: 1px solid red;
-  // }
 }
 
 .about__inner {
@@ -39,18 +35,19 @@
     content: '<h1>';
     font-family: 'La Belle Aurore', cursive;
     font-size: 2rem;
+    left: 2rem;
     position: absolute;
-    top: 5rem;
+    top: 2rem;
   }
 
   &::after {
-    bottom: 5rem;
+    bottom: 1rem;
     color: $charcoal;
     content: '</h1>';
     font-family: 'La Belle Aurore', cursive;
     font-size: 2rem;
+    left: -5.5rem;
     position: absolute;
-    transform: translateX(1rem);
   }
 }
 

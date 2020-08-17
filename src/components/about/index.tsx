@@ -2,14 +2,14 @@ import React from 'react'
 
 import './about.scss'
 
-type AboutProps = {
+interface Props {
   classNames: string
 }
 
-const AboutComponent: React.FC<AboutProps> = ({ classNames }) => {
+const AboutComponent: React.FC<Props> = ({ classNames }) => {
   return (
     <section className={`about section ${classNames}`}>
-      <div className='content-wrapper'>
+      <div className='parallax-wrapper'>
         <div className='about__inner'>
           <h1 className='about__title'>About</h1>
           <div className='about__column about__column--left'>

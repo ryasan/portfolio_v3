@@ -34,8 +34,15 @@
   }
 }
 
-.nav__icon {
+.nav__item-content {
+  align-items: center;
+  display: flex;
   height: 8rem;
+  justify-content: center;
+}
+
+.nav__icon {
+  height: 100%;
   padding: 2.5rem;
   width: 100%;
 }

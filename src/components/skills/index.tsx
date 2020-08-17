@@ -2,16 +2,14 @@ import React from 'react'
 
 import './skills.scss'
 
-type SkillsProps = {
+interface Props {
   classNames: string
 }
 
-const SkillsComponent: React.FC<SkillsProps> = ({ classNames }) => (
+const SkillsComponent: React.FC<props> = ({ classNames }) => (
   <section className={`skills section ${classNames}`}>
-    <div className='content-wrapper'>
+    <div className='parallax-wrapper'>
       <div className='skills__outer'>
-        <div className='skills__background' />
-        <div className='skills__overlay' />
         <div className='skills__inner'>
           {/* prettier-ignore */}
           <h1 className='skills__title'>Skills &<br/>Experience</h1>
