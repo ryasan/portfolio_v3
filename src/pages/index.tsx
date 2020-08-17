@@ -12,32 +12,31 @@ import Contact from '../components/contact'
 
 const components = [Hero, About, Skills, Work, Contact]
 const transitionDuration: number = 600
-const scrollSensitivity: number = 30
 
 const IndexPage: React.FC = () => {
-  const [ticking, setTicking] = useState(false)
+  const [busy, isBusy] = useState(false)
   const [slideIdx, setSlideIdx] = useState<number>(0)
   const totalSlideNumber = components.length
 
   const slideDurationTimeout = (slideDuration: number) => {
     setTimeout(() => {
-      setTicking(false)
+      isBusy(false)
     }, slideDuration)
   }
 
   const parallaxScroll = throttle((e: React.WheelEvent<HTMLDivElement>) => {
     const isWheelingDown = -e.deltaY <= 0
 
-    if (isWheelingDown && !ticking) {
-      setTicking(true)
+    if (isWheelingDown && !busy) {
+      isBusy(true)
       if (slideIdx !== totalSlideNumber - 1) {
         scrollDown()
       }
       slideDurationTimeout(transitionDuration)
     }
 
-    if (!isWheelingDown && !ticking) {
-      setTicking(true)
+    if (!isWheelingDown && !busy) {
+      isBusy(true)
       if (slideIdx !== 0) {
         scrollUp()
       }
