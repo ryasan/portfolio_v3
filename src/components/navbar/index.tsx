@@ -5,8 +5,8 @@ import Icon from '../icons'
 import './navbar.scss'
 
 type NavItem = {
-  text: string
   animationDelay: number
+  text: string
   icon: string
 }
 
@@ -27,7 +27,7 @@ const NavbarComponent = () => {
   return (
     <div className='nav'>
       <div className='nav__logo-container'>
-        <Icon name='envelope' className='nav__logo-svg' />
+        <Icon name='light-bulb' className='nav__logo-svg' />
         <div className='nav__logo-text'>RS</div>
       </div>
       <ul className='nav__nav-list'>
@@ -37,7 +37,7 @@ const NavbarComponent = () => {
             className='nav__nav-item'
             {...slideLeft(item.animationDelay)}
           >
-            <Icon name={item.icon} />
+            <Icon name={item.icon} className='nav__icon' />
           </motion.li>
         ))}
       </ul>

@@ -1,0 +1,162 @@
+@import '../globals';
+
+.about {
+  background: $dark;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+
+  // * {
+  //   outline: 1px solid red;
+  // }
+}
+
+.about__inner {
+  height: 100%;
+  max-width: $max_width;
+  position: relative;
+  width: 100%;
+}
+
+.about__column {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 50%;
+}
+
+.about__title {
+  color: #262626;
+  font-size: 20rem;
+  left: 10rem;
+  margin: 0;
+  position: absolute;
+  top: 10rem;
+
+  &::before {
+    color: $charcoal;
+    content: '<h1>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    position: absolute;
+    top: 5rem;
+  }
+
+  &::after {
+    bottom: 5rem;
+    color: $charcoal;
+    content: '</h1>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    position: absolute;
+    transform: translateX(1rem);
+  }
+}
+
+.about__text-container {
+  position: relative;
+  top: 10rem;
+}
+
+.about__paragraph {
+  line-height: 2;
+  margin-left: 5rem;
+  position: relative;
+  text-indent: 5rem;
+  z-index: 1;
+
+  &:first-child {
+    left: -5rem;
+  }
+}
+
+.about__pyramid {
+  animation: spin 10s linear infinite;
+  height: 500px;
+  left: 50%;
+  margin-left: 120px;
+  margin-top: -210px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: 116px 200px 116px;
+  transform-style: preserve-3d;
+  width: 100px;
+}
+
+.about__pyramid > div {
+  border-style: solid;
+  border-width: 200px 0 200px 346px;
+  position: absolute;
+  transform-origin: 0 0;
+}
+
+.about__pyramid > .about__side::after {
+  color: white;
+  left: -311px;
+  opacity: 0.6;
+  position: absolute;
+  text-align: center;
+  top: -69px;
+}
+
+.about__pyramid > .about__side:first-child::after {
+  content: url('../../static/react-logo.png');
+  position: absolute;
+}
+
+.about__pyramid > .about__side:nth-child(2)::after {
+  content: url('../../static/mongodb-logo.png');
+  position: absolute;
+}
+
+.about__pyramid > .about__side:nth-child(3)::after {
+  content: url('../../static/nodejs-logo.png');
+  position: absolute;
+}
+
+.about__pyramid > .about__side:nth-child(4)::after {
+  content: url('../../static/graphql-logo.png');
+  left: -315px;
+  position: absolute;
+  top: -91px;
+  width: 150px;
+}
+
+.about__pyramid > div:first-child {
+  border-color: transparent transparent transparent rgba(50, 50, 50, 0.6);
+  transform: rotateY(-19.5deg) rotateX(180deg) translateY(-400px);
+}
+
+.about__pyramid > div:nth-child(2) {
+  border-color: transparent transparent transparent rgba(50, 50, 50, 0.6);
+  transform: rotateY(90deg) rotateZ(60deg) rotateX(180deg) translateY(-400px);
+}
+
+.about__pyramid > div:nth-child(3) {
+  border-color: transparent transparent transparent rgba(50, 50, 50, 0.9);
+  transform: rotateX(60deg) rotateY(19.5deg);
+}
+
+/* prettier-ignore */
+.about__pyramid > div:nth-child(4) {
+  border-color: transparent transparent transparent rgba(50, 50, 50, 0.8);
+  transform: rotateX(-60deg) rotateY(19.5deg) translateX(-116px) translateY(-200px) translateZ(326px);
+}
+
+@media (max-width: $mobile) {
+  .about__pyramid {
+    display: none;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}

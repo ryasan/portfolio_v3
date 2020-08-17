@@ -1,18 +1,30 @@
-$charcoal: #575757;
-$dark: #1e1e1e;
-$darker: #191919;
-$darkest: #101010;
-$max_width: 100rem;
+$charcoal: #7c7c7c;
+$dark: #131313;
+$darker: #090909;
+$darkest: #010101;
 $teal: #0cfdd7;
+
+$max_width: 100rem;
+
+$mobile: 425px;
+$tablet: 768px;
+$laptop: 1024px;
+
+@mixin transition($time, $property: all, $easing: ease-in) {
+  transition: $property $time $easing !important;
+}
 
 *,
 *::before,
 *::after {
-  // box-sizing: border-box;
+  box-sizing: border-box;
+  // outline: 1px solid red;
+  text-rendering: optimizeLegibility;
 }
 
 html,
 body {
+  background: $dark;
   box-sizing: border-box;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 10px;
@@ -47,4 +59,8 @@ li {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+button {
+  cursor: pointer;
 }

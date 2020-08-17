@@ -1,0 +1,119 @@
+@import '../globals';
+
+.skills {
+  background: $dark;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+}
+
+.skills__background {
+  background: url('../../static/code-bg.png') center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.skills__overlay {
+  background: $darker;
+  height: 100%;
+  left: 0;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.skills__outer {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100vw;
+}
+
+.skills__inner {
+  background: transparent;
+  display: flex;
+  height: 100%;
+  max-width: $max_width;
+  position: relative;
+  width: 100%;
+}
+
+.skills__title {
+  color: $teal;
+  font-size: 6rem;
+  font-weight: 900;
+  position: absolute;
+  top: 10rem;
+
+  &::before {
+    color: $charcoal;
+    content: '<h1>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    left: 0;
+    position: absolute;
+    top: -1.5rem;
+  }
+
+  &::after {
+    bottom: -2.5rem;
+    color: $charcoal;
+    content: '</h1>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    left: -2rem;
+    position: absolute;
+  }
+}
+
+.skills__column {
+  align-items: center;
+  display: flex;
+  width: 50%;
+
+  h3 {
+    color: $teal;
+    font-size: 4rem;
+    font-weight: 900;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    &::before {
+      color: $charcoal;
+      content: '<h3>';
+      font-family: 'La Belle Aurore', cursive;
+      font-size: 2rem;
+      position: absolute;
+      transform: translateX(-5rem);
+    }
+
+    &::after {
+      bottom: -1.5rem;
+      color: $charcoal;
+      content: '</h3>';
+      font-family: 'La Belle Aurore', cursive;
+      font-size: 2rem;
+      position: absolute;
+    }
+  }
+}
+
+.skills__paragraph {
+  line-height: 2;
+  position: relative;
+  text-indent: 3rem;
+  z-index: 1;
+
+  &:nth-child(2) {
+    margin-left: 3.5rem;
+  }
+
+  &:last-child {
+    margin-left: 7rem;
+  }
+}

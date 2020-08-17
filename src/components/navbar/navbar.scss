@@ -3,7 +3,7 @@
 .nav {
   align-items: center;
   background: $darker;
-  color: white;
+  color: $charcoal;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -12,6 +12,7 @@
   right: 0;
   top: 0;
   width: 8rem;
+  z-index: 9999;
 }
 
 .nav__nav-list {
@@ -23,14 +24,20 @@
 }
 
 .nav__nav-item {
+  @include transition(0.3);
+
   cursor: pointer;
-  padding: 2rem 0;
   text-align: center;
-  transition: color 0.3s;
 
   &:hover {
     color: $teal;
   }
+}
+
+.nav__icon {
+  height: 8rem;
+  padding: 2.5rem;
+  width: 100%;
 }
 
 .nav__logo-container {
@@ -41,12 +48,6 @@
   flex-direction: column;
   height: 8rem;
   justify-content: center;
-  padding: 1rem;
-  width: 100%;
-}
-
-.nav__logo-svg {
-  height: 100%;
   width: 100%;
 }
 

@@ -30,8 +30,9 @@ import SettingsIcon from './settings'
 import PersonIcon from './person'
 import BriefcaseIcon from './briefcase'
 
-export interface IconProps {
+export type IconProps = {
   name: string
+  className: string
 }
 
 const IconComponent: React.FC<IconProps> = props => {

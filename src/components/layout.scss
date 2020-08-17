@@ -9,8 +9,9 @@
     font-family: 'La Belle Aurore', cursive;
     font-size: 2rem;
     left: 4rem;
-    position: absolute;
+    position: fixed;
     top: 3.5rem;
+    z-index: 5;
   }
 
   &::after {
@@ -20,6 +21,7 @@
     font-family: 'La Belle Aurore', cursive;
     font-size: 2rem;
     left: 4rem;
-    position: absolute;
+    position: fixed;
+    z-index: 5;
   }
 }
