@@ -16,8 +16,6 @@ const scrollSensitivity: number = 30
 
 const IndexPage: React.FC = () => {
   const [ticking, setTicking] = useState(false)
-  const [delta, setDelta] = useState<number>(0)
-  const [isWheelingDown, setWheeling] = useState<boolean | null>(null)
   const [slideIdx, setSlideIdx] = useState<number>(0)
   const totalSlideNumber = components.length
 
@@ -28,9 +26,6 @@ const IndexPage: React.FC = () => {
   }
 
   const parallaxScroll = throttle((e: React.WheelEvent<HTMLDivElement>) => {
-    const deltaY = e.deltaY * -120
-    setDelta(deltaY)
-
     const isWheelingDown = -e.deltaY <= 0
 
     if (isWheelingDown && !ticking) {
