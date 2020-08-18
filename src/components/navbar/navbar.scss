@@ -41,6 +41,7 @@
   @include transition(0.3);
 
   cursor: pointer;
+  position: relative;
   text-align: center;
 
   &:hover {
@@ -53,7 +54,20 @@
   display: flex;
   height: 8rem;
   justify-content: center;
+  transition: opacity 0.3s;
   width: 8rem;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  &--text {
+    position: absolute;
+  }
 }
 
 .nav__icon {

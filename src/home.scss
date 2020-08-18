@@ -3,6 +3,14 @@ $content-offset: 40vh;
 $transition-speed: 1.2s;
 $slide-number: 5;
 
+// TODO remove
+.test-btn {
+  left: 15rem;
+  position: fixed;
+  top: 15rem;
+  z-index: 9999;
+}
+
 @mixin transition($time, $property: all, $easing: ease-in) {
   transition: $property $time $easing !important;
 }
@@ -11,9 +19,6 @@ $slide-number: 5;
   @include transition($transition-speed, all, cubic-bezier(0.22, 0.44, 0, 1));
 
   backface-visibility: hidden;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 100vh + $parallax-offset;
   overflow: hidden;
   position: fixed;
@@ -58,7 +63,7 @@ $slide-number: 5;
     );
 
     backface-visibility: hidden;
-    color: #fff;
+    color: white;
     display: flex;
     flex-flow: column nowrap;
     height: 100vh;

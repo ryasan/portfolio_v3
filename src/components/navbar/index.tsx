@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import './navbar.scss'
 
 import Icon from '../icons'
-import './navbar.scss'
 
 type NavItem = {
   animationDelay: number
@@ -25,11 +25,27 @@ const slideLeft = (delay: number) => ({
 })
 
 interface Props {
-  active: boolean
+  pageIdx: number
+  scrollUp: (page: number) => void
+  scrollDown: (page: number) => void
 }
 
-const NavbarComponent: React.FC<Props> = () => {
+const NavbarComponent: React.FC<Props> = ({
+  pageIdx,
+  scrollUp,
+  scrollDown
+}) => {
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null)
+
+  const handlePageClick = (idx: number) => {
+    if (idx > pageIdx) {
+      scrollDown(idx - pageIdx)
+    }
+
+    if (idx < pageIdx) {
+      scrollUp(pageIdx - idx)
+    }
+  }
 
   return (
     <div className='nav'>
@@ -39,24 +55,31 @@ const NavbarComponent: React.FC<Props> = () => {
       </div>
       <ul className='nav__nav-list'>
         {links.map((item: NavItem, i: number) => {
-          const classNames = [ 'nav__nav-item', i === selectedIdx ? 'active' : '' ] // prettier-ignore
+          const textClasses = [
+            'nav__item-content',
+            'nav__item-content--text',
+            selectedIdx === i ? 'active' : 'hidden'
+          ].join(' ')
+
+          const iconClasses = [
+            'nav__item-content',
+            'nav__item-content--icon',
+            selectedIdx === i ? 'hidden' : 'active'
+          ].join(' ')
 
           return (
             <motion.li
               key={i}
-              className={classNames.join(' ').trim()}
+              className='nav__nav-item'
+              onClick={() => handlePageClick(i)}
               onMouseEnter={() => setSelectedIdx(i)}
               onMouseLeave={() => setSelectedIdx(null)}
               {...slideLeft(item.animationDelay)}
             >
-              {i === selectedIdx && (
-                <div className='nav__item-content'>{item.text}</div>
-              )}
-              {!(i === selectedIdx) && (
-                <div className='nav__item-content'>
-                  <Icon name={item.icon} className='nav__icon' />
-                </div>
-              )}
+              <div className={textClasses}>{item.text}</div>
+              <div className={iconClasses}>
+                <Icon name={item.icon} className='nav__icon' />
+              </div>
             </motion.li>
           )
         })}
