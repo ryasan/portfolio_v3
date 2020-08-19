@@ -8,10 +8,11 @@ interface CardProps {
   item: string
   currentIdx: number
   idx: number
+  toggleIsHovering: () => void
 }
 
 const Card: React.FC<CardProps> = props => {
-  const { item, currentIdx, idx } = props
+  const { item, currentIdx, idx, toggleIsHovering } = props
   const classNames = [
     idx === currentIdx ? 'is-center' : '',
     idx < currentIdx - 1 ? 'is-left-outer-card' : '',
@@ -23,7 +24,11 @@ const Card: React.FC<CardProps> = props => {
     .trim()
 
   return (
-    <div className='slider__list-item'>
+    <div
+      className='slider__list-item'
+      onMouseEnter={toggleIsHovering}
+      onMouseLeave={toggleIsHovering}
+    >
       <div className={`slider__card ${classNames}`}>
         <div className='slider__card-face'>
           <div className='slider__card-header'>
@@ -50,7 +55,7 @@ const items = [
   'korg'
 ]
 
-const distances = [900, 600, 300, 0, -300, -600, -900]
+const distances = [90, 60, 30, 0, -30, -60, -90]
 
 const SliderComponent: React.FC = () => {
   const half = Math.floor(items.length / 2)
@@ -58,7 +63,6 @@ const SliderComponent: React.FC = () => {
 
   const [pct, setPct] = useState(0)
   const [isHovering, setIsHovering] = useState<boolean | null>(null)
-  const cardWidth = 30
 
   const handlePrevClick = () => {
     setCurrentIdx((prev: number) => (prev + (items.length - 1)) % items.length)
@@ -77,38 +81,54 @@ const SliderComponent: React.FC = () => {
   }
 
   useEffect(() => {
-      let interval: any
-      if (!isHovering) {
-        interval = setInterval(() => {
-          setPct(prev => {
-            return prev < 100 ? prev + 25 : 0
-          })
-        }, 1000)
-      } else {
-        clearInterval(interval)
-      }
-      return () => clearInterval(interval)
-    }, [isHovering])
-    useEffect(() => {
-      if (pct === 100) handleNextClick()
+    let interval: any
+    if (!isHovering) {
+      interval = setInterval(() => {
+        setPct(prev => {
+          return prev < 100 ? prev + 25 : 0
+        })
+      }, 1000)
+    } else {
+      clearInterval(interval)
+    }
+    return () => clearInterval(interval)
+  }, [isHovering])
+  useEffect(() => {
+    if (pct === 100) handleNextClick()
   }, [pct])
 
   return (
     <div className='slider'>
       <div className='slider__container'>
         <div className='slider__track'>
-          <div className='slider__button' onClick={handlePrevClick}>
+          <div
+            className='slider__button'
+            onClick={handlePrevClick}
+            onMouseEnter={toggleIsHovering}
+            onMouseLeave={toggleIsHovering}
+          >
             &#8592;
           </div>
           <div
             className='slider__list'
-            style={{ transform: `translateX(${distances[currentIdx]}px)` }}
+            style={{ transform: `translateX(${distances[currentIdx]}rem)` }}
           >
             {items.map((item, i) => (
-              <Card key={i} idx={i} item={item} currentIdx={currentIdx} />
+              <Card
+                key={i}
+                idx={i}
+                item={item}
+                currentIdx={currentIdx}
+                toggleIsHovering={toggleIsHovering}
+              />
             ))}
           </div>
-          <div className='slider__button' onClick={handleNextClick}>
+          <div
+            className='slider__button'
+            onClick={handleNextClick}
+            onMouseEnter={toggleIsHovering}
+            onMouseLeave={toggleIsHovering}
+          >
             &#8594;
           </div>
         </div>
