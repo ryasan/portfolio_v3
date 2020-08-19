@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import './navbar.scss'
 
 import Icon from '../icons'
+import './navbar.scss'
 
 type NavItem = {
   animationDelay: number
@@ -28,24 +28,11 @@ interface Props {
   pageIdx: number
   scrollUp: (page: number) => void
   scrollDown: (page: number) => void
+  handleNavItemClick: (page: number) => void
 }
 
-const NavbarComponent: React.FC<Props> = ({
-  pageIdx,
-  scrollUp,
-  scrollDown
-}) => {
+const NavbarComponent: React.FC<Props> = ({ handleNavItemClick }) => {
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null)
-
-  const handlePageClick = (idx: number) => {
-    if (idx > pageIdx) {
-      scrollDown(idx - pageIdx)
-    }
-
-    if (idx < pageIdx) {
-      scrollUp(pageIdx - idx)
-    }
-  }
 
   return (
     <div className='nav'>
@@ -71,7 +58,7 @@ const NavbarComponent: React.FC<Props> = ({
             <motion.li
               key={i}
               className='nav__nav-item'
-              onClick={() => handlePageClick(i)}
+              onClick={() => handleNavItemClick(i)}
               onMouseEnter={() => setSelectedIdx(i)}
               onMouseLeave={() => setSelectedIdx(null)}
               {...slideLeft(item.animationDelay)}

@@ -1,13 +1,15 @@
 import React from 'react'
 
 import SvgImage from '../svgs'
+import { components } from '../../pages'
 import './hero.scss'
 
 interface Props {
   classNames: string
+  handlePageClick: (idx: number) => void
 }
 
-const HeroComponent: React.FC<Props> = ({ classNames }) => (
+const HeroComponent: React.FC<Props> = ({ classNames, handlePageClick }) => (
   <section className={`hero section ${classNames}`}>
     <div className='parallax-wrapper'>
       <div className='hero__inner'>
@@ -27,7 +29,12 @@ const HeroComponent: React.FC<Props> = ({ classNames }) => (
             <span className='hero__title-ampersand'>&</span>
             <h4 className='hero__subtitle'>I'm a frontend developer.</h4>
           </div>
-          <button className='hero__btn'>CONTACT</button>
+          <button
+            className='hero__btn'
+            onClick={() => handlePageClick(components.length - 1)}
+          >
+            CONTACT
+          </button>
         </div>
       </div>
     </div>

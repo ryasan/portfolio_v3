@@ -2,6 +2,7 @@ import React from 'react'
 
 import './dots.scss'
 
+
 interface Props {
   currentIdx: number
   numberOfDots: number

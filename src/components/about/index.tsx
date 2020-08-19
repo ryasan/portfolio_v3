@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 import './about.scss'
 
@@ -11,9 +12,9 @@ const AboutComponent: React.FC<Props> = ({ classNames }) => {
     <section className={`about section ${classNames}`}>
       <div className='parallax-wrapper'>
         <div className='about__inner'>
-          <h1 className='about__title'>About</h1>
           <div className='about__column about__column--left'>
-            <div className='about__text-container'>
+            <h1 className='about__title'>About</h1>
+            <div className='about__paragraph-container'>
               <p className='about__paragraph'>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni
                 sit ratione vitae repudiandae, nam minus, non officiis nesciunt
@@ -29,12 +30,20 @@ const AboutComponent: React.FC<Props> = ({ classNames }) => {
             </div>
           </div>
           <div className='about__column about__column--right'>
-            <div className='about__pyramid'>
+            <motion.div
+              className='about__pyramid'
+              transition={{ loop: Infinity, duration: 20, ease: 'linear' }}
+              animate={{
+                rotateX: [0, 360],
+                rotateY: [0, 360],
+                rotateZ: [0, 360]
+              }}
+            >
               <div className='about__side' />
               <div className='about__side' />
               <div className='about__side' />
               <div className='about__side' />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

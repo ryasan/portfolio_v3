@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import './slider.scss'
 import Dots from './dots/dots'
 import Timer from './timer/timer'
+import './slider.scss'
 
 interface CardProps {
   item: string

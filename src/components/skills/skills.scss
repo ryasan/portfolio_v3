@@ -31,20 +31,55 @@
 }
 
 .skills__inner {
+  align-items: center;
   background: transparent;
   display: flex;
   height: 100%;
-  max-width: $max_width;
+  justify-content: center;
+  padding: 0 5rem;
   position: relative;
   width: 100%;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
+}
+
+.skills__column {
+  align-items: center;
+  display: flex;
+
+  &--left {
+    flex-direction: column;
+    position: relative;
+    width: 40%;
+  }
+
+  &--right {
+    width: 60%;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+
+    &--left {
+      flex-direction: column;
+      height: 50%;
+    }
+
+    &--right {
+      height: 50%;
+    }
+  }
 }
 
 .skills__title {
   color: $teal;
   font-size: 6rem;
   font-weight: 900;
-  position: absolute;
-  top: 10rem;
+  position: relative;
+  text-align: left;
+  transform: translateX(-5rem);
 
   &::before {
     color: $charcoal;
@@ -65,39 +100,18 @@
     left: -2rem;
     position: absolute;
   }
-}
 
-.skills__column {
-  align-items: center;
-  display: flex;
-  width: 50%;
-
-  h3 {
-    color: $teal;
-    font-size: 4rem;
-    font-weight: 900;
+  @media (max-width: $mobile) {
+    font-size: 3rem;
+    margin: 2rem 0;
     position: relative;
     text-align: center;
-    width: 100%;
+    top: 0;
+    transform: initial;
 
-    &::before {
-      bottom: 1rem;
-      color: $charcoal;
-      content: '<h3>';
-      font-family: 'La Belle Aurore', cursive;
-      font-size: 2rem;
-      position: absolute;
-      transform: translateX(-6rem);
-    }
-
+    &::before,
     &::after {
-      bottom: 1rem;
-      color: $charcoal;
-      content: '</h3>';
-      font-family: 'La Belle Aurore', cursive;
-      font-size: 2rem;
-      position: absolute;
-      transform: translateX(1rem);
+      display: none;
     }
   }
 }
@@ -105,14 +119,24 @@
 .skills__paragraph {
   line-height: 2;
   position: relative;
+  text-align: left;
   text-indent: 3rem;
+  transform: translateX(5rem);
   z-index: 1;
 
-  &:nth-child(2) {
-    margin-left: 3.5rem;
+  @media (max-width: $mobile) {
+    font-size: 1rem;
+    line-height: initial;
+    text-indent: initial;
+    transform: initial;
   }
+}
 
-  &:last-child {
-    margin-left: 7rem;
-  }
+.skills__sphere-container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }

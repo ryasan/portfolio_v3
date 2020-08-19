@@ -1,5 +1,5 @@
 // modules
-declare module "react-helmet"
+declare module 'react-helmet'
 
 // assets
-declare module "*.svg"
+declare module '*.svg'

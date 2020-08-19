@@ -24,4 +24,14 @@
     position: fixed;
     z-index: 10;
   }
+
+  @media (max-width: $mobile) {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
 }

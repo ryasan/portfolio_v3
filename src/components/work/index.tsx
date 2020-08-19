@@ -1,7 +1,7 @@
 import React from 'react'
 
+import Slider from '../slider'
 import './work.scss'
-import Slider from '../slider/index'
 
 type Props = {
   classNames: string

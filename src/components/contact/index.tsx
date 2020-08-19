@@ -2,6 +2,7 @@ import React from 'react'
 
 import './contact.scss'
 
+
 interface Props {
   classNames: string
 }

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { throttle } from 'lodash'
-import '../home.scss'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -10,8 +9,9 @@ import Skills from '../components/skills/index'
 import Work from '../components/work'
 import Contact from '../components/contact'
 import Navbar from '../components/navbar'
+import '../home.scss'
 
-const components = [Hero, About, Skills, Work, Contact]
+export const components = [Hero, About, Skills, Work, Contact]
 const transitionDuration: number = 600
 
 const IndexPage: React.FC = () => {
@@ -53,18 +53,39 @@ const IndexPage: React.FC = () => {
     setPageIdx(prevIdx => prevIdx - pages)
   }
 
+  const handleNavItemClick = (idx: number) => {
+    if (idx > pageIdx) {
+      scrollDown(idx - pageIdx)
+    }
+
+    if (idx < pageIdx) {
+      scrollUp(pageIdx - idx)
+    }
+  }
+
   return (
     <Layout>
       <SEO title='Ryan Santos - Frontend Developer' />
-      <Navbar scrollDown={scrollDown} scrollUp={scrollUp} pageIdx={pageIdx} />
+      <Navbar
+        scrollDown={scrollDown}
+        scrollUp={scrollUp}
+        pageIdx={pageIdx}
+        handleNavItemClick={handleNavItemClick}
+      />
       <div className='sections-container' onWheel={parallaxScroll}>
         {components.map((Component: React.ReactType, i) => {
           const classNames = [
             i <= pageIdx - 1 ? 'down-scroll' : '',
             i !== totalSlideNumber - 1 && i >= pageIdx ? 'up-scroll' : ''
-          ]
+          ].join(' ')
 
-          return <Component key={i} classNames={classNames.join(' ').trim()} />
+          return (
+            <Component
+              key={i}
+              classNames={classNames}
+              handlePageClick={handleNavItemClick}
+            />
+          )
         })}
       </div>
     </Layout>

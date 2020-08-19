@@ -2,6 +2,7 @@ import React from 'react'
 
 import './timer.scss'
 
+
 interface Props {
   pct: number
 }
