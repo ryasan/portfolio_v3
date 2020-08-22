@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
 
 import Icon from '../icons'
 import './navbar.scss'
@@ -17,12 +16,6 @@ const links: NavItem[] = [
   { text: 'Work', animationDelay: 1, icon: 'briefcase' },
   { text: 'Contact', animationDelay: 1.6, icon: 'envelope' }
 ]
-
-const slideLeft = (delay: number) => ({
-  initial: { x: 80 },
-  animate: { x: 0 },
-  transition: { duration: 0.3, delay }
-})
 
 interface Props {
   pageIdx: number
@@ -55,19 +48,18 @@ const NavbarComponent: React.FC<Props> = ({ handleNavItemClick }) => {
           ].join(' ')
 
           return (
-            <motion.li
+            <li
               key={i}
               className='nav__nav-item'
               onClick={() => handleNavItemClick(i)}
               onMouseEnter={() => setSelectedIdx(i)}
               onMouseLeave={() => setSelectedIdx(null)}
-              {...slideLeft(item.animationDelay)}
             >
               <div className={textClasses}>{item.text}</div>
               <div className={iconClasses}>
                 <Icon name={item.icon} className='nav__icon' />
               </div>
-            </motion.li>
+            </li>
           )
         })}
       </ul>

@@ -1,6 +1,8 @@
 import React from 'react'
 
 import SvgImage from '../svgs'
+import HorizontalScreen from './horizontal-screen'
+import VerticalScreen from './vertical-screen'
 import { components } from '../../pages'
 import './hero.scss'
 
@@ -16,6 +18,8 @@ const HeroComponent: React.FC<Props> = ({ classNames, handlePageClick }) => (
         <div className='hero__column hero__column--left'>
           <div className='hero__svg-container'>
             <SvgImage className='hero__svg' name='hero' />
+            <HorizontalScreen />
+            <VerticalScreen />
           </div>
         </div>
         <div className='hero__column hero__column--right'>

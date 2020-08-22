@@ -2,8 +2,22 @@
 
 .contact {
   background: $dark;
+  height: 100%;
   position: fixed;
+
+  * {
+    outline: 1px solid red;
+  }
 }
 
 .contact__inner {
+  display: flex;
+  height: 100%;
+}
+
+.contact__column {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 50%;
 }

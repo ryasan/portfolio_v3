@@ -31,14 +31,14 @@ const Card: React.FC<CardProps> = props => {
     >
       <div className={`slider__card ${classNames}`}>
         <div className='slider__card-face'>
-          <div className='slider__card-header'>
-            {/* <img
+          {/* <div className='slider__card-header'>
+            <img
               src='https://via.placeholder.com/700/500'
               alt='placeholder'
               className='slider__card-image'
-            /> */}
+            />
           </div>
-          <div className='slider__card-body'>{item}</div>
+          <div className='slider__card-body'>{item}</div> */}
         </div>
       </div>
     </div>

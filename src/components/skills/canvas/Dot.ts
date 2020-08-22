@@ -44,7 +44,8 @@ export const skills: HTMLCanvasElement[] = [
   'Cloudinary',
   'Firebase',
   'SCSS',
-  'TDD'
+  'TDD',
+  'Ionic'
 ].map(getSkill)
 
 const DOT_RADIUS: number = 60
