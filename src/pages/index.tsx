@@ -41,10 +41,9 @@ const IndexPage: React.FC = () => {
   const [pageIdx, setPageIdx] = useState<number>(0)
   const firstRender = useRef<boolean>(true)
   const totalSlideNumber = components.length
+
   const slideDurationTimeout = (slideDuration: number) => {
-    setTimeout(() => {
-      setIsBusy(false)
-    }, slideDuration)
+    setTimeout(() => setIsBusy(false), slideDuration)
   }
 
   const parallaxScroll = throttle((e: React.WheelEvent<HTMLDivElement>) => {

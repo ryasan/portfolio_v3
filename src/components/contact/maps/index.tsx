@@ -8,13 +8,14 @@ import {
 } from 'react-google-maps'
 
 import styles from './maps.styles'
-import { gMapsApiKey } from '../../../config'
+
+const gMapsApiKey: string = 'AIzaSyANr_3txW2d9EoNsRJjlJ4hyenEcHLSYr8'
 
 interface Props {
   markerIsShowing?: boolean
 }
 
-const MapsComponent: React.FC<Props> = compose(
+const MapsComponent: React.FC = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${gMapsApiKey}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
