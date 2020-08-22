@@ -32,7 +32,7 @@ import BriefcaseIcon from './briefcase'
 
 export type IconProps = {
   name: string
-  className: string
+  className?: string
 }
 
 const IconComponent: React.FC<IconProps> = props => {

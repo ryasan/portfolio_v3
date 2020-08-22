@@ -1,0 +1,77 @@
+@import '../../globals';
+
+@keyframes fadeAway {
+  0% {
+    opacity: 1;
+    width: 100%;
+  }
+
+  99% {
+    opacity: 0;
+    width: 100%;
+  }
+
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    color: $teal;
+  }
+
+  50% {
+    color: #12473f;
+  }
+
+  100% {
+    color: $teal;
+  }
+}
+
+@keyframes showLine {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.loader {
+  align-items: center;
+  animation: fadeAway 0.5s linear 3s;
+  animation-fill-mode: forwards;
+  background: $darker;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+
+  svg {
+    animation: blink 1s forwards;
+  }
+}
+
+.loader__bar {
+  background: #12473f;
+  border-radius: 5rem;
+  height: 0.2rem;
+  margin-top: 2rem;
+  position: relative;
+  width: 50rem;
+
+  &::before {
+    animation: showLine 2s ease-in-out forwards;
+    background: $teal;
+    content: '';
+    height: 100%;
+    position: absolute;
+  }
+}

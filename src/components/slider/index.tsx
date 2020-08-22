@@ -12,7 +12,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = props => {
-  const { item, currentIdx, idx, toggleIsHovering } = props
+  const { currentIdx, idx, toggleIsHovering } = props
   const classNames = [
     idx === currentIdx ? 'is-center' : '',
     idx < currentIdx - 1 ? 'is-left-outer-card' : '',

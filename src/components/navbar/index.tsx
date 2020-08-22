@@ -4,17 +4,16 @@ import Icon from '../icons'
 import './navbar.scss'
 
 type NavItem = {
-  animationDelay: number
   text: string
   icon: string
 }
 
 const links: NavItem[] = [
-  { text: 'Home', animationDelay: 1.3, icon: 'home' },
-  { text: 'About', animationDelay: 1.9, icon: 'person' },
-  { text: 'Skills', animationDelay: 2.2, icon: 'settings' },
-  { text: 'Work', animationDelay: 1, icon: 'briefcase' },
-  { text: 'Contact', animationDelay: 1.6, icon: 'envelope' }
+  { text: 'Home', icon: 'home' },
+  { text: 'About', icon: 'person' },
+  { text: 'Skills', icon: 'settings' },
+  { text: 'Work', icon: 'briefcase' },
+  { text: 'Contact', icon: 'envelope' }
 ]
 
 interface Props {
@@ -57,7 +56,7 @@ const NavbarComponent: React.FC<Props> = ({ handleNavItemClick }) => {
             >
               <div className={textClasses}>{item.text}</div>
               <div className={iconClasses}>
-                <Icon name={item.icon} className='nav__icon' />
+                <Icon name={item.icon} />
               </div>
             </li>
           )

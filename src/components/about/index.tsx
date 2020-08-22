@@ -29,15 +29,7 @@ const AboutComponent: React.FC<Props> = ({ classNames }) => {
             </div>
           </div>
           <div className='about__column about__column--right'>
-            <div
-              className='about__pyramid'
-              // transition={{ loop: Infinity, duration: 20, ease: 'linear' }}
-              // animate={{
-              //   rotateX: [0, 360],
-              //   rotateY: [0, 360],
-              //   rotateZ: [0, 360]
-              // }}
-            >
+            <div className='about__pyramid'>
               <div className='about__side' />
               <div className='about__side' />
               <div className='about__side' />
