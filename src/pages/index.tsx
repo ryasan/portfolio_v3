@@ -33,12 +33,13 @@ export const components = [
   { component: Contact, componentRef: googleMapsRef }
 ]
 const transitionDuration: number = 600
-const animationDuration: number = 3500
+const loadingAnimationDuration: number = 3000
 
 const IndexPage: React.FC = () => {
   const [isBusy, setIsBusy] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [pageIdx, setPageIdx] = useState<number>(0)
+  const [_performance, setPerformance] = useState<any>(null)
   const firstRender = useRef<boolean>(true)
   const totalSlideNumber = components.length
 
@@ -95,15 +96,19 @@ const IndexPage: React.FC = () => {
   }, [pageIdx])
 
   useEffect(() => {
-    if (performance.navigation.type === 1) {
+    setPerformance(performance)
+  }, [])
+
+  useEffect(() => {
+    setIsLoading(true)
+    if (_performance && _performance.navigation.type === 1) {
       const previousPage = JSON.parse(localStorage.getItem('page') || '')
 
-      setIsLoading(true)
       handleNavItemClick(Number(previousPage))
 
-      setTimeout(() => setIsLoading(false), animationDuration)
+      setTimeout(() => setIsLoading(false), loadingAnimationDuration)
     }
-  }, [performance.navigation.type])
+  }, [_performance])
 
   return (
     <Layout>
@@ -114,7 +119,7 @@ const IndexPage: React.FC = () => {
         pageIdx={pageIdx}
         handleNavItemClick={handleNavItemClick}
       />
-      {isLoading && <Loader />}
+      <Loader />
       <div className='sections-container' onWheel={parallaxScroll}>
         {components.map((props: Props, i) => {
           const classNames = [

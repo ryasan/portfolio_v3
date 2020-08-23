@@ -27,7 +27,7 @@
 
 .slider__button {
   align-items: center;
-  background: $dark;
+  background: $darker;
   border: 0.2rem solid $teal;
   border-radius: 50%;
   color: $teal;
@@ -48,7 +48,7 @@
   }
 
   &:hover {
-    background: $darker;
+    background: $darkest;
   }
 }
 
