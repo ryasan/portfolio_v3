@@ -3,27 +3,29 @@ import { TweenMax, Power0 } from 'gsap'
 import { PERSPECTIVE, PROJECTION_CENTER_X, PROJECTION_CENTER_Y } from '.'
 
 const getSkill = (text: any) => {
-  const tempCanvas = window.document.createElement('canvas')
-  const tempCtx = tempCanvas.getContext('2d')
-  tempCanvas.width = 60
-  tempCanvas.height = 60
+  if (document) {
+    const tempCanvas = document.createElement('canvas')
+    const tempCtx = tempCanvas.getContext('2d')
+    tempCanvas.width = 60
+    tempCanvas.height = 60
 
-  if (tempCtx) {
-    let fontSize = 300
-    do {
-      fontSize--
-      tempCtx.font = `700 ${fontSize}px montserrat`
-    } while (tempCtx.measureText(text).width > tempCanvas.width)
+    if (tempCtx) {
+      let fontSize = 300
+      do {
+        fontSize--
+        tempCtx.font = `700 ${fontSize}px montserrat`
+      } while (tempCtx.measureText(text).width > tempCanvas.width)
 
-    tempCtx.textAlign = 'center'
-    tempCtx.textBaseline = 'middle'
-    tempCtx.fillStyle = '#fff'
-    tempCtx.fillText(text, 30, 35)
+      tempCtx.textAlign = 'center'
+      tempCtx.textBaseline = 'middle'
+      tempCtx.fillStyle = '#fff'
+      tempCtx.fillText(text, 30, 35)
+    }
+    return tempCanvas
   }
-  return tempCanvas
 }
 
-export const skills: HTMLCanvasElement[] = [
+export const skills: HTMLCanvasElement[] | any = [
   'React',
   'GraphQL',
   'TypeScript',

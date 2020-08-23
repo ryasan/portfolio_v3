@@ -62,15 +62,4 @@ const CanvasComponent: React.FC<Props> = ({ width, height }) => {
   )
 }
 
-// {skills.map((skill, i) => (
-//   <DotClassComponent
-//     key={i}
-//     idx={i}
-//     ctx={ctx}
-//     canvasRef={canvasRef}
-//     height={height}
-//     width={width}
-//   />
-// ))}
-
 export default CanvasComponent
