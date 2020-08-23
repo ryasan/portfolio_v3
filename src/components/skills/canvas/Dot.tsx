@@ -3,7 +3,7 @@ import { TweenMax, Power0 } from 'gsap'
 import { PERSPECTIVE, PROJECTION_CENTER_X, PROJECTION_CENTER_Y } from '.'
 
 const getSkill = (text: any) => {
-  const tempCanvas = document.createElement('canvas')
+  const tempCanvas = window.document.createElement('canvas')
   const tempCtx = tempCanvas.getContext('2d')
   tempCanvas.width = 60
   tempCanvas.height = 60
@@ -22,6 +22,7 @@ const getSkill = (text: any) => {
   }
   return tempCanvas
 }
+
 export const skills: HTMLCanvasElement[] = [
   'React',
   'GraphQL',

@@ -20,10 +20,10 @@ import '../home.scss'
 
 interface Props {
   component: React.ReactType
-  componentRef?: React.RefObject<any>
+  componentRef?: React.RefObject<HTMLDivElement>
 }
 
-const googleMapsRef: React.RefObject<any> = createRef()
+const googleMapsRef: React.RefObject<HTMLDivElement> = createRef()
 
 export const components = [
   { component: Hero },
@@ -46,8 +46,8 @@ const IndexPage: React.FC = () => {
     setTimeout(() => setIsBusy(false), slideDuration)
   }
 
-  const parallaxScroll = throttle((e: React.WheelEvent<HTMLDivElement>) => {
-    if (googleMapsRef.current.contains(e.target)) return
+  const parallaxScroll = throttle((e: any) => {
+    if (googleMapsRef?.current?.contains(e.target)) return
 
     const isWheelingDown = -e.deltaY <= 0
 

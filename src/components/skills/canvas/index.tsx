@@ -12,7 +12,7 @@ interface Props {
 }
 
 const CanvasComponent: React.FC<Props> = ({ width, height }) => {
-  const canvas = useRef<HTMLCanvasElement | null>(null)
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const requestRef = useRef<number>(0)
   const [ctx, setCtx] = useState<any>()
   const [dots, setDots] = useState<Dot[]>([])
@@ -32,13 +32,13 @@ const CanvasComponent: React.FC<Props> = ({ width, height }) => {
   }, [ctx, dots, render])
 
   useEffect(() => {
-    if (canvas.current) {
+    if (canvasRef.current) {
       PERSPECTIVE = width * 0.8
       PROJECTION_CENTER_X = width / 2
       PROJECTION_CENTER_Y = height / 2
-      setCtx(canvas.current.getContext('2d'))
+      setCtx(canvasRef.current.getContext('2d'))
     }
-  }, [canvas, width, height])
+  }, [canvasRef, width, height])
 
   useEffect(() => {
     if (ctx) {
@@ -55,11 +55,22 @@ const CanvasComponent: React.FC<Props> = ({ width, height }) => {
   return (
     <canvas
       className='skills__sphere'
-      ref={canvas}
+      ref={canvasRef}
       width={width}
       height={height}
     />
   )
 }
+
+// {skills.map((skill, i) => (
+//   <DotClassComponent
+//     key={i}
+//     idx={i}
+//     ctx={ctx}
+//     canvasRef={canvasRef}
+//     height={height}
+//     width={width}
+//   />
+// ))}
 
 export default CanvasComponent

@@ -6,7 +6,7 @@ import './contact.scss'
 
 interface Props {
   classNames: string
-  componentRef: React.RefObject<any>
+  componentRef: React.RefObject<HTMLDivElement>
 }
 
 const ContactComponent: React.FC<Props> = props => (
