@@ -4,7 +4,7 @@ import { PERSPECTIVE, PROJECTION_CENTER_X, PROJECTION_CENTER_Y } from '.'
 
 const getSkill = (text: any) => {
   if (document) {
-    const tempCanvas = document.createElement('canvas')
+    const tempCanvas = new HTMLCanvasElement()
     const tempCtx = tempCanvas.getContext('2d')
     tempCanvas.width = 60
     tempCanvas.height = 60

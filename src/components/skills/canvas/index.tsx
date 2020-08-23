@@ -44,8 +44,8 @@ const CanvasComponent: React.FC<Props> = ({ width, height }) => {
     if (ctx) {
       setDots(
         skills
-          .map((_, idx) => new Dot(ctx, width, height, idx))
-          .sort((dotA, dotB) => {
+          .map((_: any, idx: number) => new Dot(ctx, width, height, idx))
+          .sort((dotA: any, dotB: any) => {
             return dotA.scaleProjected - dotB.scaleProjected
           })
       )
