@@ -4,7 +4,12 @@
   background: $dark;
   display: flex;
   justify-content: center;
+  outline: 1px solid red;
   position: fixed;
+
+  * {
+    outline: 1px solid red;
+  }
 }
 
 .skills__background {
