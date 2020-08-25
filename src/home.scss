@@ -19,7 +19,7 @@ $slide-number: 5;
   will-change: transform;
 
   &::before {
-    background-color: rgba(0, 0, 0, 0.3);
+    // background-color: rgba(0, 0, 0, 0.3);
     bottom: 0;
     content: '';
     height: 100%;

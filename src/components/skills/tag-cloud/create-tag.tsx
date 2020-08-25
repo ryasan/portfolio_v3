@@ -1,15 +1,15 @@
 import { useRef } from 'react'
 
-import { texts } from '.'
+import { skills } from '.'
 
 const computePosition = (
   idx: number,
   random: boolean = false,
   size: number
 ) => {
-  if (random) idx = Math.floor(Math.random() * (texts.length + 1))
-  const phi = Math.acos(-1 + (2 * idx + 1) / texts.length)
-  const theta = Math.sqrt((texts.length + 1) * Math.PI) * phi
+  if (random) idx = Math.floor(Math.random() * (skills.length + 1))
+  const phi = Math.acos(-1 + (2 * idx + 1) / skills.length)
+  const theta = Math.sqrt((skills.length + 1) * Math.PI) * phi
 
   return {
     x: (size * Math.cos(theta) * Math.sin(phi)) / 2,

@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react'
 import './tag-cloud.scss'
 import createTag from './create-tag'
 
-export const texts: string[] = [
+export const skills: string[] = [
   'React',
   'GraphQL',
   'TypeScript',
@@ -43,7 +43,7 @@ interface ItemProps {
 }
 
 const createInitialState = (size: number) => {
-  return texts.map((text, i) => {
+  return skills.map((text, i) => {
     return createTag(i, text, size)
   })
 }
@@ -58,18 +58,17 @@ const { radius, maxSpeed, initSpeed, direction } = {
 const size = 1.5 * radius
 const depth = 2 * radius
 
-const TagCloudComponent: React.FC = React.memo(() => {
+// prettier-ignore
+const TagCloudComponent: React.FC = () => {
   const tagCloudRef = useRef<HTMLDivElement | null>(null)
   const [items, setItems] = useState<ItemProps[]>(createInitialState(size))
 
-  const mouseX0 = useRef<number>(initSpeed * Math.sin(direction * (Math.PI / 180))) // prettier-ignore
-  const mouseY0 = useRef<number>(-initSpeed * Math.cos(direction * (Math.PI / 180))) // prettier-ignore
-  const mouseX = useRef<number>(mouseX0.current)
-  const mouseY = useRef<number>(mouseY0.current)
+  const mouseX = useRef<number>(initSpeed * Math.sin(direction * (Math.PI / 180)))
+  const mouseY = useRef<number>(-initSpeed * Math.cos(direction * (Math.PI / 180)))
 
   const next = useCallback(() => {
-    const a = -(Math.min(Math.max(-mouseY.current, -size), size) / radius) * maxSpeed // prettier-ignore
-    const b = (Math.min(Math.max(-mouseX.current, -size), size) / radius) * maxSpeed // prettier-ignore
+    const a = -(Math.min(Math.max(-mouseY.current, -size), size) / radius) * maxSpeed
+    const b = (Math.min(Math.max(-mouseX.current, -size), size) / radius) * maxSpeed
 
     if (Math.abs(a) <= 0.01 && Math.abs(b) <= 0.01) return // pause
 
@@ -158,6 +157,6 @@ const TagCloudComponent: React.FC = React.memo(() => {
       })}
     </div>
   )
-})
+}
 
 export default TagCloudComponent

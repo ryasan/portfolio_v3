@@ -2,38 +2,44 @@
 
 .hero {
   background: $dark;
-  color: white;
+}
+
+.hero__outer {
+  align-items: center;
+  background: $dark;
   display: flex;
+  height: 100%;
   justify-content: center;
-  position: fixed;
-  width: 100%;
 }
 
 .hero__inner {
   align-items: center;
   display: flex;
-  height: 100%;
+  height: 90%;
   justify-content: center;
+  margin-right: 7rem;
   max-width: $max_width;
-  width: 100%;
+  width: 90%;
 
   @media (max-width: $mobile) {
     flex-direction: column;
+    margin-right: initial;
   }
 }
 
 .hero__column {
-  align-items: center;
   display: flex;
   height: 100%;
   width: 50%;
 
   &--left {
+    align-items: center;
+    justify-content: flex-end;
     position: relative;
   }
 
   &--right {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: center;
   }
@@ -46,8 +52,6 @@
 
 .hero__text-container {
   font-weight: 300;
-  text-align: left;
-  transform: translateY(-5rem);
   width: 100%;
 }
 
@@ -83,9 +87,6 @@
 }
 
 .hero__title-newline {
-  display: block;
-  text-align: right;
-
   @media (max-width: $mobile) {
     font-size: 3rem;
     text-align: center;
@@ -101,7 +102,6 @@
   display: block;
   font-size: 3rem;
   font-weight: inherit;
-  margin-left: 10rem;
 
   @media (max-width: $mobile) {
     font-size: 2.5rem;
@@ -116,7 +116,6 @@
   font-weight: inherit;
   letter-spacing: 0.9rem;
   margin-bottom: 0;
-  margin-left: 5rem;
   white-space: nowrap;
 
   @media (max-width: $mobile) {
@@ -127,7 +126,7 @@
 
 .hero__svg-container {
   position: relative;
-  width: 400px;
+  width: 100%;
 
   @media (max-width: $mobile) {
     left: 50%;
@@ -151,7 +150,7 @@
   color: $teal;
   font-size: 1.8rem;
   letter-spacing: 0.9rem;
-  margin: 0;
+  margin: 2rem;
   padding: 1rem 2rem;
   transition: background 0.3s, color 0.3s;
 

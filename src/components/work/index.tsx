@@ -11,9 +11,11 @@ const WorkComponent: React.FC<Props> = ({ classNames }) => {
   return (
     <section className={`work section ${classNames}`}>
       <div className='parallax-wrapper'>
-        <div className='work__inner'>
-          <h1 className='work__title'>Works</h1>
-          <Slider />
+        <div className='work__outer'>
+          <div className='work__inner'>
+            <h1 className='work__title'>Works</h1>
+            <Slider />
+          </div>
         </div>
       </div>
     </section>

@@ -3,27 +3,36 @@
 .contact {
   background: $dark;
   height: 100%;
-  // outline: 1px solid red;
   position: fixed;
 }
 
 .contact__inner {
   display: flex;
   height: 100%;
+  max-width: $max_width;
+  width: 100%;
 }
 
 .contact__column {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   position: relative;
   width: 50%;
-}
 
-.contact__max-width {
-  max-width: $max_width / 2;
-  text-align: left;
+  &--left {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5rem;
+  }
+
+  @media (max-width: $mobile) {
+    height: 100%;
+    width: 100%;
+
+    &--right {
+      display: none;
+    }
+  }
 }
 
 .contact__title {
@@ -32,6 +41,8 @@
   font-weight: 900;
   margin: 5rem 0;
   position: relative;
+  text-align: left;
+  width: 100%;
 
   &::before {
     color: $charcoal;
@@ -64,6 +75,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 3fr;
   margin-top: 3rem;
+  width: 100%;
 }
 
 .contact__field {

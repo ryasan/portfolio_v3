@@ -14,15 +14,14 @@ const ContactComponent: React.FC<Props> = props => (
     <div className='parallax-wrapper'>
       <div className='contact__inner'>
         <div className='contact__column contact__column--left'>
-          <div className='contact__max-width'>
-            <h1 className='contact__title'>Contact Me</h1>
-            <p className='contact__paragraph'>
-              I am interested in freelance, contract, and full time
-              opportunities. I love being an active participant in cool and
-              ambitious projects. Please feel free to contact me about whatever!
-            </p>
-            {/* prettier-ignore */}
-            <form method='post' className='contact__form'>
+          <h1 className='contact__title'>Contact Me</h1>
+          <p className='contact__paragraph'>
+            I am interested in freelance, contract, and full time opportunities.
+            I love being an active participant in cool and ambitious projects.
+            Please feel free to contact me about whatever!
+          </p>
+          {/* prettier-ignore */}
+          <form method='post' className='contact__form'>
                 <div className='contact__field'>
                   <input type='text' placeholder='Name' className='contact__input' />
                 </div>
@@ -36,7 +35,6 @@ const ContactComponent: React.FC<Props> = props => (
                   <textarea placeholder='Message' rows={3} className='contact__textarea' />
                 </div>
               </form>
-          </div>
         </div>
         <div className='contact__column contact__column--right'>
           <div className='contact__maps' ref={props.componentRef}>

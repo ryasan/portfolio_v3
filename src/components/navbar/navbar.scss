@@ -3,7 +3,6 @@
 $item_width: 7rem;
 
 .nav {
-  align-items: center;
   background: $darker;
   color: $charcoal;
   display: flex;
@@ -18,8 +17,8 @@ $item_width: 7rem;
 
   @media (max-width: $mobile) {
     bottom: 0;
-    flex-direction: row;
     height: $item_width;
+    left: 0;
     right: initial;
     top: initial;
     width: 100%;
@@ -27,7 +26,15 @@ $item_width: 7rem;
 }
 
 .nav__nav-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
+
+  @media (max-width: $mobile) {
+    flex-direction: row;
+  }
 }
 
 .nav__nav-item {
@@ -73,7 +80,8 @@ $item_width: 7rem;
   flex-direction: column;
   height: $item_width;
   justify-content: center;
-  width: 100%;
+  position: relative;
+  width: $item_width;
 
   @media (max-width: $mobile) {
     display: none;
