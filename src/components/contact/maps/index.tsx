@@ -33,7 +33,7 @@ const MapsComponent: React.FC<Props> = compose(
     {props.markerIsShowing && (
       <Marker
         position={{ lat: 34.079425, lng: -118.134693 }}
-        title='Hello World!'
+        icon={require('../../../static/marker.svg')}
       />
     )}
   </GoogleMap>
