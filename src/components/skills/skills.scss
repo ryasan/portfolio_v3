@@ -44,31 +44,35 @@
   @media (max-width: $mobile) {
     flex-direction: column;
   }
+
+  @media (min-width: $tablet) {
+    margin-right: 7rem;
+  }
 }
 
 .skills__column {
   align-items: center;
   display: flex;
 
-  &--left {
+  &--right {
     flex-direction: column;
     position: relative;
-    width: 40%;
+    width: 60%;
   }
 
-  &--right {
-    width: 60%;
+  &--left {
+    width: 40%;
   }
 
   @media (max-width: $mobile) {
     width: 100%;
 
-    &--left {
+    &--right {
       flex-direction: column;
       height: 50%;
     }
 
-    &--right {
+    &--left {
       height: 50%;
     }
   }

@@ -18,13 +18,12 @@ const computePosition = (
   }
 }
 
-const createTag = (idx: number, text: string, size: number, scale?: number) => {
+const createTag = (idx: number, text: string, size: number) => {
   const tagRef = useRef<HTMLDivElement | null>(null)
 
   return {
     idx: idx,
     text: text,
-    scale: scale,
     opacity: 0,
     filter: 'alpha(opacity=0)',
     transform: 'translate3d(-50%, -50%, 0) scale(1)',

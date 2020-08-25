@@ -13,8 +13,13 @@ const SkillsComponent: React.FC<Props> = ({ classNames }) => {
       <div className='parallax-wrapper'>
         <div className='skills__outer'>
           <div className='skills__inner'>
-            {/* prettier-ignore */}
             <div className='skills__column skills__column--left'>
+              <div className='skills__tag-cloud-container'>
+                <TagCloud />
+              </div>
+            </div>
+            {/* prettier-ignore */}
+            <div className='skills__column skills__column--right'>
             <h1 className='skills__title'>Skills &<br/>Experience</h1>
               <div className='skills__text-container'>
                 <p className='skills__paragraph'>
@@ -30,11 +35,6 @@ const SkillsComponent: React.FC<Props> = ({ classNames }) => {
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Magni sit ratione vitae repudiandae.
                 </p>
-              </div>
-            </div>
-            <div className='skills__column skills__column--right'>
-              <div className='skills__tag-cloud-container'>
-                <TagCloud />
               </div>
             </div>
           </div>

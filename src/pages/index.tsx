@@ -33,11 +33,9 @@ export const components = [
   { component: Contact, componentRef: googleMapsRef }
 ]
 const transitionDuration: number = 600
-const loadingAnimationDuration: number = 3000
 
 const IndexPage: React.FC = () => {
   const [isBusy, setIsBusy] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
   const [pageIdx, setPageIdx] = useState<number>(0)
   const [_performance, setPerformance] = useState<any>(null)
   const firstRender = useRef<boolean>(true)
@@ -100,13 +98,9 @@ const IndexPage: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    setIsLoading(true)
     if (_performance && _performance.navigation.type === 1) {
       const previousPage = JSON.parse(localStorage.getItem('page') || '')
-
       handleNavItemClick(Number(previousPage))
-
-      setTimeout(() => setIsLoading(false), loadingAnimationDuration)
     }
   }, [_performance])
 
