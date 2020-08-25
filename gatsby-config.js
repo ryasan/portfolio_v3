@@ -34,7 +34,8 @@ module.exports = {
       options: {
         fonts: [
           'montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i', // eslint-disable-line
-          'La Belle Aurore:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i'
+          'La Belle Aurore:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i',
+          'Caveat: 600i'
         ],
         display: 'swap'
       }

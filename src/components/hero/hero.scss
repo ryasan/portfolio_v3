@@ -130,19 +130,13 @@
 
 .hero__svg-container {
   position: relative;
-  width: 55rem;
+  width: 100%;
 
   @media (max-width: $mobile) {
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  svg {
-    position: relative;
-    width: 100%;
-    z-index: 10;
   }
 }
 

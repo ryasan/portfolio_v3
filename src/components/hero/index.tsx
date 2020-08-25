@@ -1,10 +1,8 @@
 import React from 'react'
 
-import SvgImage from '../svgs'
-import HorizontalScreen from './horizontal-screen'
-import VerticalScreen from './vertical-screen'
 import { components } from '../../pages'
 import './hero.scss'
+import WorkstationIllustration from './workstation/index'
 
 interface Props {
   classNames: string
@@ -18,9 +16,7 @@ const HeroComponent: React.FC<Props> = ({ classNames, handlePageClick }) => (
         <div className='hero__inner'>
           <div className='hero__column hero__column--left'>
             <div className='hero__svg-container'>
-              <SvgImage className='hero__svg' name='hero' />
-              <HorizontalScreen />
-              <VerticalScreen />
+              <WorkstationIllustration />
             </div>
           </div>
           <div className='hero__column hero__column--right'>
