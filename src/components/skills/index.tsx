@@ -1,41 +1,13 @@
-import React, { createRef, useState, useLayoutEffect } from 'react'
+import React from 'react'
 
 import './skills.scss'
-import Canvas from './canvas'
-
-const containerRef = createRef<HTMLDivElement>()
-
-const useWindowResize = () => {
-  const [size, setSize] = useState([
-    containerRef.current?.offsetWidth || 500,
-    containerRef.current?.offsetHeight || 1000
-  ])
-
-  useLayoutEffect(() => {
-    const updateSize = () => {
-      if (containerRef.current) {
-        setSize([
-          containerRef.current?.offsetWidth,
-          containerRef.current?.offsetHeight
-        ])
-      }
-    }
-    window.addEventListener('resize', updateSize)
-    updateSize()
-
-    return () => window.removeEventListener('resize', updateSize)
-  }, [])
-
-  return size
-}
+import TagCloud from './tag-cloud'
 
 interface Props {
   classNames: string
 }
 
 const SkillsComponent: React.FC<Props> = ({ classNames }) => {
-  const [width, height] = useWindowResize()
-
   return (
     <section className={`skills section ${classNames}`}>
       <div className='parallax-wrapper'>
@@ -61,8 +33,8 @@ const SkillsComponent: React.FC<Props> = ({ classNames }) => {
               </div>
             </div>
             <div className='skills__column skills__column--right'>
-              <div className='skills__sphere-container' ref={containerRef}>
-                {containerRef && <Canvas width={width} height={height} />}
+              <div className='skills__tag-cloud-container'>
+                <TagCloud />
               </div>
             </div>
           </div>

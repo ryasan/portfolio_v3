@@ -4,12 +4,7 @@
   background: $dark;
   display: flex;
   justify-content: center;
-  outline: 1px solid red;
   position: fixed;
-
-  * {
-    outline: 1px solid red;
-  }
 }
 
 .skills__background {
@@ -29,6 +24,7 @@
 }
 
 .skills__outer {
+  align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
@@ -39,11 +35,11 @@
   align-items: center;
   background: transparent;
   display: flex;
-  height: 100%;
+  height: 90%;
   justify-content: center;
   padding: 0 5rem;
   position: relative;
-  width: 100%;
+  width: 90%;
 
   @media (max-width: $mobile) {
     flex-direction: column;
@@ -137,7 +133,7 @@
   }
 }
 
-.skills__sphere-container {
+.skills__tag-cloud-container {
   align-items: center;
   display: flex;
   height: 100%;
