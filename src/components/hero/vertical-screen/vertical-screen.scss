@@ -1,7 +1,7 @@
 @import '../../../globals.scss';
 
-$screen_height: 120px;
-$screen_width: 90px;
+$screen_height: 12rem;
+$screen_width: 9rem;
 
 @keyframes infiniteSlideA {
   0% {
@@ -20,7 +20,7 @@ $screen_width: 90px;
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  transform: translate(270px, -330px);
+  transform: translate(34rem, -30.9rem);
 }
 
 .screen__inner {
@@ -57,8 +57,8 @@ $screen_width: 90px;
 .screen__base {
   background: $darker;
   border: 10px solid $darkest;
-  border-left-color: #161616;
-  border-right-color: #161616;
+  border-left-color: $dark;
+  border-right-color: $dark;
   border-top: 0;
   height: 20px;
   position: relative;
