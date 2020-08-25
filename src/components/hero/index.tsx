@@ -1,8 +1,8 @@
 import React from 'react'
 
+import WorkstationIllustration from './workstation'
 import { components } from '../../pages'
 import './hero.scss'
-import WorkstationIllustration from './workstation/index'
 
 interface Props {
   classNames: string

@@ -1,15 +1,10 @@
-const charcoal: string = '#7c7c7c'
-const dark: string = '#2e2e2e'
-const darker: string = '#0e0e0e'
-const darkest: string = '#010101'
-const teal: string = '#0cfdd7'
-
+// color: '#0cfdd7'
 const styles = [
   {
     elementType: 'geometry',
     stylers: [
       {
-        color: teal
+        color: '#0cfdd7'
       }
     ]
   },
@@ -25,7 +20,7 @@ const styles = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#757575'
+        color: '#212121'
       }
     ]
   },
@@ -33,7 +28,7 @@ const styles = [
     elementType: 'labels.text.stroke',
     stylers: [
       {
-        color: teal
+        color: '#0cfdd7'
       }
     ]
   },
@@ -51,7 +46,7 @@ const styles = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#9e9e9e'
+        color: '#212121'
       }
     ]
   },
@@ -68,7 +63,7 @@ const styles = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#bdbdbd'
+        color: '#212121'
       }
     ]
   },
@@ -77,7 +72,7 @@ const styles = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#757575'
+        color: '#212121'
       }
     ]
   },
@@ -95,7 +90,7 @@ const styles = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#616161'
+        color: '#212121'
       }
     ]
   },
@@ -104,7 +99,7 @@ const styles = [
     elementType: 'labels.text.stroke',
     stylers: [
       {
-        color: '#1b1b1b'
+        color: '#0cfdd7'
       }
     ]
   },
@@ -122,7 +117,7 @@ const styles = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#8a8a8a'
+        color: '#212121'
       }
     ]
   },
@@ -131,7 +126,7 @@ const styles = [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#373737'
+        color: '#1e1e1e'
       }
     ]
   },
@@ -140,7 +135,7 @@ const styles = [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#3c3c3c'
+        color: '#1e1e1e'
       }
     ]
   },
@@ -149,7 +144,7 @@ const styles = [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#4e4e4e'
+        color: '#1e1e1e'
       }
     ]
   },
@@ -158,7 +153,7 @@ const styles = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#616161'
+        color: '#212121'
       }
     ]
   },
@@ -167,7 +162,7 @@ const styles = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#757575'
+        color: '#1e1e1e'
       }
     ]
   },
@@ -176,7 +171,7 @@ const styles = [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#202020'
+        color: '#000000'
       }
     ]
   },
@@ -185,7 +180,7 @@ const styles = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#3d3d3d'
+        color: '#000000'
       }
     ]
   }

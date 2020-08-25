@@ -22,18 +22,18 @@ const ContactComponent: React.FC<Props> = props => (
           </p>
           {/* prettier-ignore */}
           <form method='post' className='contact__form'>
-                <div className='contact__field'>
-                  <input type='text' placeholder='Name' className='contact__input' />
-                </div>
-                <div className='contact__field'>
-                  <input type='text' placeholder='Email' className='contact__input' />
-                </div>
-                <div className='contact__field'>
-                  <input type='text' placeholder='Subject' className='contact__input' />
-                </div>
-                <div className='contact__field'>
-                  <textarea placeholder='Message' rows={3} className='contact__textarea' />
-                </div>
+            <div className='contact__field'>
+              <input type='text' placeholder='Name' className='contact__input' />
+            </div>
+            <div className='contact__field'>
+              <input type='text' placeholder='Email' className='contact__input' />
+            </div>
+            <div className='contact__field'>
+              <input type='text' placeholder='Subject' className='contact__input' />
+            </div>
+            <div className='contact__field'>
+              <textarea placeholder='Message' rows={3} className='contact__textarea' />
+            </div>
               </form>
         </div>
         <div className='contact__column contact__column--right'>

@@ -1,9 +1,5 @@
 @import '../../../globals';
 
-$barely_white: #fafafa;
-$light_gray: #b0bec5;
-$off_white: #dfdfdf;
-
 .wrapper {
   align-items: center;
   display: flex;
@@ -189,7 +185,7 @@ $off_white: #dfdfdf;
   justify-content: space-between;
   position: relative;
   top: 0;
-  transform: translateY(-13px);
+  transform: translateY(-1.3rem);
   width: 80%;
 }
 

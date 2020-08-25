@@ -31,7 +31,10 @@ const MapsComponent: React.FC<Props> = compose(
     defaultOptions={{ styles }}
   >
     {props.markerIsShowing && (
-      <Marker position={{ lat: 34.079425, lng: -118.134693 }} />
+      <Marker
+        position={{ lat: 34.079425, lng: -118.134693 }}
+        title='Hello World!'
+      />
     )}
   </GoogleMap>
 ))
