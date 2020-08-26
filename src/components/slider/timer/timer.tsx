@@ -1,25 +1,25 @@
 import React from 'react'
 
 import './timer.scss'
+import { classList } from '../../../utils'
 
 interface TimerInterface {
   pct: number
 }
 
-const TimerComponent: React.FC<TimerInterface> = ({ pct }) => {
-  const styles = {
-    borderBottomColor: pct >= 50 ? '#0cfdd7' : 'transparent',
-    borderLeftColor: pct >= 75 ? '#0cfdd7' : 'transparent',
-    borderRightColor: pct >= 25 ? '#0cfdd7' : 'transparent',
-    borderTopColor: pct >= 100 ? '#0cfdd7' : 'transparent'
-  }
-
-  return (
-    <div className='timer'>
-      <div className='timer__bg' />
-      <div className='timer__clock' style={styles} />
-    </div>
-  )
-}
+const TimerComponent: React.FC<TimerInterface> = ({ pct }) => (
+  <div className='timer'>
+    <div className='timer__bg' />
+    <div
+      className={classList({
+        timer__clock: true,
+        'bottom-active': pct >= 50 || !pct,
+        'left-active': pct >= 75 || !pct,
+        'right-active': pct >= 25 || !pct,
+        'top-active': pct >= 100 || !pct
+      })}
+    />
+  </div>
+)
 
 export default TimerComponent

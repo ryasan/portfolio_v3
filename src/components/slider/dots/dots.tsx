@@ -1,7 +1,7 @@
 import React from 'react'
 
+import { classList } from '../../../utils'
 import './dots.scss'
-
 
 interface DotsInfoInterface {
   currentIdx: number
@@ -19,8 +19,11 @@ const DotsComponent: React.FC<DotsInfoInterface> = ({
       <div className='dot'></div>
       {Array.from({ length: numberOfDots }).map((_, i) => (
         <div
-          className={`dot${i === currentIdx ? ' active' : ''}`}
           key={i}
+          className={classList({
+            dot: true,
+            active: i === currentIdx
+          })}
           onClick={() => onClick(i)}
         />
       ))}

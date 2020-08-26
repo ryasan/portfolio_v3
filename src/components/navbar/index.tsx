@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import Icon from '../icons'
+import { classList } from '../../utils'
 import './navbar.scss'
 
 type NavItemType = {
@@ -19,25 +20,9 @@ const links: NavItemType[] = [
   { text: 'Home', icon: 'home' },
   { text: 'About', icon: 'person' },
   { text: 'Skills', icon: 'settings' },
-  { text: 'Work', icon: 'briefcase' },
+  { text: 'Works', icon: 'briefcase' },
   { text: 'Contact', icon: 'envelope' }
 ]
-
-const renderTextClasses = (idx: number, activeIdx: number | null) => {
-  return [
-    'nav__item-content',
-    'nav__item-content--text',
-    idx === activeIdx ? 'active' : 'hidden'
-  ].join(' ')
-}
-
-const renderIconClasses = (idx: number, activeIdx: number | null) => {
-  return [
-    'nav__item-content',
-    'nav__item-content--icon',
-    idx === activeIdx ? 'hidden' : 'active'
-  ].join(' ')
-}
 
 const NavbarComponent: React.FC<NavbarInterface> = ({ handleNavItemClick }) => {
   const [activeIdx, setActiveIdx] = useState<number | null>(null)
@@ -57,8 +42,22 @@ const NavbarComponent: React.FC<NavbarInterface> = ({ handleNavItemClick }) => {
             onMouseEnter={() => setActiveIdx(i)}
             onMouseLeave={() => setActiveIdx(null)}
           >
-            <div className={renderTextClasses(i, activeIdx)}>{item.text}</div>
-            <div className={renderIconClasses(i, activeIdx)}>
+            <div
+              className={classList({
+                'nav__item-content': true,
+                'nav__item-content--text': true,
+                [i === activeIdx ? 'active' : 'hidden']: true
+              })}
+            >
+              {item.text}
+            </div>
+            <div
+              className={classList({
+                'nav__item-content': true,
+                'nav__item-content--icon': true,
+                [i === activeIdx ? 'hidden' : 'active']: true
+              })}
+            >
               <Icon name={item.icon} />
             </div>
           </li>

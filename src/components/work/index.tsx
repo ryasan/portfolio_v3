@@ -9,7 +9,7 @@ type WorkType = {
 
 const WorkComponent: React.FC<WorkType> = ({ classNames }) => {
   return (
-    <section className={`work section ${classNames}`}>
+    <section className={`work ${classNames}`}>
       <div className='parallax-wrapper'>
         <div className='work__outer'>
           <div className='work__inner'>

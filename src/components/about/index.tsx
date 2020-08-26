@@ -8,7 +8,7 @@ interface AboutInterface {
 
 const AboutComponent: React.FC<AboutInterface> = ({ classNames }) => {
   return (
-    <section className={`about section ${classNames}`}>
+    <section className={`about ${classNames}`}>
       <div className='parallax-wrapper'>
         <div className='about__outer'>
           <div className='about__inner'>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import Maps from './maps'
 import Icon from '../icons'
+import { classList } from '../../utils'
 import './contact.scss'
 
 interface FieldInterface {
@@ -29,16 +30,17 @@ const fields: FieldInterface[] = [
 ]
 
 const ContactComponent: React.FC<ContactInterface> = props => {
+  const [activeIdx, setActiveIdx] = useState<number | null>(null)
   const [state, setState] = useState<FormInterface>({
     name: '',
     email: '',
     subject: '',
     message: ''
   })
-  const [activeIdx, setActiveIdx] = useState<number | null>(null)
 
   const handleChange = (e: React.FormEvent): void => {
     e.persist()
+
     const target = e.target as HTMLInputElement | HTMLTextAreaElement
 
     setState(prev => ({
@@ -48,7 +50,7 @@ const ContactComponent: React.FC<ContactInterface> = props => {
   }
 
   return (
-    <section className={`contact section ${props.classNames}`}>
+    <section className={`contact ${props.classNames}`}>
       <div className='parallax-wrapper'>
         <div className='contact__inner'>
           <div className='contact__column contact__column--left'>
@@ -59,21 +61,24 @@ const ContactComponent: React.FC<ContactInterface> = props => {
               ambitious projects. Please feel free to contact me about whatever!
             </p>
             <form method='post' className='contact__form'>
-              {fields.map(({ El, props }, i) => {
-                const classNames = ['contact__field', i === activeIdx ? 'active' : ''] // prettier-ignore
-                return (
-                  <div key={i} className={classNames.join(' ')}>
-                    <El
-                      {...props}
-                      type='text'
-                      value={state[props.name]}
-                      onFocus={() => setActiveIdx(i)}
-                      onBlur={() => setActiveIdx(null)}
-                      onChange={handleChange}
-                    />
-                  </div>
-                )
-              })}
+              {fields.map(({ El, props }, i) => (
+                <div
+                  key={i}
+                  className={classList({
+                    contact__field: true,
+                    active: i === activeIdx
+                  })}
+                >
+                  <El
+                    {...props}
+                    type='text'
+                    value={state[props.name]}
+                    onFocus={() => setActiveIdx(i)}
+                    onBlur={() => setActiveIdx(null)}
+                    onChange={handleChange}
+                  />
+                </div>
+              ))}
             </form>
           </div>
           <div className='contact__column contact__column--right'>

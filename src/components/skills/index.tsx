@@ -9,7 +9,7 @@ interface SkillsInterface {
 
 const SkillsComponent: React.FC<SkillsInterface> = ({ classNames }) => {
   return (
-    <section className={`skills section ${classNames}`}>
+    <section className={`skills ${classNames}`}>
       <div className='parallax-wrapper'>
         <div className='skills__outer'>
           <div className='skills__inner'>

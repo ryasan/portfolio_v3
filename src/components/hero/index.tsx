@@ -13,7 +13,7 @@ const HeroComponent: React.FC<HeroInterface> = ({
   classNames,
   handlePageClick
 }) => (
-  <section className={`hero section ${classNames}`}>
+  <section className={`hero ${classNames}`}>
     <div className='parallax-wrapper'>
       <div className='hero__outer'>
         <div className='hero__inner'>

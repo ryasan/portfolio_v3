@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Dots from './dots/dots'
 import Timer from './timer/timer'
+import { classList } from '../../utils'
 import './slider.scss'
 
 interface CardInterface {
@@ -13,15 +14,6 @@ interface CardInterface {
 
 const Card: React.FC<CardInterface> = props => {
   const { currentIdx, idx, toggleIsHovering } = props
-  const classNames = [
-    idx === currentIdx ? 'is-center' : '',
-    idx < currentIdx - 1 ? 'is-left-outer-card' : '',
-    idx > currentIdx + 1 ? 'is-right-outer-card' : '',
-    idx === currentIdx - 1 ? 'is-left-inner-card' : '',
-    idx === currentIdx + 1 ? 'is-right-inner-card' : ''
-  ]
-    .join(' ')
-    .trim()
 
   return (
     <div
@@ -29,7 +21,16 @@ const Card: React.FC<CardInterface> = props => {
       onMouseEnter={toggleIsHovering}
       onMouseLeave={toggleIsHovering}
     >
-      <div className={`slider__card ${classNames}`}>
+      <div
+        className={classList({
+          slider__card: true,
+          'is-center': idx === currentIdx,
+          'is-left-outer-card': idx < currentIdx - 1,
+          'is-right-outer-card': idx > currentIdx + 1,
+          'is-left-inner-card': idx === currentIdx - 1,
+          'is-right-inner-card': idx === currentIdx + 1
+        })}
+      >
         <div className='slider__card-face'>
           {/* <div className='slider__card-header'>
             <img
@@ -59,10 +60,10 @@ const distances = [90, 60, 30, 0, -30, -60, -90]
 
 const SliderComponent: React.FC = () => {
   const half = Math.floor(items.length / 2)
-  const [currentIdx, setCurrentIdx] = useState<number>(half)
 
-  const [pct, setPct] = useState(0)
+  const [currentIdx, setCurrentIdx] = useState<number>(half)
   const [isHovering, setIsHovering] = useState<boolean | null>(null)
+  const [pct, setPct] = useState(0)
 
   const handlePrevClick = () => {
     setCurrentIdx((prev: number) => (prev + (items.length - 1)) % items.length)
@@ -73,6 +74,7 @@ const SliderComponent: React.FC = () => {
   }
 
   const handleDotClick = (idx: number) => {
+    setPct(0)
     setCurrentIdx(idx)
   }
 
@@ -82,17 +84,19 @@ const SliderComponent: React.FC = () => {
 
   useEffect(() => {
     let interval: any
+
     if (!isHovering) {
       interval = setInterval(() => {
-        setPct(prev => {
-          return prev < 100 ? prev + 25 : 0
-        })
+        setPct(prev => (prev < 100 ? prev + 25 : 0))
       }, 1000)
-    } else {
+    }
+    if (isHovering) {
       clearInterval(interval)
     }
+
     return () => clearInterval(interval)
   }, [isHovering])
+
   useEffect(() => {
     if (pct === 100) handleNextClick()
   }, [pct])

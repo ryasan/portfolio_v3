@@ -16,6 +16,7 @@ import Skills from '../components/skills/index'
 import Work from '../components/work'
 import Contact from '../components/contact'
 import Navbar from '../components/navbar'
+import { classList } from '../utils'
 import '../home.scss'
 
 interface ComponentInterface {
@@ -52,17 +53,13 @@ const IndexPage: React.FC = () => {
 
     if (isWheelingDown && !isBusy) {
       setIsBusy(true)
-      if (pageIdx !== totalSlideNumber - 1) {
-        scrollDown()
-      }
+      if (pageIdx !== totalSlideNumber - 1) scrollDown()
       slideDurationTimeout(transitionDuration)
     }
 
     if (!isWheelingDown && !isBusy) {
       setIsBusy(true)
-      if (pageIdx !== 0) {
-        scrollUp()
-      }
+      if (pageIdx !== 0) scrollUp()
       slideDurationTimeout(transitionDuration)
     }
   })
@@ -81,11 +78,8 @@ const IndexPage: React.FC = () => {
   }
 
   useLayoutEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false
-    } else {
-      localStorage.setItem('page', JSON.stringify(pageIdx))
-    }
+    if (firstRender.current) firstRender.current = false
+    else localStorage.setItem('page', JSON.stringify(pageIdx))
   }, [pageIdx])
 
   useEffect(() => setPerformance(performance), [])
@@ -114,20 +108,18 @@ const IndexPage: React.FC = () => {
       />
       <Loader />
       <div className='sections-container' onWheel={parallaxScroll}>
-        {components.map((props: ComponentInterface, i) => {
-          const downScroll = i <= pageIdx - 1 ? 'down-scroll' : ''
-          const upScroll = i !== totalSlideNumber - 1 && i >= pageIdx ? 'up-scroll' : ''
-          const classNames = [downScroll, upScroll].join(' ').trim()
-
-          return (
-            <props.component
-              key={i}
-              componentRef={props.componentRef}
-              classNames={classNames}
-              handlePageClick={handleNavItemClick}
-            />
-          )
-        })}
+        {components.map((props: ComponentInterface, i) => (
+          <props.component
+            key={i}
+            componentRef={props.componentRef}
+            classNames={classList({
+              section: true,
+              'down-scroll': i <= pageIdx - 1,
+              'up-scroll': i !== totalSlideNumber - 1 && i >= pageIdx
+            })}
+            handlePageClick={handleNavItemClick}
+          />
+        ))}
       </div>
     </Layout>
   )

@@ -134,27 +134,24 @@ const TagCloudComponent: React.FC = () => {
         }
       }}
       style={{
-        position: 'relative',
         width: `${2 * radius}px`,
         height: `${2 * radius}px`
       }}
     >
-      {items.map(item => {
-        return (
-          <span
-            key={item.idx}
-            className='tag-cloud__item'
-            ref={item.tagRef}
-            style={{
-              filter: item.filter,
-              opacity: item.opacity,
-              transform: item.transform
-            }}
-          >
-            {item.text}
-          </span>
-        )
-      })}
+      {items.map(item => (
+        <span
+          key={item.idx}
+          ref={item.tagRef}
+          className='tag-cloud__item'
+          style={{
+            filter: item.filter,
+            opacity: item.opacity,
+            transform: item.transform
+          }}
+        >
+          {item.text}
+        </span>
+      ))}
     </div>
   )
 }

@@ -15,12 +15,27 @@
 }
 
 .timer__clock {
+  border: 1rem solid transparent;
   border-radius: 50%;
-  border-style: solid;
-  border-width: 1rem;
   left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+
+  &.bottom-active {
+    border-bottom-color: $teal;
+  }
+
+  &.top-active {
+    border-top-color: $teal;
+  }
+
+  &.left-active {
+    border-left-color: $teal;
+  }
+
+  &.right-active {
+    border-right-color: $teal;
+  }
 }
