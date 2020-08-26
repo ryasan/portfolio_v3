@@ -97,6 +97,12 @@ const IndexPage: React.FC = () => {
   }, [])
 
   useEffect(() => {
+    if (window?.onbeforeunload) {
+      window.onbeforeunload = (): void => localStorage.removeItem('page')
+    }
+  }, [window])
+
+  useEffect(() => {
     if (_performance && _performance.navigation.type === 1) {
       const previousPage = JSON.parse(localStorage.getItem('page') || '')
       handleNavItemClick(Number(previousPage))

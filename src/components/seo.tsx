@@ -2,12 +2,12 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-type SEOType = {
+interface SEOInterface {
   title: string
-  description: string
-  lang: string
-  meta: any[]
-} & typeof defaultProps
+  description?: string
+  lang?: string
+  meta?: any[]
+}
 
 const defaultProps = {
   lang: `en`,
@@ -15,7 +15,12 @@ const defaultProps = {
   description: ``
 }
 
-const SEOComponent: React.FC<SEOType> = ({ description, lang, meta, title }) => {
+const SEOComponent: React.FC<SEOInterface> = ({
+  description,
+  lang,
+  meta,
+  title
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -71,8 +76,9 @@ const SEOComponent: React.FC<SEOType> = ({ description, lang, meta, title }) => 
         {
           name: `twitter:description`,
           content: metaDescription
-        }
-      ].concat(meta)}
+        },
+        ...(meta || [])
+      ]}
     />
   )
 }
