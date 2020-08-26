@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { IconProps } from '.'
+import { IconInterface } from '.'
 
-const KeyIcon:React.FC<IconProps> = props => {
+const KeyIcon:React.FC<IconInterface> = props => {
   switch (props.name) {
     case 'key-filled':
       return (

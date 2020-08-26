@@ -2,7 +2,7 @@ import React from 'react'
 
 import './workstation.scss'
 
-const WorkstationIllustration = () => {
+const WorkstationIllustration: React.FC = () => {
   return (
     <div className='wrapper'>
       <div className='board'>

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { IconProps } from '.'
+import { IconInterface } from '.'
 
-const InstagramIcon:React.FC<IconProps> = props => {
+const InstagramIcon:React.FC<IconInterface> = props => {
   switch (props.name) {
     case 'instagram-filled':
       return (

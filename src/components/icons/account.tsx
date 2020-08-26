@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { IconProps } from '.'
+import { IconInterface } from '.'
 
-const AccountIcon: React.FC<IconProps> = props => {
+const AccountIcon: React.FC<IconInterface> = props => {
   switch (props.name) {
     case 'account-box':
       return (

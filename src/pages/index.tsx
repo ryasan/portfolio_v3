@@ -18,7 +18,7 @@ import Contact from '../components/contact'
 import Navbar from '../components/navbar'
 import '../home.scss'
 
-interface Props {
+interface ComponentInterface {
   component: React.ReactType
   componentRef?: React.RefObject<HTMLDivElement>
 }
@@ -47,7 +47,6 @@ const IndexPage: React.FC = () => {
 
   const parallaxScroll = throttle((e: any) => {
     if (googleMapsRef?.current?.contains(e.target)) return
-
     const isWheelingDown = -e.deltaY <= 0
 
     if (isWheelingDown && !isBusy) {
@@ -115,7 +114,7 @@ const IndexPage: React.FC = () => {
       />
       <Loader />
       <div className='sections-container' onWheel={parallaxScroll}>
-        {components.map((props: Props, i) => {
+        {components.map((props: ComponentInterface, i) => {
           const classNames = [
             i <= pageIdx - 1 ? 'down-scroll' : '',
             i !== totalSlideNumber - 1 && i >= pageIdx ? 'up-scroll' : ''

@@ -1,5 +1,4 @@
-// color: '#0cfdd7'
-const styles = [
+const styles: object[] = [
   {
     elementType: 'geometry',
     stylers: [

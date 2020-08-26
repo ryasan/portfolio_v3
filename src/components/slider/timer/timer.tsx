@@ -2,12 +2,11 @@ import React from 'react'
 
 import './timer.scss'
 
-
-interface Props {
+interface TimerInterface {
   pct: number
 }
 
-const TimerComponent: React.FC<Props> = ({ pct }) => {
+const TimerComponent: React.FC<TimerInterface> = ({ pct }) => {
   const styles = {
     borderBottomColor: pct >= 50 ? '#0cfdd7' : 'transparent',
     borderLeftColor: pct >= 75 ? '#0cfdd7' : 'transparent',

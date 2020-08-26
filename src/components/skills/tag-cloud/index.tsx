@@ -3,6 +3,19 @@ import React, { useState, useRef, useEffect, useCallback } from 'react'
 import './tag-cloud.scss'
 import createTag from './create-tag'
 
+interface TagItemInterface {
+  transform: string
+  opacity: number
+  filter: string
+  idx: number
+  text: string
+  x: number
+  y: number
+  z: number
+  scale?: number
+  tagRef?: React.RefObject<HTMLSpanElement>
+}
+
 export const skills: string[] = [
   'React',
   'GraphQL',
@@ -29,19 +42,6 @@ export const skills: string[] = [
   'Ionic'
 ]
 
-interface ItemProps {
-  transform: string
-  opacity: number
-  filter: string
-  idx: number
-  text: string
-  x: number
-  y: number
-  z: number
-  scale?: number
-  tagRef?: React.RefObject<HTMLSpanElement>
-}
-
 const createInitialState = (size: number) => {
   return skills.map((text, i) => {
     return createTag(i, text, size)
@@ -55,13 +55,13 @@ const { radius, maxSpeed, initSpeed, direction } = {
   direction: 135 as number
 }
 
-const size = 1.5 * radius
-const depth = 2 * radius
+const size: number = 1.5 * radius
+const depth: number = 2 * radius
 
 // prettier-ignore
 const TagCloudComponent: React.FC = () => {
   const tagCloudRef = useRef<HTMLDivElement | null>(null)
-  const [items, setItems] = useState<ItemProps[]>(createInitialState(size))
+  const [items, setItems] = useState<TagItemInterface[]>(createInitialState(size))
 
   const mouseX = useRef<number>(initSpeed * Math.sin(direction * (Math.PI / 180)))
   const mouseY = useRef<number>(-initSpeed * Math.cos(direction * (Math.PI / 180)))

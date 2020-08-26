@@ -3,11 +3,11 @@ import React from 'react'
 import './skills.scss'
 import TagCloud from './tag-cloud'
 
-interface Props {
+interface SkillsInterface {
   classNames: string
 }
 
-const SkillsComponent: React.FC<Props> = ({ classNames }) => {
+const SkillsComponent: React.FC<SkillsInterface> = ({ classNames }) => {
   return (
     <section className={`skills section ${classNames}`}>
       <div className='parallax-wrapper'>

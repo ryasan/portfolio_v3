@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { IconProps } from '.'
+import { IconInterface } from '.'
 
-const UploadIcon: React.FC<IconProps> = props => {
+const UploadIcon: React.FC<IconInterface> = props => {
   switch (props.name) {
     case 'upload-filled':
       return (

@@ -3,11 +3,11 @@ import React from 'react'
 import Slider from '../slider'
 import './work.scss'
 
-type Props = {
+type WorkType = {
   classNames: string
 }
 
-const WorkComponent: React.FC<Props> = ({ classNames }) => {
+const WorkComponent: React.FC<WorkType> = ({ classNames }) => {
   return (
     <section className={`work section ${classNames}`}>
       <div className='parallax-wrapper'>

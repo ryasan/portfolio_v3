@@ -3,12 +3,19 @@ import React, { useState } from 'react'
 import Icon from '../icons'
 import './navbar.scss'
 
-type NavItem = {
+type NavItemType = {
   text: string
   icon: string
 }
 
-const links: NavItem[] = [
+interface NavbarInterface {
+  pageIdx: number
+  scrollUp: (page: number) => void
+  scrollDown: (page: number) => void
+  handleNavItemClick: (page: number) => void
+}
+
+const links: NavItemType[] = [
   { text: 'Home', icon: 'home' },
   { text: 'About', icon: 'person' },
   { text: 'Skills', icon: 'settings' },
@@ -16,15 +23,24 @@ const links: NavItem[] = [
   { text: 'Contact', icon: 'envelope' }
 ]
 
-interface Props {
-  pageIdx: number
-  scrollUp: (page: number) => void
-  scrollDown: (page: number) => void
-  handleNavItemClick: (page: number) => void
+const renderTextClasses = (idx: number, activeIdx: number | null) => {
+  return [
+    'nav__item-content',
+    'nav__item-content--text',
+    idx === activeIdx ? 'active' : 'hidden'
+  ].join(' ')
 }
 
-const NavbarComponent: React.FC<Props> = ({ handleNavItemClick }) => {
-  const [selectedIdx, setSelectedIdx] = useState<number | null>(null)
+const renderIconClasses = (idx: number, activeIdx: number | null) => {
+  return [
+    'nav__item-content',
+    'nav__item-content--icon',
+    idx === activeIdx ? 'hidden' : 'active'
+  ].join(' ')
+}
+
+const NavbarComponent: React.FC<NavbarInterface> = ({ handleNavItemClick }) => {
+  const [activeIdx, setActiveIdx] = useState<number | null>(null)
 
   return (
     <div className='nav'>
@@ -33,34 +49,20 @@ const NavbarComponent: React.FC<Props> = ({ handleNavItemClick }) => {
         <div className='nav__logo-text'>RS</div>
       </div>
       <ul className='nav__nav-list'>
-        {links.map((item: NavItem, i: number) => {
-          const textClasses = [
-            'nav__item-content',
-            'nav__item-content--text',
-            selectedIdx === i ? 'active' : 'hidden'
-          ].join(' ')
-
-          const iconClasses = [
-            'nav__item-content',
-            'nav__item-content--icon',
-            selectedIdx === i ? 'hidden' : 'active'
-          ].join(' ')
-
-          return (
-            <li
-              key={i}
-              className='nav__nav-item'
-              onClick={() => handleNavItemClick(i)}
-              onMouseEnter={() => setSelectedIdx(i)}
-              onMouseLeave={() => setSelectedIdx(null)}
-            >
-              <div className={textClasses}>{item.text}</div>
-              <div className={iconClasses}>
-                <Icon name={item.icon} />
-              </div>
-            </li>
-          )
-        })}
+        {links.map((item: NavItemType, i: number) => (
+          <li
+            key={i}
+            className='nav__nav-item'
+            onClick={() => handleNavItemClick(i)}
+            onMouseEnter={() => setActiveIdx(i)}
+            onMouseLeave={() => setActiveIdx(null)}
+          >
+            <div className={renderTextClasses(i, activeIdx)}>{item.text}</div>
+            <div className={renderIconClasses(i, activeIdx)}>
+              <Icon name={item.icon} />
+            </div>
+          </li>
+        ))}
       </ul>
       <ul className='social'></ul>
     </div>

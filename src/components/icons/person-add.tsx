@@ -1,7 +1,7 @@
 import React from 'react'
-import { IconProps } from '.'
+import { IconInterface } from '.'
 
-const PersonAddIcon = (props: IconProps) => (
+const PersonAddIcon = (props: IconInterface) => (
   <svg {...props} focusable='false' viewBox='0 0 24 24' aria-hidden='true'>
     <path
       fill='currentColor'

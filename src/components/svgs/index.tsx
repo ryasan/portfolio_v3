@@ -2,12 +2,12 @@ import React from 'react'
 
 import HeroSvg from './hero'
 
-type SvgProps = {
+type SvgType = {
   name: string
   className: string
 }
 
-const SvgImage: React.FC<SvgProps> = props => {
+const SvgImage: React.FC<SvgType> = props => {
   switch (props.name) {
     case 'hero':
     default:

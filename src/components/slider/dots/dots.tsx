@@ -3,13 +3,13 @@ import React from 'react'
 import './dots.scss'
 
 
-interface Props {
+interface DotsInfoInterface {
   currentIdx: number
   numberOfDots: number
   onClick: (idx: number) => void
 }
 
-const DotsComponent: React.FC<Props> = ({
+const DotsComponent: React.FC<DotsInfoInterface> = ({
   currentIdx,
   numberOfDots,
   onClick

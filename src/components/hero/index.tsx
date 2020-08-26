@@ -4,12 +4,12 @@ import WorkstationIllustration from './workstation'
 import { components } from '../../pages'
 import './hero.scss'
 
-interface Props {
+interface HeroInterface {
   classNames: string
   handlePageClick: (idx: number) => void
 }
 
-const HeroComponent: React.FC<Props> = ({ classNames, handlePageClick }) => (
+const HeroComponent: React.FC<HeroInterface> = ({ classNames, handlePageClick }) => (
   <section className={`hero section ${classNames}`}>
     <div className='parallax-wrapper'>
       <div className='hero__outer'>

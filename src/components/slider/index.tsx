@@ -4,14 +4,14 @@ import Dots from './dots/dots'
 import Timer from './timer/timer'
 import './slider.scss'
 
-interface CardProps {
+interface CardInterface {
   item: string
   currentIdx: number
   idx: number
   toggleIsHovering: () => void
 }
 
-const Card: React.FC<CardProps> = props => {
+const Card: React.FC<CardInterface> = props => {
   const { currentIdx, idx, toggleIsHovering } = props
   const classNames = [
     idx === currentIdx ? 'is-center' : '',

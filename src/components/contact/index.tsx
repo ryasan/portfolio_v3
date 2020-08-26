@@ -1,35 +1,35 @@
-import React, { useState, JSXElementConstructor, FormEvent } from 'react'
+import React, { useState } from 'react'
 
 import Maps from './maps'
 import Icon from '../icons'
 import './contact.scss'
 
-interface FieldProps {
-  El: JSXElementConstructor<HTMLInputElement | HTMLTextAreaElement> | string
+interface FieldInterface {
+  El: React.JSXElementConstructor<HTMLInputElement | HTMLTextAreaElement> | string // prettier-ignore
   props?: any
 }
 
-interface FormProps {
+interface FormInterface {
   [name: string]: string
   email: string
   subject: string
   message: string
 }
 
-interface ContactProps {
+interface ContactInterface {
   classNames: string
   componentRef: React.RefObject<HTMLDivElement>
 }
 
-const fields: FieldProps[] = [
+const fields: FieldInterface[] = [
   { El: 'input', props: { name: 'name', placeholder: 'Name' } },
   { El: 'input', props: { name: 'email', placeholder: 'Email' } },
   { El: 'input', props: { name: 'subject', placeholder: 'Subject' } },
   {  El: 'textarea', props: { name: 'message', placeholder: 'Message', rows: 3 } } // prettier-ignore
 ]
 
-const ContactComponent: React.FC<ContactProps> = props => {
-  const [state, setState] = useState<FormProps>({
+const ContactComponent: React.FC<ContactInterface> = props => {
+  const [state, setState] = useState<FormInterface>({
     name: '',
     email: '',
     subject: '',
@@ -37,7 +37,7 @@ const ContactComponent: React.FC<ContactProps> = props => {
   })
   const [activeIdx, setActiveIdx] = useState<number | null>(null)
 
-  const handleChange = (e: FormEvent): void => {
+  const handleChange = (e: React.FormEvent): void => {
     e.persist()
     const target = e.target as HTMLInputElement | HTMLTextAreaElement
 

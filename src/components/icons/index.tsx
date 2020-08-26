@@ -30,12 +30,12 @@ import SettingsIcon from './settings'
 import PersonIcon from './person'
 import BriefcaseIcon from './briefcase'
 
-export type IconProps = {
+export type IconInterface = {
   name: string
   className?: string
 }
 
-const IconComponent: React.FC<IconProps> = props => {
+const IconComponent: React.FC<IconInterface> = props => {
   switch (props.name) {
     case 'account-circle':
     case 'account-box':
