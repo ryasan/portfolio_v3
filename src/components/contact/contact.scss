@@ -66,7 +66,9 @@
 }
 
 .contact__paragraph {
+  color: white;
   line-height: 2.5rem;
+  text-align: left;
 }
 
 .contact__form {
@@ -80,6 +82,8 @@
 
 .contact__field {
   height: 100%;
+  outline: 0;
+  position: relative;
   width: 100%;
 
   &:nth-child(1) {
@@ -106,8 +110,28 @@
   textarea {
     background: #2b2b2b;
     border: 0;
+    color: white;
+    font-weight: 300;
     height: 100%;
+    outline: 0;
     padding: 1.7rem;
+    position: relative;
+    width: 100%;
+  }
+
+  &::before {
+    background: $teal;
+    bottom: 0;
+    content: '';
+    height: 0.2rem;
+    left: 0;
+    position: absolute;
+    transition: width 0.2s linear;
+    width: 0;
+    z-index: 9999;
+  }
+
+  &.active::before {
     width: 100%;
   }
 }
