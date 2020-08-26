@@ -6,3 +6,4 @@ declare module 'recompose'
 // assets
 declare module '*.svg'
 declare module '*.jpg'
+declare module '*.png'

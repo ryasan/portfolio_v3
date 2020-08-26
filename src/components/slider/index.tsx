@@ -5,15 +5,20 @@ import Timer from './timer/timer'
 import { classList } from '../../utils'
 import './slider.scss'
 
+interface Item {
+  text: string
+  image: string
+}
+
 interface CardInterface {
-  item: string
+  item: Item
   currentIdx: number
   idx: number
   toggleIsHovering: () => void
 }
 
 const Card: React.FC<CardInterface> = props => {
-  const { currentIdx, idx, toggleIsHovering } = props
+  const { currentIdx, idx, toggleIsHovering, item } = props
 
   return (
     <div
@@ -32,28 +37,49 @@ const Card: React.FC<CardInterface> = props => {
         })}
       >
         <div className='slider__card-face'>
-          {/* <div className='slider__card-header'>
+          <div className='slider__card-header'>
             <img
-              src='https://via.placeholder.com/700/500'
+              src={item.image}
               alt='placeholder'
               className='slider__card-image'
             />
           </div>
-          <div className='slider__card-body'>{item}</div> */}
+          <div className='slider__card-body'>{item.text}</div>
         </div>
       </div>
     </div>
   )
 }
 
-const items = [
-  'iron man',
-  'spider-man',
-  'wolverine',
-  'magneto',
-  'incredible hulk',
-  'dr strange',
-  'korg'
+const items: Item[] = [
+  {
+    image: 'https://placeimg.com/375/300/tech?t=1598430010019',
+    text: 'iron man'
+  },
+  {
+    image: 'https://placeimg.com/375/300/tech?t=1598430022189',
+    text: 'spider-man'
+  },
+  {
+    image: 'https://placeimg.com/375/300/tech?t=1598430034726',
+    text: 'wolverine'
+  },
+  {
+    image: 'https://placeimg.com/375/300/tech?t=1598430047228',
+    text: 'magneto'
+  },
+  {
+    image: 'https://placeimg.com/375/300/tech?t=1598430061307',
+    text: 'dr strange'
+  },
+  {
+    image: 'https://placeimg.com/375/300/tech?t=1598429963150',
+    text: 'incredible hulk'
+  },
+  {
+    image: 'https://placeimg.com/375/300/tech?t=1598430074132',
+    text: 'korg'
+  }
 ]
 
 const distances = [90, 60, 30, 0, -30, -60, -90]
