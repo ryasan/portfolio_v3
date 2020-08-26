@@ -32,6 +32,7 @@ export const components = [
   { component: Work },
   { component: Contact, componentRef: googleMapsRef }
 ]
+
 const transitionDuration: number = 600
 
 const IndexPage: React.FC = () => {
@@ -75,13 +76,8 @@ const IndexPage: React.FC = () => {
   }
 
   const handleNavItemClick = (idx: number) => {
-    if (idx > pageIdx) {
-      scrollDown(idx - pageIdx)
-    }
-
-    if (idx < pageIdx) {
-      scrollUp(pageIdx - idx)
-    }
+    if (idx > pageIdx) scrollDown(idx - pageIdx)
+    if (idx < pageIdx) scrollUp(pageIdx - idx)
   }
 
   useLayoutEffect(() => {
@@ -92,18 +88,16 @@ const IndexPage: React.FC = () => {
     }
   }, [pageIdx])
 
-  useEffect(() => {
-    setPerformance(performance)
-  }, [])
+  useEffect(() => setPerformance(performance), [])
 
   useEffect(() => {
     if (window?.onbeforeunload) {
       window.onbeforeunload = (): void => localStorage.removeItem('page')
     }
-  }, [window])
+  }, [])
 
   useEffect(() => {
-    if (_performance && _performance.navigation.type === 1) {
+    if (_performance?.navigation.type === 1) {
       const previousPage = JSON.parse(localStorage.getItem('page') || '')
       handleNavItemClick(Number(previousPage))
     }
@@ -121,12 +115,9 @@ const IndexPage: React.FC = () => {
       <Loader />
       <div className='sections-container' onWheel={parallaxScroll}>
         {components.map((props: ComponentInterface, i) => {
-          const classNames = [
-            i <= pageIdx - 1 ? 'down-scroll' : '',
-            i !== totalSlideNumber - 1 && i >= pageIdx ? 'up-scroll' : ''
-          ]
-            .join(' ')
-            .trim()
+          const downScroll = i <= pageIdx - 1 ? 'down-scroll' : ''
+          const upScroll = i !== totalSlideNumber - 1 && i >= pageIdx ? 'up-scroll' : ''
+          const classNames = [downScroll, upScroll].join(' ').trim()
 
           return (
             <props.component
