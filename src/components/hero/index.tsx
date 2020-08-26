@@ -9,7 +9,10 @@ interface HeroInterface {
   handlePageClick: (idx: number) => void
 }
 
-const HeroComponent: React.FC<HeroInterface> = ({ classNames, handlePageClick }) => (
+const HeroComponent: React.FC<HeroInterface> = ({
+  classNames,
+  handlePageClick
+}) => (
   <section className={`hero section ${classNames}`}>
     <div className='parallax-wrapper'>
       <div className='hero__outer'>
@@ -22,7 +25,7 @@ const HeroComponent: React.FC<HeroInterface> = ({ classNames, handlePageClick })
           <div className='hero__column hero__column--right'>
             <div className='hero__text-container'>
               <h1 className='hero__title'>
-                Hello Moto{' '}
+                Hello Moto
                 <span className='hero__title-newline'>
                   My name is <span className='hero__name'>Ryan</span>
                 </span>

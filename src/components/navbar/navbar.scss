@@ -58,9 +58,9 @@ $item_width: 7rem;
   width: 100%;
 
   svg {
-    height: 100%;
+    height: $item_width;
     padding: 2rem;
-    width: 100%;
+    width: $item_width;
   }
 
   &.active {

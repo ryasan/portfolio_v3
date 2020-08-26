@@ -63,13 +63,14 @@
   font-size: 5rem;
   font-weight: inherit;
   position: relative;
+  text-align: left;
 
   &::before {
     color: $charcoal;
     content: '<h1>';
     font-family: 'La Belle Aurore', cursive;
     font-size: 2rem;
-    left: -5rem;
+    left: -4rem;
     position: absolute;
     top: 3.5rem;
   }
@@ -81,19 +82,28 @@
     font-family: 'La Belle Aurore', cursive;
     font-size: 2rem;
     position: absolute;
-    right: -6rem;
+    right: 12rem;
   }
 
   @media (max-width: $mobile) {
     font-size: 3rem;
     text-align: center;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 }
 
 .hero__title-newline {
+  display: block;
+  text-indent: 4rem;
+
   @media (max-width: $mobile) {
     font-size: 3rem;
     text-align: center;
+    text-indent: initial;
   }
 }
 
@@ -147,7 +157,7 @@
   color: $teal;
   font-size: 1.8rem;
   letter-spacing: 0.9rem;
-  margin: 2rem;
+  margin: 4rem;
   padding: 1rem 2rem;
   transition: background 0.3s, color 0.3s;
 
