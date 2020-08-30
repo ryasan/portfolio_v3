@@ -1,22 +1,22 @@
 @import '../../../globals';
 
 .dot-list {
-  display: flex;
-  margin-top: 5rem;
+    display: flex;
+    margin-top: 5rem;
 }
 
 .dot {
-  background: $teal;
-  cursor: pointer;
-  height: 0.5rem;
-  opacity: 0.2;
-  width: 3rem;
+    background: $teal;
+    cursor: pointer;
+    height: 0.5rem;
+    opacity: 0.2;
+    width: 3rem;
 
-  &.active {
-    opacity: 1;
-  }
+    &.active {
+        opacity: 1;
+    }
 
-  &:not(:first-child) {
-    margin-left: 0.8rem;
-  }
+    &:not(:first-child) {
+        margin-left: 0.8rem;
+    }
 }

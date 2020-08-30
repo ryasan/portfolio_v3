@@ -1,200 +1,202 @@
 @import '../../globals';
 
 .about {
-  background: $darker;
+    background: $darker;
 }
 
 .about__outer {
-  align-items: center;
-  background: $darker;
-  display: flex;
-  height: 100%;
-  justify-content: center;
+    align-items: center;
+    background: $darker;
+    display: flex;
+    height: 100%;
+    justify-content: center;
 }
 
 .about__inner {
-  align-items: center;
-  display: flex;
-  height: 90%;
-  justify-content: center;
-  margin-right: 7rem;
-  max-width: $max_width;
-  width: 90%;
+    align-items: center;
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    margin-right: 7rem;
+    max-width: $max_width;
+    width: 90%;
 
-  @media (max-width: $mobile) {
-    flex-direction: column;
-    margin-right: initial;
-  }
+    @media (max-width: $mobile) {
+        flex-direction: column;
+        margin-right: initial;
+    }
 }
 
 .about__column {
-  display: flex;
-  height: 100%;
-
-  &--left {
-    flex-direction: column;
-    justify-content: center;
-    width: 60%;
-  }
-
-  &--right {
-    width: 40%;
-  }
-
-  @media (max-width: $mobile) {
+    display: flex;
     height: 100%;
-    width: 100%;
+
+    &--left {
+        flex-direction: column;
+        justify-content: center;
+        width: 60%;
+    }
 
     &--right {
-      display: none;
+        width: 40%;
     }
-  }
+
+    @media (max-width: $mobile) {
+        height: 100%;
+        width: 100%;
+
+        &--right {
+            display: none;
+        }
+    }
 }
 
 .about__title {
-  color: $dark;
-  font-size: 20rem;
-  left: -2rem;
-  position: absolute;
-  top: 7rem;
-
-  &::before {
-    color: $charcoal;
-    content: '<h1>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
-    left: 2rem;
+    color: $dark;
+    font-size: 20rem;
+    left: -2rem;
     position: absolute;
-    top: 2rem;
-  }
+    top: 7rem;
 
-  &::after {
-    bottom: 1rem;
-    color: $charcoal;
-    content: '</h1>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
-    position: absolute;
-    right: -2rem;
-    top: 2rem;
-  }
-
-  @media (max-width: $mobile) {
-    font-size: 7rem;
-    left: 0;
-    position: relative;
-    top: 0;
-
-    &::before,
-    &::after {
-      display: none;
+    &::before {
+        color: $charcoal;
+        content: '<h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 2rem;
+        left: 2rem;
+        position: absolute;
+        top: 2rem;
     }
-  }
+
+    &::after {
+        bottom: 1rem;
+        color: $charcoal;
+        content: '</h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 2rem;
+        position: absolute;
+        right: -2rem;
+        top: 2rem;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 7rem;
+        left: 0;
+        position: relative;
+        top: 0;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
 }
 
 .about__paragraph {
-  color: $teal;
-  line-height: 2;
-  position: relative;
-  text-align: left;
-  text-indent: 3rem;
-  z-index: 1;
-
-  &:last-child {
-    transform: translateX(5rem);
-  }
-
-  @media (max-width: $mobile) {
-    line-height: 1.5;
-    text-align: center;
-    text-indent: initial;
+    color: $teal;
+    line-height: 2;
+    position: relative;
+    text-align: left;
+    text-indent: 3rem;
+    z-index: 1;
 
     &:last-child {
-      transform: translateX(0);
+        transform: translateX(5rem);
     }
-  }
+
+    @media (max-width: $mobile) {
+        line-height: 1.5;
+        text-align: center;
+        text-indent: initial;
+
+        &:last-child {
+            transform: translateX(0);
+        }
+    }
 }
 
 .about__pyramid {
-  animation: spin 10s linear infinite;
-  height: 500px;
-  left: 60%;
-  margin-left: 120px;
-  margin-top: -210px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transform-origin: 116px 200px 116px;
-  transform-style: preserve-3d;
-  width: 100px;
+    animation: spin 10s linear infinite;
+    height: 500px;
+    left: 60%;
+    margin-left: 120px;
+    margin-top: -210px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: 116px 200px 116px;
+    transform-style: preserve-3d;
+    width: 100px;
 }
 
 .about__pyramid > div {
-  border-style: solid;
-  border-width: 200px 0 200px 346px;
-  position: absolute;
-  transform-origin: 0 0;
+    border-style: solid;
+    border-width: 200px 0 200px 346px;
+    position: absolute;
+    transform-origin: 0 0;
 }
 
 .about__pyramid > .about__side::after {
-  color: white;
-  left: -311px;
-  opacity: 0.6;
-  position: absolute;
-  text-align: center;
-  top: -69px;
+    color: white;
+    left: -311px;
+    opacity: 0.6;
+    position: absolute;
+    text-align: center;
+    top: -69px;
 }
 
 .about__pyramid > .about__side:first-child::after {
-  content: url('../../static/react-logo.png');
-  position: absolute;
+    content: url('../../static/react-logo.png');
+    position: absolute;
 }
 
 .about__pyramid > .about__side:nth-child(2)::after {
-  content: url('../../static/mongodb-logo.png');
-  position: absolute;
+    content: url('../../static/mongodb-logo.png');
+    position: absolute;
 }
 
 .about__pyramid > .about__side:nth-child(3)::after {
-  content: url('../../static/nodejs-logo.png');
-  position: absolute;
+    content: url('../../static/nodejs-logo.png');
+    position: absolute;
 }
 
 .about__pyramid > .about__side:nth-child(4)::after {
-  content: url('../../static/graphql-logo.png');
-  left: -315px;
-  position: absolute;
-  top: -91px;
-  width: 150px;
+    content: url('../../static/graphql-logo.png');
+    left: -315px;
+    position: absolute;
+    top: -91px;
+    width: 150px;
 }
 
 .about__pyramid > div:first-child {
-  border-color: transparent transparent transparent rgba(50, 50, 50, 0.6);
-  transform: rotateY(-19.5deg) rotateX(180deg) translateY(-400px);
+    border-color: transparent transparent transparent rgba(50, 50, 50, 0.6);
+    transform: rotateY(-19.5deg) rotateX(180deg) translateY(-400px);
 }
 
 .about__pyramid > div:nth-child(2) {
-  border-color: transparent transparent transparent rgba(50, 50, 50, 0.6);
-  transform: rotateY(90deg) rotateZ(60deg) rotateX(180deg) translateY(-400px);
+    border-color: transparent transparent transparent rgba(50, 50, 50, 0.6);
+    transform: rotateY(90deg) rotateZ(60deg) rotateX(180deg) translateY(-400px);
 }
 
 .about__pyramid > div:nth-child(3) {
-  border-color: transparent transparent transparent rgba(50, 50, 50, 0.9);
-  transform: rotateX(60deg) rotateY(19.5deg);
+    border-color: transparent transparent transparent rgba(50, 50, 50, 0.9);
+    transform: rotateX(60deg) rotateY(19.5deg);
 }
 
-/* prettier-ignore */
+// prettier-ignore
 .about__pyramid > div:nth-child(4) {
-  border-color: transparent transparent transparent rgba(50, 50, 50, 0.8);
-  transform: rotateX(-60deg) rotateY(19.5deg) translateX(-116px) translateY(-200px) translateZ(326px);
+    border-color: transparent transparent transparent rgba(50, 50, 50, 0.8);
+    transform:
+        rotateX(-60deg) rotateY(19.5deg) translateX(-116px)
+        translateY(-200px) translateZ(326px);
 }
 
 @keyframes spin {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  }
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
 
-  100% {
-    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-  }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
 }

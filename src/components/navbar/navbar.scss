@@ -3,91 +3,91 @@
 $item_width: 7rem;
 
 .nav {
-  background: $darker;
-  color: $charcoal;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: $item_width;
-  z-index: 9999;
+    background: $darker;
+    color: $charcoal;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: $item_width;
+    z-index: 9999;
 
-  @media (max-width: $mobile) {
-    bottom: 0;
-    height: $item_width;
-    left: 0;
-    right: initial;
-    top: initial;
-    width: 100%;
-  }
+    @media (max-width: $mobile) {
+        bottom: 0;
+        height: $item_width;
+        left: 0;
+        right: initial;
+        top: initial;
+        width: 100%;
+    }
 }
 
 .nav__nav-list {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
 
-  @media (max-width: $mobile) {
-    flex-direction: row;
-  }
+    @media (max-width: $mobile) {
+        flex-direction: row;
+    }
 }
 
 .nav__nav-item {
-  height: $item_width;
-  position: relative;
-  width: $item_width;
+    height: $item_width;
+    position: relative;
+    width: $item_width;
 
-  &:hover {
-    color: $teal;
-  }
+    &:hover {
+        color: $teal;
+    }
 }
 
 .nav__item-content {
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  position: absolute;
-  transition: opacity 0.8s;
-  width: 100%;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    transition: opacity 0.8s;
+    width: 100%;
 
-  svg {
-    height: $item_width;
-    padding: 2rem;
-    width: $item_width;
-  }
+    svg {
+        height: $item_width;
+        padding: 2rem;
+        width: $item_width;
+    }
 
-  &.active {
-    opacity: 1;
-  }
+    &.active {
+        opacity: 1;
+    }
 
-  &.hidden {
-    opacity: 0;
-  }
+    &.hidden {
+        opacity: 0;
+    }
 }
 
 .nav__logo-container {
-  align-items: center;
-  background: $darkest;
-  color: $teal;
-  display: flex;
-  flex-direction: column;
-  height: $item_width;
-  justify-content: center;
-  position: relative;
-  width: $item_width;
+    align-items: center;
+    background: $darkest;
+    color: $teal;
+    display: flex;
+    flex-direction: column;
+    height: $item_width;
+    justify-content: center;
+    position: relative;
+    width: $item_width;
 
-  @media (max-width: $mobile) {
-    display: none;
-  }
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .nav__logo-text {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }

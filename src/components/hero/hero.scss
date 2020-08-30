@@ -1,168 +1,168 @@
 @import '../../globals';
 
 .hero {
-  background: $dark;
+    background: $dark;
 }
 
 .hero__outer {
-  align-items: center;
-  background: $dark;
-  display: flex;
-  height: 100%;
-  justify-content: center;
+    align-items: center;
+    background: $dark;
+    display: flex;
+    height: 100%;
+    justify-content: center;
 }
 
 .hero__inner {
-  align-items: center;
-  display: flex;
-  height: 90%;
-  justify-content: center;
-  margin-right: 7rem;
-  max-width: $max_width;
-  width: 90%;
+    align-items: center;
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    margin-right: 7rem;
+    max-width: $max_width;
+    width: 90%;
 
-  @media (max-width: $mobile) {
-    flex-direction: column;
-    margin-right: initial;
-  }
+    @media (max-width: $mobile) {
+        flex-direction: column;
+        margin-right: initial;
+    }
 }
 
 .hero__column {
-  display: flex;
-  height: 100%;
-  width: 50%;
-
-  &--left {
-    align-items: center;
-    justify-content: flex-end;
-    position: relative;
-  }
-
-  &--right {
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  @media (max-width: $mobile) {
+    display: flex;
     height: 100%;
-    width: 100%;
+    width: 50%;
 
     &--left {
-      display: none;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
     }
-  }
+
+    &--right {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @media (max-width: $mobile) {
+        height: 100%;
+        width: 100%;
+
+        &--left {
+            display: none;
+        }
+    }
 }
 
 .hero__text-container {
-  font-weight: 300;
-  width: 100%;
+    font-weight: 300;
+    width: 100%;
 }
 
 .hero__title {
-  font-size: 7rem;
-  font-weight: 800;
-  position: relative;
-  text-align: left;
+    font-size: 7rem;
+    font-weight: 800;
+    position: relative;
+    text-align: left;
 
-  &::before {
-    color: $charcoal;
-    content: '<h1>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
-    left: -4rem;
-    position: absolute;
-    top: 5rem;
-  }
-
-  &::after {
-    bottom: 0.5rem;
-    color: $charcoal;
-    content: '</h1>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
-    position: absolute;
-    right: 4rem;
-  }
-
-  @media (max-width: $mobile) {
-    font-size: 3rem;
-    text-align: center;
-
-    &::before,
-    &::after {
-      display: none;
+    &::before {
+        color: $charcoal;
+        content: '<h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 2rem;
+        left: -4rem;
+        position: absolute;
+        top: 5rem;
     }
-  }
+
+    &::after {
+        bottom: 0.5rem;
+        color: $charcoal;
+        content: '</h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 2rem;
+        position: absolute;
+        right: 4rem;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 3rem;
+        text-align: center;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
 }
 
 .hero__title-newline {
-  display: block;
-  text-indent: 4rem;
+    display: block;
+    text-indent: 4rem;
 
-  @media (max-width: $mobile) {
-    font-size: 3rem;
-    text-align: center;
-    text-indent: initial;
-  }
+    @media (max-width: $mobile) {
+        font-size: 3rem;
+        text-align: center;
+        text-indent: initial;
+    }
 }
 
 .hero__name {
-  color: $teal;
+    color: $teal;
 }
 
 .hero__title-ampersand {
-  color: $teal;
-  display: block;
-  font-size: 3rem;
-  font-weight: inherit;
+    color: $teal;
+    display: block;
+    font-size: 3rem;
+    font-weight: inherit;
 
-  @media (max-width: $mobile) {
-    font-size: 2.5rem;
-    margin: 0;
-    text-align: center;
-  }
+    @media (max-width: $mobile) {
+        font-size: 2.5rem;
+        margin: 0;
+        text-align: center;
+    }
 }
 
 .hero__subtitle {
-  color: $charcoal;
-  font-size: 1.8rem;
-  font-weight: inherit;
-  letter-spacing: 0.9rem;
-  margin-bottom: 0;
-  white-space: nowrap;
+    color: $charcoal;
+    font-size: 1.8rem;
+    font-weight: inherit;
+    letter-spacing: 0.9rem;
+    margin-bottom: 0;
+    white-space: nowrap;
 
-  @media (max-width: $mobile) {
-    font-size: 1.1rem;
-    text-align: center;
-  }
+    @media (max-width: $mobile) {
+        font-size: 1.1rem;
+        text-align: center;
+    }
 }
 
 .hero__svg-container {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 
-  @media (max-width: $mobile) {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+    @media (max-width: $mobile) {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .hero__btn {
-  align-self: center;
-  background: transparent;
-  border: 0.2rem solid $teal;
-  color: $teal;
-  font-size: 1.8rem;
-  letter-spacing: 0.9rem;
-  margin: 4rem;
-  padding: 1rem 2rem;
-  transition: background 0.3s, color 0.3s;
+    align-self: center;
+    background: transparent;
+    border: 0.2rem solid $teal;
+    color: $teal;
+    font-size: 1.8rem;
+    letter-spacing: 0.9rem;
+    margin: 4rem;
+    padding: 1rem 2rem;
+    transition: background 0.3s, color 0.3s;
 
-  &:hover {
-    background: $teal;
-    color: white;
-  }
+    &:hover {
+        background: $teal;
+        color: white;
+    }
 }

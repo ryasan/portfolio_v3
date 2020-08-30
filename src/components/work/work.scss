@@ -1,44 +1,44 @@
 @import '../../globals';
 
 .work {
-  background: $darker;
+    background: $darker;
 }
 
 .work__outer {
-  align-items: center;
-  background: $darker;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
+    align-items: center;
+    background: $darker;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
 }
 
 .work__inner {
-  height: 90%;
-  margin-right: 7rem;
-  position: relative;
-  width: 90%;
+    height: 90%;
+    margin-right: 7rem;
+    position: relative;
+    width: 90%;
 
-  @media (max-width: $mobile) {
-    flex-direction: column;
-    margin-right: initial;
-  }
+    @media (max-width: $mobile) {
+        flex-direction: column;
+        margin-right: initial;
+    }
 }
 
 .work__title {
-  color: $charcoal;
-  font-size: 25rem;
-  left: -3rem;
-  position: absolute;
-  top: -15rem;
-
-  &::after {
-    bottom: 5rem;
-    color: $teal;
-    content: '</h1>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
+    color: $charcoal;
+    font-size: 25rem;
+    left: -3rem;
     position: absolute;
-    right: -6rem;
-  }
+    top: -15rem;
+
+    &::after {
+        bottom: 5rem;
+        color: $teal;
+        content: '</h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 2rem;
+        position: absolute;
+        right: -6rem;
+    }
 }

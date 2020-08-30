@@ -1,37 +1,37 @@
 @import '../globals';
 
 .layout {
-  position: relative;
+    position: relative;
 
-  &::before {
-    color: $charcoal;
-    content: '<body>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
-    left: 4rem;
-    position: fixed;
-    top: 3.5rem;
-    z-index: 9997;
-  }
-
-  &::after {
-    bottom: 3.5rem;
-    color: $charcoal;
-    content: '</body>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
-    left: 4rem;
-    position: fixed;
-    z-index: 9997;
-  }
-
-  @media (max-width: $mobile) {
     &::before {
-      display: none;
+        color: $charcoal;
+        content: '<body>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 2rem;
+        left: 4rem;
+        position: fixed;
+        top: 3.5rem;
+        z-index: 9997;
     }
 
     &::after {
-      display: none;
+        bottom: 3.5rem;
+        color: $charcoal;
+        content: '</body>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 2rem;
+        left: 4rem;
+        position: fixed;
+        z-index: 9997;
     }
-  }
+
+    @media (max-width: $mobile) {
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
 }
