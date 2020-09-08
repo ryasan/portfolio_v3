@@ -115,8 +115,7 @@ const IndexPage: React.FC = () => {
                         classNames={classList({
                             section: true,
                             'down-scroll': i <= pageIdx - 1,
-                            'up-scroll':
-                                i !== totalSlideNumber - 1 && i >= pageIdx
+                            'up-scroll': i !== totalSlideNumber - 1 && i >= pageIdx
                         })}
                         handlePageClick={handleNavItemClick}
                     />

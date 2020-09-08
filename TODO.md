@@ -19,3 +19,10 @@
 13. Typescript
 14. Angular
 15. SSR
+
+## About me ideas and stuff
+
+1. Seeing something come together and behave exactly as you'd hope.
+2. The smallest changes can make the biggest differences.
+3. Trying to make data come to life by using various techniques.
+4. Web development has come a long way.

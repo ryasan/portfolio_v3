@@ -51,20 +51,20 @@ const Card: React.FC<CardInterface> = props => {
 
 const items: Item[] = [
     {
+        image: require('../../static/slider/notpinterest.png'),
+        text: 'Notpinterest Clone'
+    },
+    {
+        image: require('../../static/slider/mars-rovers.png'),
+        text: 'Mars Rover Image Browser'
+    },
+    {
         image: require('../../static/slider/e&s.png'),
-        text: 'E & S'
+        text: 'E & S Streetwear Ecommerce Shop'
     },
     {
         image: require('../../static/slider/marvel-collections.png'),
-        text: 'Marvel Collections'
-    },
-    {
-        image: require('../../static/slider/e&s.png'),
-        text: 'E & S'
-    },
-    {
-        image: require('../../static/slider/marvel-collections.png'),
-        text: 'Marvel Collections'
+        text: 'Marvel Collections Price Aggregator'
     },
     {
         image: require('../../static/slider/e&s.png'),

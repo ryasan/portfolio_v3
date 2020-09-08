@@ -1,5 +1,14 @@
 @import '../../globals';
 
+@keyframes percentage {
+    @for $i from 1 through 100 {
+        $value: $i + '%';
+        #{$value} {
+            content: '#{$i}%';
+        }
+    }
+}
+
 @keyframes fadeAway {
     0% {
         opacity: 1;
@@ -72,5 +81,20 @@
         content: '';
         height: 100%;
         position: absolute;
+    }
+}
+
+.loader__pct-text {
+    color: $teal;
+    display: inline-block;
+    margin-top: 2rem;
+    position: relative;
+    text-align: center;
+
+    &::before {
+        animation: percentage 2s ease-in-out forwards;
+        content: '';
+        position: absolute;
+        top: 0;
     }
 }
