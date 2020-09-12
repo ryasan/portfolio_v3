@@ -4,3 +4,7 @@ export const classList = (classes: object) => {
         .map(entry => entry[0])
         .join(' ')
 }
+
+export const sleep = (ms = 0): Promise<any> => {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}

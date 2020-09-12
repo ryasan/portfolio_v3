@@ -13,7 +13,7 @@ const DotsComponent: React.FC<DotsInfoInterface> = ({
     currentIdx,
     numberOfDots,
     onClick
-}) => (console.log(numberOfDots), (
+}) => (
     <div className='dot-list'>
         {Array.from({ length: numberOfDots }).map((_, i) => (
             <div
@@ -27,5 +27,5 @@ const DotsComponent: React.FC<DotsInfoInterface> = ({
         ))}
     </div>
 )
-)
+
 export default DotsComponent

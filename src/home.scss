@@ -7,6 +7,25 @@ $slide-number: 5;
     transition: $property $time $easing !important;
 }
 
+.parallax-wrapper {
+    @include transition(
+        $transition-speed + 0.5,
+        all,
+        cubic-bezier(0.22, 0.44, 0, 1)
+    );
+
+    backface-visibility: hidden;
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    transform: translateY($content-offset);
+    will-change: transform;
+}
+
 .section {
     @include transition($transition-speed, all, cubic-bezier(0.22, 0.44, 0, 1));
 
@@ -42,27 +61,6 @@ $slide-number: 5;
 @for $i from 1 to ($slide-number + 1) {
     .section:nth-child(#{$i}) {
         z-index: ($slide-number + 1) - $i;
-    }
-}
-
-.parallax {
-    &-wrapper {
-        @include transition(
-            $transition-speed + 0.5,
-            all,
-            cubic-bezier(0.22, 0.44, 0, 1)
-        );
-
-        backface-visibility: hidden;
-        color: white;
-        display: flex;
-        flex-flow: column nowrap;
-        height: 100vh;
-        justify-content: center;
-        position: relative;
-        text-align: center;
-        transform: translateY($content-offset);
-        will-change: transform;
     }
 }
 

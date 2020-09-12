@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Dispatch, SetStateAction } from 'react'
 
 import Dots from './dots/dots'
 import Timer from './timer/timer'
@@ -10,7 +10,7 @@ interface Item {
     image: string
 }
 
-interface CardInterface {
+interface CardInterface extends Props {
     item: Item
     currentIdx: number
     idx: number
@@ -18,13 +18,14 @@ interface CardInterface {
 }
 
 const Card: React.FC<CardInterface> = props => {
-    const { currentIdx, idx, toggleIsHovering, item } = props
+    const { currentIdx, idx, toggleIsHovering, item, setProject } = props
 
     return (
         <div
             className='slider__list-item'
             onMouseEnter={toggleIsHovering}
-            onMouseLeave={toggleIsHovering}>
+            onMouseLeave={toggleIsHovering}
+            onClick={setProject(item)}>
             <div
                 className={classList({
                     slider__card: true,
@@ -42,7 +43,7 @@ const Card: React.FC<CardInterface> = props => {
                             className='slider__card-image'
                         />
                     </div>
-                    {/* <div className='slider__card-body'>{item.text}</div> */}
+                    <div className='slider__card-body'>{item.text}</div>
                 </div>
             </div>
         </div>
@@ -67,8 +68,8 @@ const items: Item[] = [
         text: 'Marvel Collections Price Aggregator'
     },
     {
-        image: require('../../static/slider/e&s.png'),
-        text: 'E & S'
+        image: require('../../static/slider/simon-says-2.png'),
+        text: 'Simon Says Game'
     },
     {
         image: require('../../static/slider/marvel-collections.png'),
@@ -80,11 +81,17 @@ const items: Item[] = [
     }
 ]
 
-const distances = [90, 60, 30, 0, -30, -60, -90]
+const cardWidth = 375
+const distances = Array.from({ length: 7 }, (_, i) => (i - 3) * -cardWidth)
 
-const SliderComponent: React.FC = () => {
+interface Props {
+    modalActive?: boolean
+    setProject: (p: Item | null) => () => void
+}
+
+const SliderComponent: React.FC<Props> = props => {
     const half = Math.floor(items.length / 2)
-
+    const { modalActive, setProject } = props
     const [currentIdx, setCurrentIdx] = useState<number>(half)
     const [isHovering, setIsHovering] = useState<boolean | null>(null)
     const [pct, setPct] = useState(0)
@@ -116,7 +123,7 @@ const SliderComponent: React.FC = () => {
                 setPct(prev => (prev < 100 ? prev + 25 : 0))
             }, 1000)
         }
-        if (isHovering) {
+        if (isHovering || modalActive) {
             clearInterval(interval)
         }
 
@@ -141,7 +148,7 @@ const SliderComponent: React.FC = () => {
                     <div
                         className='slider__list'
                         style={{
-                            transform: `translateX(${distances[currentIdx]}rem)`
+                            transform: `translateX(${distances[currentIdx]}px)` // stylelint-ignore
                         }}>
                         {items.map((item, i) => (
                             <Card
@@ -150,6 +157,7 @@ const SliderComponent: React.FC = () => {
                                 item={item}
                                 currentIdx={currentIdx}
                                 toggleIsHovering={toggleIsHovering}
+                                setProject={setProject}
                             />
                         ))}
                     </div>
