@@ -39,7 +39,7 @@ export const skills: string[] = [
     'Firebase',
     'SCSS',
     'TDD',
-    'Ionic'
+    'Data Visualization'
 ]
 
 const createInitialState = (size: number) => {
@@ -58,26 +58,17 @@ const { radius, maxSpeed, initSpeed, direction } = {
 const size: number = 1.5 * radius
 const depth: number = 2 * radius
 
+// prettier-ignore
 const TagCloudComponent: React.FC = () => {
     const tagCloudRef = useRef<HTMLDivElement | null>(null)
-    const [items, setItems] = useState<TagItemInterface[]>(
-        createInitialState(size)
-    )
+    const [items, setItems] = useState<TagItemInterface[]>(createInitialState(size))
 
-    const mouseX = useRef<number>(
-        initSpeed * Math.sin(direction * (Math.PI / 180))
-    )
-    const mouseY = useRef<number>(
-        -initSpeed * Math.cos(direction * (Math.PI / 180))
-    )
+    const mouseX = useRef<number>(initSpeed * Math.sin(direction * (Math.PI / 180)))
+    const mouseY = useRef<number>(-initSpeed * Math.cos(direction * (Math.PI / 180)))
 
     const next = useCallback(() => {
-        const a =
-            -(Math.min(Math.max(-mouseY.current, -size), size) / radius) *
-            maxSpeed
-        const b =
-            (Math.min(Math.max(-mouseX.current, -size), size) / radius) *
-            maxSpeed
+        const a = -(Math.min(Math.max(-mouseY.current, -size), size) / radius) * maxSpeed
+        const b = (Math.min(Math.max(-mouseX.current, -size), size) / radius) * maxSpeed
 
         if (Math.abs(a) <= 0.01 && Math.abs(b) <= 0.01) return // pause
 
