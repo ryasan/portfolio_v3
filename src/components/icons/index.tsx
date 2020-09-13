@@ -33,6 +33,7 @@ import BriefcaseIcon from './briefcase'
 export type IconInterface = {
     name: string
     className?: string
+    onClick?: (...args: any[]) => void
 }
 
 const IconComponent: React.FC<IconInterface> = props => {

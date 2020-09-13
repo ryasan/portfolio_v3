@@ -1,19 +1,15 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Dots from './dots/dots'
 import Timer from './timer/timer'
+import { projectItems as items, ProjectItem } from './slider-items'
 import { classList } from '../../utils'
 import './slider.scss'
 
-interface Item {
-    text: string
-    image: string
-}
-
 interface CardInterface extends Props {
-    item: Item
-    currentIdx: number
+    item: ProjectItem
     idx: number
+    currentIdx: number
     toggleIsHovering: () => void
 }
 
@@ -25,7 +21,7 @@ const Card: React.FC<CardInterface> = props => {
             className='slider__list-item'
             onMouseEnter={toggleIsHovering}
             onMouseLeave={toggleIsHovering}
-            onClick={setProject(item)}>
+            onClick={() => setProject(item)}>
             <div
                 className={classList({
                     slider__card: true,
@@ -43,50 +39,19 @@ const Card: React.FC<CardInterface> = props => {
                             className='slider__card-image'
                         />
                     </div>
-                    <div className='slider__card-body'>{item.text}</div>
+                    <div className='slider__card-body'>{item.title}</div>
                 </div>
             </div>
         </div>
     )
 }
 
-const items: Item[] = [
-    {
-        image: require('../../static/slider/notpinterest.png'),
-        text: 'Notpinterest Clone'
-    },
-    {
-        image: require('../../static/slider/mars-rovers.png'),
-        text: 'Mars Rover Image Browser'
-    },
-    {
-        image: require('../../static/slider/e&s.png'),
-        text: 'E & S Streetwear Ecommerce Shop'
-    },
-    {
-        image: require('../../static/slider/marvel-collections.png'),
-        text: 'Marvel Collections Price Aggregator'
-    },
-    {
-        image: require('../../static/slider/simon-says-2.png'),
-        text: 'Simon Says Game'
-    },
-    {
-        image: require('../../static/slider/marvel-collections.png'),
-        text: 'Marvel Collections'
-    },
-    {
-        image: require('../../static/slider/e&s.png'),
-        text: 'E & S'
-    }
-]
-
 const cardWidth = 375
 const distances = Array.from({ length: 7 }, (_, i) => (i - 3) * -cardWidth)
 
 interface Props {
     modalActive?: boolean
-    setProject: (p: Item | null) => () => void
+    setProject: (p: ProjectItem) => void
 }
 
 const SliderComponent: React.FC<Props> = props => {
@@ -97,13 +62,15 @@ const SliderComponent: React.FC<Props> = props => {
     const [pct, setPct] = useState(0)
 
     const handlePrevClick = () => {
-        setCurrentIdx(
-            (prev: number) => (prev + (items.length - 1)) % items.length
-        )
+        setCurrentIdx((prev: number) => {
+            return (prev + (items.length - 1)) % items.length
+        })
     }
 
     const handleNextClick = () => {
-        setCurrentIdx((prev: number) => (prev + 1) % items.length)
+        setCurrentIdx((prev: number) => {
+            return (prev + 1) % items.length
+        })
     }
 
     const handleDotClick = (idx: number) => {
@@ -111,9 +78,7 @@ const SliderComponent: React.FC<Props> = props => {
         setCurrentIdx(idx)
     }
 
-    const toggleIsHovering = () => {
-        setIsHovering(prev => !prev)
-    }
+    const toggleIsHovering = () => setIsHovering(prev => !prev)
 
     useEffect(() => {
         let interval: any

@@ -1,51 +1,76 @@
 import React, { useState, useEffect } from 'react'
+
 import { classList, sleep } from '../../utils'
-
+import { ProjectItem } from '../slider/slider-items'
 import Slider from '../slider'
-import Icon from '../icons/'
+import Icon from '../icons'
 import './work.scss'
-
-interface ProjectItem {
-    text: string
-    image: string
-}
+import './project.scss'
 
 interface ProjectProps {
     project?: ProjectItem | null
-    unsetProject: () => void
+    setProject: (p: null) => void
 }
 
-const ProjectDetails: React.FC<ProjectProps> = ({ unsetProject, project }) => {
-    const [active, setActive] = useState(!!project)
+const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
+    const [active, setActive] = useState<boolean>()
+    const [slides, setSlides] = useState<number[]>([0, 1, 2, 3, 4])
 
-    const exit = () => {
+    const exit = async () => {
         setActive(false)
-        sleep(300).then(unsetProject)
+        sleep(200).then(() => setProject(null))
+    }
+
+    const rotate = () => {
+        setSlides(prev => [...prev.slice(1), prev[0]])
     }
 
     useEffect(() => {
-        if (project) setActive(true)
+        if (project) {
+            setActive(true)
+        }
     }, [project])
 
     return (
         <div className={classList({ project: true, active })}>
             <div className='project__icon-container' onClick={exit}>
-                <Icon name='close' />
+                <Icon className='project__close-icon' name='close' />
             </div>
             {project && (
                 <div className='project__inner'>
-                    <h2 className='project__title'>{project.text}</h2>
-                    <div className='project__column-container'>
-                        <div className='project__column project__column--left'>
-                            <div className='project__main-img-container'>
-                                <img
-                                    src={project.image}
-                                    alt={project.text}
-                                    className='project__main-img'
-                                />
-                            </div>
-                        </div>
-                        <div className='project__column project__column--right'></div>
+                    <h2 className='project__title'>{project.title}</h2>
+                    <div className='project__slider-container'>
+                        {/* prettier-ignore */}
+                        <ul className='project__slider'>
+                            {slides.map((idx, i) => (
+                                <li
+                                key={idx}
+                                className='project__slide-item'
+                                    style={{
+                                        transform: `translateX(${i === 0 ? 50 : 50 + (17.5 * i)}rem)`
+                                    }}>
+                                    <img
+                                        src={project.images[idx]}
+                                        className='project__slide-img'
+                                    />
+                                </li>
+                            ))}
+                        </ul>
+                        <Icon name='right-arrow' className='project__slide-btn' onClick={rotate}>
+                            rotate
+                        </Icon>
+                    </div>
+                    <div className='project__text'>
+                        <p className='project__description'>
+                            {project.description}
+                        </p>
+                        <ul className='project__tech-list'>
+                            {project.technologies.map((tech, i) => (
+                                <li key={i} className='project__tech-item'>
+                                    {tech}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             )}
@@ -53,19 +78,13 @@ const ProjectDetails: React.FC<ProjectProps> = ({ unsetProject, project }) => {
     )
 }
 
-type WorkType = {
+interface Props {
     classNames: string
 }
 
-const WorkComponent: React.FC<WorkType> = ({ classNames }) => {
-    const [project, setActiveProject] = useState<ProjectItem | null>(null)
+const WorkComponent: React.FC<Props> = ({ classNames }) => {
+    const [project, setActiveProject] = useState<ProjectItem | null>()
     const [modalActive, setModalActive] = useState(false)
-
-    const setProject = (p: ProjectItem | null) => () => {
-        setActiveProject(p)
-    }
-
-    const unsetProject = () => setActiveProject(null)
 
     useEffect(() => {
         if (project) setModalActive(true)
@@ -84,12 +103,15 @@ const WorkComponent: React.FC<WorkType> = ({ classNames }) => {
                         <h1 className='work__title'>Works</h1>
                         <Slider
                             modalActive={modalActive}
-                            setProject={setProject}
+                            setProject={setActiveProject}
                         />
                     </div>
                 </div>
 
-                <ProjectDetails project={project} unsetProject={unsetProject} />
+                <ProjectDetails
+                    project={project}
+                    setProject={setActiveProject}
+                />
             </div>
         </section>
     )
