@@ -39,7 +39,8 @@ export const skills: string[] = [
     'Firebase',
     'SCSS',
     'TDD',
-    'Data Visualization'
+    'Data Visualization',
+    'MongoDB'
 ]
 
 const createInitialState = (size: number) => {
