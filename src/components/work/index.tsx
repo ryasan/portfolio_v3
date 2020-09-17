@@ -28,6 +28,10 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
         setSlides(prev => [...prev.slice(1), prev[0]])
     }
 
+    const viewProject = (url: string) => () => {
+        window.open(url, '_blank')
+    }
+
     useEffect(() => {
         if (project) {
             setActive(true)
@@ -62,10 +66,13 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
                         </ul>
                         <Icon
                             name='right-arrow'
-                            className='project__slide-btn'
+                            className='project__btn project__btn--slide'
                             onClick={rotate}>
                             rotate
                         </Icon>
+                        <button className='project__btn project__btn--view' onClick={viewProject(project.url)}>
+                            VIEW PROJECT
+                        </button>
                     </div>
                     <div className='project__text'>
                         <div className='project__description-container'>

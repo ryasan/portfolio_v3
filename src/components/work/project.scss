@@ -62,6 +62,7 @@
 
 .project__text-title {
     color: $teal;
+    letter-spacing: 0.5rem;
     margin-top: 3rem;
     text-align: left;
 }
@@ -123,18 +124,18 @@
     }
 }
 
-.project__slide-btn {
+.project__btn {
+    background: 0;
     border: 0.2rem solid $teal;
-    border-radius: 20%;
     color: $teal;
     cursor: pointer;
     height: 4rem;
     left: 52rem;
+    min-width: 5rem;
     padding: 1rem;
     position: absolute;
     top: 14.8rem;
     transition: all 0.2s;
-    width: 5rem;
 
     &:hover {
         border-color: lighten($teal, 25%);
@@ -145,5 +146,9 @@
         border-color: $teal;
         color: $teal;
         transform: scale(1.1);
+    }
+
+    &--view {
+        left: 58rem;
     }
 }

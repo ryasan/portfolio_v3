@@ -3,7 +3,7 @@ export interface ProjectItem {
     description: string
     technologies: string[]
     images: string[]
-    url?: string
+    url: string
 }
 
 const description = "Marvel Collections was a full stack project employing Express, React, and some light GraphQL to take care of backend queries and frontend caching. I used Puppeteer to web scrape price information about available comics and online locations of where they could be purchased. Marvel's API is really fun to mess around with. I found that their rich photos made styling easier for this project since comic books almost style themselves!" // prettier-ignore
