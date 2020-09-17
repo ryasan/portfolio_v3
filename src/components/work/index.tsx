@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 
 import { classList, sleep } from '../../utils'
 import { ProjectItem } from '../slider/slider-items'
@@ -11,8 +11,6 @@ interface ProjectProps {
     project?: ProjectItem | null
     setProject: (p: null) => void
 }
-
-const genArray = (l: number) => Array.from(Array(l).keys())
 
 const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
     const [active, setActive] = useState<boolean>()
@@ -28,14 +26,31 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
         setSlides(prev => [...prev.slice(1), prev[0]])
     }
 
-    const viewProject = (url: string) => () => {
-        window.open(url, '_blank')
-    }
+    const renderSlider = (slides: number[], project: ProjectItem) => (
+        <Fragment>
+            {/* prettier-ignore */}
+            <ul className='project__slider'>
+                {slides.map((idx, i) => (
+                    <li
+                        key={idx}
+                        className='project__slide-item'
+                        style={{
+                            transform: `translateX(${ i === 0 ? 50 : 50 + 17.5 * i }rem)`
+                        }}>
+                        <img
+                            src={project.images[idx]}
+                            className='project__slide-img'
+                        />
+                    </li>
+                ))}
+            </ul>
+        </Fragment>
+    )
 
     useEffect(() => {
         if (project) {
             setActive(true)
-            setSlides(genArray(project.images.length))
+            setSlides(Array.from(Array(project.images.length).keys()))
         }
     }, [project])
 
@@ -48,29 +63,16 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
                 <div className='project__inner'>
                     <h2 className='project__title'>{project.title}</h2>
                     <div className='project__slider-container'>
-                        {/* prettier-ignore */}
-                        <ul className='project__slider'>
-                            {slides.map((idx, i) => (
-                                <li
-                                key={idx}
-                                className='project__slide-item'
-                                    style={{
-                                        transform: `translateX(${i === 0 ? 50 : 50 + (17.5 * i)}rem)`
-                                    }}>
-                                    <img
-                                        src={project.images[idx]}
-                                        className='project__slide-img'
-                                    />
-                                </li>
-                            ))}
-                        </ul>
+                        {renderSlider(slides, project)}
                         <Icon
                             name='right-arrow'
                             className='project__btn project__btn--slide'
                             onClick={rotate}>
                             rotate
                         </Icon>
-                        <button className='project__btn project__btn--view' onClick={viewProject(project.url)}>
+                        <button
+                            className='project__btn project__btn--view'
+                            onClick={() => window.open(project.url, '_blank')}>
                             VIEW PROJECT
                         </button>
                     </div>
@@ -85,13 +87,17 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
                             <h3 className='project__text-title'>
                                 TECHNOLOGIES
                             </h3>
-                            <ul className='project__tech-list'>
-                                {project.technologies.map((tech, i) => (
-                                    <li key={i} className='project__tech-item'>
-                                        {tech}
-                                    </li>
-                                ))}
-                            </ul>
+                            {
+                                <ul className='project__tech-list'>
+                                    {project.technologies.map((tech, i) => (
+                                        <li
+                                            key={i}
+                                            className='project__tech-item'>
+                                            {tech}
+                                        </li>
+                                    ))}
+                                </ul>
+                            }
                         </div>
                     </div>
                 </div>
