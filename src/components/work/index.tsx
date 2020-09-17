@@ -26,9 +26,7 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
     }
 
     useEffect(() => {
-        if (project) {
-            setActive(true)
-        }
+        if (project) setActive(true)
     }, [project])
 
     return (
@@ -56,21 +54,34 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
                                 </li>
                             ))}
                         </ul>
-                        <Icon name='right-arrow' className='project__slide-btn' onClick={rotate}>
+                        <Icon
+                            name='right-arrow'
+                            className='project__slide-btn'
+                            onClick={rotate}>
                             rotate
                         </Icon>
                     </div>
                     <div className='project__text'>
-                        <p className='project__description'>
-                            {project.description}
-                        </p>
-                        <ul className='project__tech-list'>
-                            {project.technologies.map((tech, i) => (
-                                <li key={i} className='project__tech-item'>
-                                    {tech}
-                                </li>
-                            ))}
-                        </ul>
+                        <div className='project__description-container'>
+                            <h3 className='project__text-title'>
+                                WHAT I DID
+                            </h3>
+                            <p className='project__description'>
+                                {project.description}
+                            </p>
+                        </div>
+                        <div className='project__tech-list-container'>
+                            <h3 className='project__text-title'>
+                                TECHNOLOGIES
+                            </h3>
+                            <ul className='project__tech-list'>
+                                {project.technologies.map((tech, i) => (
+                                    <li key={i} className='project__tech-item'>
+                                        {tech}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             )}

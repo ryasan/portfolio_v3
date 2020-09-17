@@ -26,7 +26,7 @@ const fields: FieldInterface[] = [
     { El: 'input', props: { name: 'name', placeholder: 'Name' } },
     { El: 'input', props: { name: 'email', placeholder: 'Email' } },
     { El: 'input', props: { name: 'subject', placeholder: 'Subject' } },
-    {  El: 'textarea', props: { name: 'message', placeholder: 'Message', rows: 3 } } // prettier-ignore
+    { El: 'textarea', props: { name: 'message', placeholder: 'Message', rows: 3 } } // prettier-ignore
 ]
 
 const ContactComponent: React.FC<ContactInterface> = props => {

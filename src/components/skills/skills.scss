@@ -49,11 +49,10 @@
 
         &--right {
             flex-direction: column;
-            height: 50%;
         }
 
         &--left {
-            height: 50%;
+            display: none;
         }
     }
 }
@@ -110,7 +109,7 @@
     z-index: 1;
 
     @media (max-width: $mobile) {
-        font-size: 1rem;
+        font-size: 1.2rem;
         line-height: initial;
         text-indent: initial;
         transform: initial;

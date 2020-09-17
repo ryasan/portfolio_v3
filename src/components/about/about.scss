@@ -30,24 +30,22 @@
 .about__column {
     display: flex;
     height: 100%;
+    width: 50%;
 
     &--left {
         flex-direction: column;
         justify-content: center;
-        width: 60%;
     }
 
     &--right {
-        width: 40%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
     }
 
     @media (max-width: $mobile) {
-        height: 100%;
+        height: 50%;
         width: 100%;
-
-        &--right {
-            display: none;
-        }
     }
 }
 
@@ -105,6 +103,7 @@
     }
 
     @media (max-width: $mobile) {
+        font-size: 1.2rem;
         line-height: 1.5;
         text-align: center;
         text-indent: initial;
@@ -115,88 +114,39 @@
     }
 }
 
-.about__pyramid {
-    animation: spin 10s linear infinite;
-    height: 500px;
-    left: 60%;
-    margin-left: 120px;
-    margin-top: -210px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: 116px 200px 116px;
-    transform-style: preserve-3d;
-    width: 100px;
+.about__illustration {
+    position: relative;
+    width: 80%;
 }
 
-.about__pyramid > div {
-    border-style: solid;
-    border-width: 200px 0 200px 346px;
-    position: absolute;
-    transform-origin: 0 0;
+.about__me {
+    width: 100%;
+
+    @media (max-width: $mobile) {
+        height: 50%;
+        width: 100%;
+    }
 }
 
-.about__pyramid > .about__side::after {
-    color: white;
-    left: -311px;
-    opacity: 0.6;
-    position: absolute;
-    text-align: center;
-    top: -69px;
-}
-
-.about__pyramid > .about__side:first-child::after {
-    content: url('../../static/react-logo.png');
-    position: absolute;
-}
-
-.about__pyramid > .about__side:nth-child(2)::after {
-    content: url('../../static/mongodb-logo.png');
-    position: absolute;
-}
-
-.about__pyramid > .about__side:nth-child(3)::after {
-    content: url('../../static/nodejs-logo.png');
-    position: absolute;
-}
-
-.about__pyramid > .about__side:nth-child(4)::after {
-    content: url('../../static/graphql-logo.png');
-    left: -315px;
-    position: absolute;
-    top: -91px;
-    width: 150px;
-}
-
-.about__pyramid > div:first-child {
-    border-color: transparent transparent transparent rgba(50, 50, 50, 0.6);
-    transform: rotateY(-19.5deg) rotateX(180deg) translateY(-400px);
-}
-
-.about__pyramid > div:nth-child(2) {
-    border-color: transparent transparent transparent rgba(50, 50, 50, 0.6);
-    transform: rotateY(90deg) rotateZ(60deg) rotateX(180deg) translateY(-400px);
-}
-
-.about__pyramid > div:nth-child(3) {
-    border-color: transparent transparent transparent rgba(50, 50, 50, 0.9);
-    transform: rotateX(60deg) rotateY(19.5deg);
-}
-
-// prettier-ignore
-.about__pyramid > div:nth-child(4) {
-    border-color: transparent transparent transparent rgba(50, 50, 50, 0.8);
-    transform:
-        rotateX(-60deg) rotateY(19.5deg) translateX(-116px)
-        translateY(-200px) translateZ(326px);
-}
-
-@keyframes spin {
+@keyframes flail {
     0% {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(1rem);
     }
 
     100% {
-        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        transform: translateY(0);
     }
+}
+
+.rectangle-filled {
+    animation: flail 2s ease-in-out infinite;
+}
+
+.circle-filled {
+    animation: flail 2s ease-in-out infinite;
+    animation-delay: 1s;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './about.scss'
+import SvgImage from '../svgs'
 
 interface AboutInterface {
     classNames: string
@@ -34,12 +35,9 @@ const AboutComponent: React.FC<AboutInterface> = ({ classNames }) => {
                             </div>
                         </div>
                         <div className='about__column about__column--right'>
-                            <div className='about__pyramid'>
-                                <div className='about__side' />
-                                <div className='about__side' />
-                                <div className='about__side' />
-                                <div className='about__side' />
-                            </div>
+                          <div className='about__illustration'>
+                              <SvgImage name='me' className='about__me' />
+                          </div>
                         </div>
                     </div>
                 </div>

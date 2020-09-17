@@ -189,14 +189,14 @@
     width: 80%;
 }
 
-$horizontal_screen_height: 10rem;
-$horizontal_screen_width: 20rem;
-$vertical_screen_height: 17rem;
-$vertical_screen_width: 12rem;
+$horizontal-screen-height: 10rem;
+$horizontal-screen-width: 20rem;
+$vertical-screen-height: 17rem;
+$vertical-screen-width: 12rem;
 
 @keyframes infiniteSlideA {
     0% {
-        transform: translateY($vertical_screen_height * -2);
+        transform: translateY($vertical-screen-height * -2);
     }
 
     100% {
@@ -206,7 +206,7 @@ $vertical_screen_width: 12rem;
 
 @keyframes infiniteSlideB {
     0% {
-        transform: translateY($horizontal_screen_height * -2);
+        transform: translateY($horizontal-screen-height * -2);
     }
 
     100% {
@@ -233,27 +233,27 @@ $vertical_screen_width: 12rem;
 
 .my-stuff__screen-inner {
     border-radius: 0.3rem;
-    height: $vertical_screen_height;
+    height: $vertical-screen-height;
     overflow: hidden;
     position: relative;
-    width: $vertical_screen_width;
+    width: $vertical-screen-width;
 
     &--horizontal {
-        height: $horizontal_screen_height;
-        width: $horizontal_screen_width;
+        height: $horizontal-screen-height;
+        width: $horizontal-screen-width;
     }
 }
 
 .my-stuff__frame {
     background: transparent;
     border: 0.6rem solid $darker;
-    height: $vertical_screen_height;
+    height: $vertical-screen-height;
     position: absolute;
     width: 100%;
     z-index: 100;
 
     &--horizontal {
-        height: $horizontal_screen_height;
+        height: $horizontal-screen-height;
     }
 }
 
@@ -271,7 +271,7 @@ $vertical_screen_width: 12rem;
     background: url('../../../static/vertical-screen.svg') center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: $vertical_screen_height;
+    height: $vertical-screen-height;
     position: relative;
     width: 100%;
 
@@ -279,7 +279,7 @@ $vertical_screen_width: 12rem;
         background: url('../../../static/horizontal-screen.svg') center center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: $horizontal_screen_height;
+        height: $horizontal-screen-height;
     }
 }
 

@@ -48,10 +48,21 @@
     width: 100%;
 }
 
+.project__text {
+    left: 52rem;
+    position: absolute;
+    top: 27rem;
+}
+
 .project__description {
     line-height: 3rem;
     text-align: left;
     text-indent: 2rem;
+}
+
+.project__text-title {
+    margin-top: 3rem;
+    text-align: left;
 }
 
 .project__tech-list {
@@ -59,11 +70,15 @@
 }
 
 .project__tech-item {
-    list-style-position: inside;
-    list-style-type: circle;
+    align-items: center;
+    display: flex;
 
-    &:not(:first-child) {
-        margin-top: 1rem;
+    &::before {
+        color: $teal;
+        content: '• ';
+        font-size: 3rem;
+        line-height: 1;
+        margin-right: 1rem;
     }
 }
 
@@ -98,6 +113,12 @@
     &:first-child .project__slide-img {
         height: 40rem;
         width: 50rem;
+    }
+
+    @media (max-width: $mobile) {
+        &:not(:first-child) {
+            display: none;
+        }
     }
 }
 
