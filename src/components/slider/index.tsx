@@ -34,7 +34,7 @@ const Card: React.FC<CardInterface> = props => {
                 <div className='slider__card-face'>
                     <div className='slider__card-header'>
                         <img
-                            src={item.image}
+                            src={item.images[0]}
                             alt='placeholder'
                             className='slider__card-image'
                         />

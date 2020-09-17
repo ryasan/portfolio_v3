@@ -12,12 +12,15 @@ interface ProjectProps {
     setProject: (p: null) => void
 }
 
+const genArray = (l: number) => Array.from(Array(l).keys())
+
 const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
     const [active, setActive] = useState<boolean>()
-    const [slides, setSlides] = useState<number[]>([0, 1, 2, 3, 4])
+    const [slides, setSlides] = useState<number[]>([])
 
     const exit = async () => {
         setActive(false)
+        setSlides([])
         sleep(200).then(() => setProject(null))
     }
 
@@ -26,7 +29,10 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
     }
 
     useEffect(() => {
-        if (project) setActive(true)
+        if (project) {
+            setActive(true)
+            setSlides(genArray(project.images.length))
+        }
     }, [project])
 
     return (
@@ -63,9 +69,7 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
                     </div>
                     <div className='project__text'>
                         <div className='project__description-container'>
-                            <h3 className='project__text-title'>
-                                WHAT I DID
-                            </h3>
+                            <h3 className='project__text-title'>DEETS</h3>
                             <p className='project__description'>
                                 {project.description}
                             </p>

@@ -26,3 +26,4 @@
 2. The smallest changes can make the biggest differences.
 3. Trying to make data come to life by using various techniques.
 4. Web development has come a long way.
+5. Motivation to do something and finding new ways to keep motivation high is key.
