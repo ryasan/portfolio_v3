@@ -26,10 +26,10 @@ $card-height: 300px + $card-body-height;
     max-width: $max-width;
     position: relative;
     top: 0;
-    width: 100%;
+    width: 100vw;
 }
 
-.slider__button {
+.slider__btn {
     align-items: center;
     background: $darker;
     border: 0.2rem solid $teal;
@@ -40,19 +40,21 @@ $card-height: 300px + $card-body-height;
     font-size: 3rem;
     height: 5rem;
     justify-content: center;
-    left: 1rem;
+    left: 10rem;
     position: absolute;
     top: 25rem;
+    transition: background 0.2s, color 0.2s;
     width: 5rem;
     z-index: 1;
 
     &:last-child {
         left: initial;
-        right: 1rem;
+        right: 10rem;
     }
 
     &:hover {
-        background: $darkest;
+        background: $teal;
+        color: $darkest;
     }
 }
 
@@ -96,15 +98,15 @@ $card-height: 300px + $card-body-height;
         background: rgba(0, 0, 0, 0.8);
         content: 'View Details';
         display: flex;
-        height: calc(100% + 2px);
+        height: calc(100% + 4px);
         justify-content: center;
-        left: -1px;
+        left: -2px;
         opacity: 0;
         overflow: hidden;
         position: absolute;
-        top: -1px;
+        top: -2px;
         transition: all 0.3s;
-        width: calc(100% + 2px);
+        width: calc(100% + 4px);
     }
 }
 

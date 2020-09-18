@@ -90,7 +90,8 @@ const NavItem: React.FC<NavItem> = ({
 )
 
 const NavbarComponent: React.FC<NavbarInterface> = ({ handleNavItemClick }) => {
-    const [activeIdx, setActiveIdx] = useState<number | null>(null)
+    const [linksIdx, setLinksIdx] = useState<number | null>(null)
+    const [socialsIdx, setSocialsIdx] = useState<number | null>(null)
 
     return (
         <div className='nav'>
@@ -103,11 +104,11 @@ const NavbarComponent: React.FC<NavbarInterface> = ({ handleNavItemClick }) => {
                     <NavItem
                         key={idx}
                         idx={idx}
-                        activeIdx={activeIdx}
+                        activeIdx={linksIdx}
                         item={item}
                         onClick={() => handleNavItemClick(idx)}
-                        onMouseEnter={() => setActiveIdx(idx)}
-                        onMouseLeave={() => setActiveIdx(null)}
+                        onMouseEnter={() => setLinksIdx(idx)}
+                        onMouseLeave={() => setLinksIdx(null)}
                     />
                 ))}
             </ul>
@@ -117,7 +118,10 @@ const NavbarComponent: React.FC<NavbarInterface> = ({ handleNavItemClick }) => {
                         key={idx}
                         idx={idx}
                         item={item}
+                        activeIdx={socialsIdx}
                         onClick={() => window.open(item.link, '_blank')}
+                        onMouseEnter={() => setSocialsIdx(idx)}
+                        onMouseLeave={() => setSocialsIdx(null)}
                     />
                 ))}
             </ul>

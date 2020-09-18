@@ -104,7 +104,7 @@ const SliderComponent: React.FC<Props> = props => {
             <div className='slider__container'>
                 <div className='slider__track'>
                     <div
-                        className='slider__button'
+                        className='slider__btn'
                         onClick={handlePrevClick}
                         onMouseEnter={toggleIsHovering}
                         onMouseLeave={toggleIsHovering}>
@@ -127,7 +127,7 @@ const SliderComponent: React.FC<Props> = props => {
                         ))}
                     </div>
                     <div
-                        className='slider__button'
+                        className='slider__btn'
                         onClick={handleNextClick}
                         onMouseEnter={toggleIsHovering}
                         onMouseLeave={toggleIsHovering}>

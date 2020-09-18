@@ -33,9 +33,9 @@ const SkillsComponent: React.FC<SkillsInterface> = ({ classNames }) => (
                             <p className='skills__paragraph'>
                                 My most recent projects have involved
                                 technologies like React, GraphQL, Prisma, CSS
-                                Tailwind, and D3. At the moment
-                                I'm pretty huge on GraphQL and believe it is the
-                                future of REST if it isn't already.
+                                Tailwind, and D3. Really loving GraphQL right
+                                now and super impressed with Apollo's API for
+                                interacting with backend data.
                             </p>
                             <p className='skills__paragraph'>
                                 I've been part of teams employing scrum

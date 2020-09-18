@@ -54,7 +54,7 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'https://vibrant-leavitt-7a3709.netlify.app',
         title: 'E & S Streetwear Ecommerce Shop',
-        description,
+        description: "E & S is a Fullstack ecommerce application that has everything from front to back. E & S Streetwear utilizes a GraphQL-Yoga server coupled with Prisma to perform all your CRUD operations. Some of the features include a back office component responsible for editing user permissions, Stripe payment gateway, live search as you type autocomplete search bar, cookie based authentication using JWTs, and much more!", // prettier-ignore
         technologies
     },
     {
@@ -83,14 +83,14 @@ export const projectItems: ProjectItem[] = [
     },
     {
         images: [
-            'https://i.postimg.cc/vTY7gNM2/marvel-collections.png',
-            'https://i.postimg.cc/zBSSfrmR/Screen-Shot-2020-09-16-at-11-07-36-PM.png',
+            'https://i.postimg.cc/MKBWZvRn/Screen-Shot-2020-09-17-at-11-34-31-PM.png',
+            'https://i.postimg.cc/wxZqdhtK/Screen-Shot-2020-09-17-at-11-35-27-PM.png',
             'https://i.postimg.cc/63NfwQPX/Screen-Shot-2020-09-16-at-11-06-10-PM.png',
             'https://i.postimg.cc/N0XkWXpD/Screen-Shot-2020-09-16-at-11-08-39-PM.png',
             'https://i.postimg.cc/dVp9H6mD/Screen-Shot-2020-09-16-at-11-08-57-PM.png'
         ],
-        url: 'https://elegant-snyder-2d0543.netlify.app',
-        title: 'Marvel Collections',
+        url: 'https://ryasan86.github.io/100_days_css/?day=1',
+        title: '100 Days CSS',
         description,
         technologies
     },
@@ -103,8 +103,8 @@ export const projectItems: ProjectItem[] = [
             'https://i.postimg.cc/2jghfyLX/Screen-Shot-2020-09-16-at-11-42-09-PM.png'
         ],
         url: 'https://vibrant-leavitt-7a3709.netlify.app',
-        title: 'E & S',
-        description,
+        title: 'Drum Machine',
+        description: "E & S is a Fullstack ecommerce application that has everything from front to back. This project uses a GraphQL-Yoga server coupled with Prisma to perform all your CRUD operations. Some of the features include a back office component responsible for editing user permissions, Stripe payment gateway, live search as you type autocomplete search bar, cookie based authentication using JWTs, and much more!", // prettier-ignore
         technologies
     }
 ]

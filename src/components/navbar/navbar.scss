@@ -1,6 +1,6 @@
 @import '../../globals';
 
-$item_width: 7rem;
+$item-width: 7rem;
 
 .nav {
     background: $darker;
@@ -12,16 +12,26 @@ $item_width: 7rem;
     position: fixed;
     right: 0;
     top: 0;
-    width: $item_width;
+    width: $item-width;
     z-index: 9999;
 
     @media (max-width: $mobile) {
         bottom: 0;
-        height: $item_width;
+        height: $item-width;
         left: 0;
         right: initial;
         top: initial;
         width: 100%;
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX($item-width);
+    }
+
+    to {
+        transform: translateX(0);
     }
 }
 
@@ -35,12 +45,53 @@ $item_width: 7rem;
     @media (max-width: $mobile) {
         flex-direction: row;
     }
+
+    .nav__nav-item {
+        animation: slide-left 0.3s ease-out forwards;
+    }
+
+    &--1 {
+        .nav__nav-item:nth-child(1) {
+            animation-delay: 1.2s;
+        }
+
+        .nav__nav-item:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .nav__nav-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .nav__nav-item:nth-child(4) {
+            animation-delay: 0.9s;
+        }
+
+        .nav__nav-item:nth-child(5) {
+            animation-delay: 1.4s;
+        }
+    }
+
+    &--2 {
+        .nav__nav-item:nth-child(1) {
+            animation-delay: 2s;
+        }
+
+        .nav__nav-item:nth-child(2) {
+            animation-delay: 1.7s;
+        }
+
+        .nav__nav-item:nth-child(3) {
+            animation-delay: 2.3s;
+        }
+    }
 }
 
 .nav__nav-item {
-    height: $item_width;
+    height: $item-width;
     position: relative;
-    width: $item_width;
+    transform: translateX($item-width);
+    width: $item-width;
 
     &:hover {
         color: $teal;
@@ -59,9 +110,9 @@ $item_width: 7rem;
     width: 100%;
 
     svg {
-        height: $item_width;
+        height: $item-width;
         padding: 2rem;
-        width: $item_width;
+        width: $item-width;
     }
 
     &.active {
@@ -75,14 +126,17 @@ $item_width: 7rem;
 
 .nav__logo-container {
     align-items: center;
+    animation: slide-left 0.3s ease-out forwards;
+    animation-delay: 3s;
     background: $darkest;
     color: $teal;
     display: flex;
     flex-direction: column;
-    height: $item_width;
+    height: $item-width;
     justify-content: center;
     position: relative;
-    width: $item_width;
+    transform: translateX($item-width);
+    width: $item-width;
 
     @media (max-width: $mobile) {
         display: none;
