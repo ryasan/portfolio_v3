@@ -4,6 +4,7 @@ const CodepenIcon: React.FC = props => (
     <svg {...props} focusable='false' viewBox='0 0 512 512' aria-hidden='true'>
         <g>
             <path
+                fill='currentColor'
                 id='XMLID_11_'
                 d='M504.6,162L265.3,2.8c-5.6-3.7-13-3.7-18.6,0L7.4,162c-4.7,2.8-7.4,8.4-7.4,14v159.2c0,5.6,2.8,11.2,7.4,14
 		l239.2,160.1c2.8,1.9,6.5,2.8,9.3,2.8c3.7,0,6.5-0.9,9.3-2.8L504.6,350c4.7-2.8,7.4-8.4,7.4-14V175.9

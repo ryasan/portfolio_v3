@@ -70,11 +70,11 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
                             onClick={rotate}>
                             rotate
                         </Icon>
-                        <button
+                        <a
                             className='project__btn project__btn--view'
                             onClick={() => window.open(project.url, '_blank')}>
                             VIEW PROJECT
-                        </button>
+                        </a>
                     </div>
                     <div className='project__text'>
                         <div className='project__description-container'>

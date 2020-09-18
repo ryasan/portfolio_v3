@@ -29,6 +29,9 @@ import ShoppingBagIcon from './shopping-bag'
 import SettingsIcon from './settings'
 import PersonIcon from './person'
 import BriefcaseIcon from './briefcase'
+import GithubIcon from './github'
+import LinkedInIcon from './linkedin'
+import CodepenIcon from './codepen'
 
 export type IconInterface = {
     name: string
@@ -55,6 +58,8 @@ const IconComponent: React.FC<IconInterface> = props => {
             return <ExitIcon {...props} />
         case 'close':
             return <CloseIcon {...props} />
+        case 'codepen':
+            return <CodepenIcon {...props} />
         case 'facebook-filled':
         case 'facebook-outlined':
             return <FacebookIcon {...props} />
@@ -62,6 +67,8 @@ const IconComponent: React.FC<IconInterface> = props => {
             return <FilterIcon {...props} />
         case 'fingerprint':
             return <FingerprintIcon {...props} />
+        case 'github':
+            return <GithubIcon {...props} />
         case 'home':
             return <HomeIcon {...props} />
         case 'instagram-filled':
@@ -74,6 +81,8 @@ const IconComponent: React.FC<IconInterface> = props => {
             return <LeftArrowIcon {...props} />
         case 'light-bulb':
             return <LightBulbIcon {...props} />
+        case 'linkedin':
+            return <LinkedInIcon {...props} />
         case 'magnifier':
         case 'magnifier-texture':
             return <MagnifierIcon {...props} />

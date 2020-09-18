@@ -25,7 +25,7 @@ const images = [
 
 export const projectItems: ProjectItem[] = [
     {
-        images: [require('../../static/slider/notpinterest.png'), ...images],
+        images: ['https://i.postimg.cc/WzwKHLCw/notpinterest.png', ...images],
         url: 'https://notpinterest-next-prod.herokuapp.com',
         title: 'Notpinterest Clone',
         description,
@@ -41,7 +41,7 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'http://ryasan86.github.io/mars_rovers',
         title: 'Mars Rover Image Browser',
-        description,
+        description: '',
         technologies
     },
     {
