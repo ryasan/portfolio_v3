@@ -24,26 +24,17 @@ const SkillsComponent: React.FC<SkillsInterface> = ({ classNames }) => (
                         </h1>
                         <div className='skills__text-container'>
                             <p className='skills__paragraph'>
-                                At the time of writing this my primary skills
-                                fall mostly under the frontend spectrum of the
-                                tech variety. However, I have experience in all
-                                areas of the stack and continue to learn the
-                                frontend, backend, and everything in between.
-                            </p>
-                            <p className='skills__paragraph'>
-                                My most recent projects have involved
-                                technologies like React, GraphQL, Prisma, CSS
-                                Tailwind, and D3. Really loving GraphQL right
-                                now and super impressed with Apollo's API for
-                                interacting with backend data.
+                                My primary skills fall mostly under the frontend
+                                spectrum of the tech variety. However, I have
+                                experience in all areas of the stack and don't
+                                mind getting my hands dirty whether it be
+                                frontend, backend, or anything in between.
                             </p>
                             <p className='skills__paragraph'>
                                 I've been part of teams employing scrum
                                 methodologies, involved in the feature planning
-                                processes, Git rebase and merge workflows...the
-                                list goes on. If ever I have the opportunity to
-                                work with you, you'll quickly find that I give
-                                everything my all and put forth max effort.
+                                processes, Git rebase and merge workflows...and
+                                more. Contact me if you'd like to know more.
                             </p>
                         </div>
                     </div>
