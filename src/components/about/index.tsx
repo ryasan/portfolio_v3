@@ -16,13 +16,17 @@ const AboutComponent: React.FC<AboutInterface> = ({ classNames }) => (
                         <h1 className='about__title'>About</h1>
                         <div className='about__paragraph-container'>
                             <p className='about__paragraph'>
-                                I haven't always been interested in software. I
-                                didn't think I was smart enough to code. I
-                                started out by doing help desk and support type
-                                roles. But as time went on I was exposed more
-                                and more to the industry and I found a growing passion
-                                in it. Now I love all things web development &
-                                design!
+                                I haven't always been interested in software. To
+                                me, it seemed like a path that the
+                                intellectually minded tended to take and I never
+                                thought of myself the type. Heck I still don't.
+                            </p>
+                            <p className='about__paragraph'>
+                                I started out on the hardware side of things
+                                doing help desk and support. But as time went on
+                                I was exposed more and more to the software
+                                industry and I found a growing passion in it.
+                                Now I love all things web development & design!
                             </p>
                             <p className='about__paragraph'>
                                 When I'm not on my never ending quest to improve

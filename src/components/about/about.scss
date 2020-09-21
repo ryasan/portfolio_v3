@@ -54,7 +54,7 @@
     font-size: 20rem;
     left: -2rem;
     position: absolute;
-    top: 7rem;
+    top: 4rem;
 
     &::before {
         color: $charcoal;
@@ -98,8 +98,12 @@
     text-indent: 3rem;
     z-index: 1;
 
-    &:last-child {
-        transform: translateX(5rem);
+    &:nth-child(2) {
+        transform: translateX(3rem);
+    }
+
+    &:nth-child(3) {
+        transform: translateX(6rem);
     }
 
     @media (max-width: $mobile) {
@@ -107,6 +111,10 @@
         line-height: 1.5;
         text-align: center;
         text-indent: initial;
+
+        &:nth-child(2) {
+            transform: translateX(0);
+        }
 
         &:last-child {
             transform: translateX(0);
