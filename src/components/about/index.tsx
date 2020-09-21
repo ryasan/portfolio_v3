@@ -18,9 +18,9 @@ const AboutComponent: React.FC<AboutInterface> = ({ classNames }) => (
                             <p className='about__paragraph'>
                                 I haven't always been interested in software. I
                                 didn't think I was smart enough to code. I
-                                started out doing help desk and support type
+                                started out by doing help desk and support type
                                 roles. But as time went on I was exposed more
-                                and more to the industry and I found a passion
+                                and more to the industry and I found a growing passion
                                 in it. Now I love all things web development &
                                 design!
                             </p>
