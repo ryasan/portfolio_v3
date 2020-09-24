@@ -41,7 +41,8 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'http://ryasan86.github.io/mars_rovers',
         title: 'Mars Rover Image Browser',
-        description: '',
+        description:
+            "A React frontend application that makes API calls to NASA's open API. This API can sure send a lot of data for being an open API. Anyways, this UI is great if you want to take a look at the latest photos that the mars rovers have to offer. You can filter images by rover, date, and camera type. The UI comes with a custom built slider that can fully rotate both ways.",
         technologies
     },
     {
@@ -83,25 +84,25 @@ export const projectItems: ProjectItem[] = [
     },
     {
         images: [
-            'https://i.postimg.cc/MKBWZvRn/Screen-Shot-2020-09-17-at-11-34-31-PM.png',
-            'https://i.postimg.cc/wxZqdhtK/Screen-Shot-2020-09-17-at-11-35-27-PM.png',
-            'https://i.postimg.cc/63NfwQPX/Screen-Shot-2020-09-16-at-11-06-10-PM.png',
-            'https://i.postimg.cc/N0XkWXpD/Screen-Shot-2020-09-16-at-11-08-39-PM.png',
-            'https://i.postimg.cc/dVp9H6mD/Screen-Shot-2020-09-16-at-11-08-57-PM.png'
-        ],
-        url: 'https://ryasan86.github.io/100_days_css/?day=1',
-        title: '100 Days CSS',
-        description,
-        technologies
-    },
-    {
-        images: [
             'https://i.postimg.cc/26Dp6h1H/Screen-Shot-2020-09-23-at-11-08-28-PM.png',
             'https://i.postimg.cc/wvcCsMJ9/Screen-Shot-2020-09-23-at-11-08-10-PM.png'
         ],
         url: 'http://ryasan86.github.io/react_pizza_builder',
-        title: 'Mr. Pizza',
+        title: 'Mr. Pizza Builder',
         description: "Mr. Pizza is a create-react-app application with neumorphic inputs. All animations and styling are custom. I used Tailwind CSS for the first time building Mr. Pizza. I gotta say that while Tailwind is amazing, there are some downsides when using it compared to your conventional CSS or CSS in JS. One of them being that your HTML markup becomes a little more bloated since you are using only Tailwind class names to inject styles. That separation of concern when you have individual js and css files is no longer a benefit. Some of the benefits include eliminating specificity and overriding issues and although more bloated, the markup is very simple and easy to read.", // prettier-ignore
+        technologies
+    },
+    {
+        images: [
+            'https://i.postimg.cc/MKBWZvRn/Screen-Shot-2020-09-17-at-11-34-31-PM.png',
+            'https://i.postimg.cc/ryhrSJqt/Screen-Shot-2020-09-24-at-12-10-38-AM.png',
+            'https://i.postimg.cc/BbvPr8B6/Screen-Shot-2020-09-24-at-12-11-12-AM.png',
+            'https://i.postimg.cc/0jHKP8VC/Screen-Shot-2020-09-24-at-12-11-39-AM.png',
+            'https://i.postimg.cc/fTJ059bq/Screen-Shot-2020-09-24-at-12-12-58-AM.png'
+        ],
+        url: 'https://ryasan86.github.io/100_days_css/?day=1',
+        title: '100 Days CSS',
+        description,
         technologies
     }
 ]
