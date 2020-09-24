@@ -96,15 +96,12 @@ export const projectItems: ProjectItem[] = [
     },
     {
         images: [
-            'https://i.postimg.cc/wvGxLtdK/e-s.png',
-            'https://i.postimg.cc/dQhrXr3y/Screen-Shot-2020-09-16-at-11-39-39-PM.png',
-            'https://i.postimg.cc/yWqVpwdv/Screen-Shot-2020-09-16-at-11-41-37-PM.png',
-            'https://i.postimg.cc/BbPSgqqj/Screen-Shot-2020-09-16-at-11-40-35-PM.png',
-            'https://i.postimg.cc/2jghfyLX/Screen-Shot-2020-09-16-at-11-42-09-PM.png'
+            'https://i.postimg.cc/26Dp6h1H/Screen-Shot-2020-09-23-at-11-08-28-PM.png',
+            'https://i.postimg.cc/wvcCsMJ9/Screen-Shot-2020-09-23-at-11-08-10-PM.png'
         ],
-        url: 'https://vibrant-leavitt-7a3709.netlify.app',
-        title: 'Drum Machine',
-        description: "E & S is a Fullstack ecommerce application that has everything from front to back. This project uses a GraphQL-Yoga server coupled with Prisma to perform all your CRUD operations. Some of the features include a back office component responsible for editing user permissions, Stripe payment gateway, live search as you type autocomplete search bar, cookie based authentication using JWTs, and much more!", // prettier-ignore
+        url: 'http://ryasan86.github.io/react_pizza_builder',
+        title: 'Mr. Pizza',
+        description: "Mr. Pizza is a create-react-app application with neumorphic inputs. All animations and styling are custom. I used Tailwind CSS for the first time building Mr. Pizza. I gotta say that while Tailwind is amazing, there are some downsides when using it compared to your conventional CSS or CSS in JS. One of them being that your HTML markup becomes a little more bloated since you are using only Tailwind class names to inject styles. That separation of concern when you have individual js and css files is no longer a benefit. Some of the benefits include eliminating specificity and overriding issues and although more bloated, the markup is very simple and easy to read.", // prettier-ignore
         technologies
     }
 ]
