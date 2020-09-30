@@ -22,11 +22,11 @@ const AboutComponent: React.FC<AboutInterface> = ({ classNames }) => (
                                 thought of myself the type. Heck I still don't.
                             </p>
                             <p className='about__paragraph'>
-                                I started out on the hardware side of things
-                                doing help desk and support. But as time went on
-                                I was exposed more and more to the software
-                                industry and I found a growing passion in it.
-                                Now I love all things web development & design!
+                                My career, for the most part, has been rooted in
+                                hardware and support. But as time went on I was
+                                exposed more and more to the software industry
+                                and I found a growing passion in it. Now I love
+                                all things web development & design!
                             </p>
                             <p className='about__paragraph'>
                                 When I'm not on my never ending quest to improve
