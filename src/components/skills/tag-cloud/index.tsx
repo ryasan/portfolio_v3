@@ -136,10 +136,8 @@ const TagCloudComponent: React.FC = () => {
             onMouseMove={ev => {
                 if (tagCloudRef?.current) {
                     const rect = tagCloudRef.current.getBoundingClientRect()
-                    mouseX.current =
-                        (ev.clientX - (rect.left + rect.width / 2)) / 5
-                    mouseY.current =
-                        (ev.clientY - (rect.top + rect.height / 2)) / 5
+                    mouseX.current = (ev.clientX - (rect.left + rect.width / 2)) / 5
+                    mouseY.current = (ev.clientY - (rect.top + rect.height / 2)) / 5
                 }
             }}
             style={{

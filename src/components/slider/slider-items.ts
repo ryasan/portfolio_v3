@@ -25,9 +25,9 @@ const images = [
 
 export const projectItems: ProjectItem[] = [
     {
-        images: ['https://i.postimg.cc/WzwKHLCw/notpinterest.png', ...images],
+        images: ['https://i.postimg.cc/0jfgKDnC/Screen-Shot-2020-09-30-at-1-00-41-AM-min.png', ...images],
         url: 'https://notpinterest-next-prod.herokuapp.com',
-        title: 'Notpinterest Clone',
+        title: 'Foodies',
         description,
         technologies
     },
