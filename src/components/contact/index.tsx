@@ -58,7 +58,7 @@ const ContactComponent: React.FC<ContactInterface> = props => {
                         <p className='contact__paragraph'>
                             I am interested in freelance, contract, and full
                             time opportunities. I love being an active
-                            participant in cool and ambitious projects. Please
+                            participant in cool and ambitious projects. But please
                             feel free to contact me about whatever!
                         </p>
                         <form method='post' className='contact__form'>
@@ -80,6 +80,19 @@ const ContactComponent: React.FC<ContactInterface> = props => {
                                 </div>
                             ))}
                         </form>
+                        <div className='contact__code'>
+                            <small className='contact__code-text'>
+                                Code for this portfolio?
+                                <a
+                                    href='https://github.com/ryasan86/portfolio_v3'
+                                    target='__blank'
+                                    className='contact__code-link'>
+                                    {' '}
+                                    repo
+                                </a>{' '}
+                                :)
+                            </small>
+                        </div>
                     </div>
                     <div className='contact__column contact__column--right'>
                         <div className='contact__maps' ref={props.componentRef}>

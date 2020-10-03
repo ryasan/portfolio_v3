@@ -75,6 +75,11 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
                             onClick={() => window.open(project.url, '_blank')}>
                             VIEW PROJECT
                         </a>
+                        <a
+                            className='project__btn project__btn--code'
+                            onClick={() => window.open(project.repoUrl, '_blank')}>
+                            VIEW CODE
+                        </a>
                     </div>
                     <div className='project__text'>
                         <div className='project__description-container'>

@@ -68,7 +68,12 @@
 }
 
 .project__tech-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 20rem;
     text-align: left;
+    width: 45rem;
 }
 
 .project__tech-item {
@@ -156,5 +161,9 @@
 
     &--view {
         left: 58rem;
+    }
+
+    &--code {
+        left: 73rem;
     }
 }

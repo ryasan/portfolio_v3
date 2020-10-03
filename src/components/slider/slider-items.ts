@@ -4,33 +4,10 @@ export interface ProjectItem {
     technologies: string[]
     images: string[]
     url: string
+    repoUrl: string
 }
 
-const description = "Marvel Collections was a full stack project employing Express, React, and some light GraphQL to take care of backend queries and frontend caching. I used Puppeteer to web scrape price information about available comics and online locations of where they could be purchased. Marvel's API is really fun to mess around with. I found that their rich photos made styling easier for this project since comic books almost style themselves!" // prettier-ignore
-const technologies = [
-    'react',
-    'graphql',
-    'gatsby',
-    'styled components',
-    'puppeteer',
-    'netlify',
-    'apollo'
-]
-const images = [
-    'https://images.unsplash.com/photo-1588497859490-85d1c17db96d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80',
-    'https://images.unsplash.com/flagged/photo-1501421018470-faf26f6b1bef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80',
-    'https://images.unsplash.com/photo-1549998724-03a9e93f22f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2680&q=80',
-    'https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80'
-]
-
 export const projectItems: ProjectItem[] = [
-    {
-        images: ['https://i.postimg.cc/0jfgKDnC/Screen-Shot-2020-09-30-at-1-00-41-AM-min.png', ...images],
-        url: 'https://notpinterest-next-prod.herokuapp.com',
-        title: 'Foodies',
-        description,
-        technologies
-    },
     {
         images: [
             'https://i.postimg.cc/g2mwYZz4/mars-rovers.png',
@@ -42,8 +19,58 @@ export const projectItems: ProjectItem[] = [
         url: 'http://ryasan86.github.io/mars_rovers',
         title: 'Mars Rover Image Browser',
         description:
-            "A React frontend application that makes API calls to NASA's open API. This API can sure send a lot of data for being an open API. Anyways, this UI is great if you want to take a look at the latest photos that the mars rovers have to offer. You can filter images by rover, date, and camera type. The UI comes with a custom built slider that can fully rotate both ways.",
-        technologies
+            "A React frontend application that makes API calls to NASA's open API. This is a useful UI if you want to take a look at the latest photos that the mars rovers have to offer. You can find a D3 lines chart representing the number of photos taken by each rover by year. You can filter images by rover, date, and camera type. The UI comes with a custom built slider that can fully rotate both ways. NASA's open API is great and I plan to use it more on my free time :)",
+        technologies: [
+            'D3',
+            'TypeScript',
+            'SCSS',
+            'REST',
+            'NASA Open API',
+            'React',
+            'ParticlesJS'
+        ],
+        repoUrl: 'https://github.com/ryasan86/mars_rovers'
+    },
+    {
+        images: [
+            'https://i.postimg.cc/90K7mbKx/Screen-Shot-2020-10-02-at-6-54-32-PM-min.png',
+            'https://i.postimg.cc/KjRThwqk/Screen-Shot-2020-10-02-at-6-55-35-PM-min.png',
+            'https://i.postimg.cc/qRmKY4LH/Screen-Shot-2020-10-02-at-6-56-57-PM-min.png'
+        ],
+        url: 'https://notpinterest-next-prod.herokuapp.com',
+        title: 'Fullstack Foodies Pinterest for Recipes!',
+        description:
+            "I had originally planned to make a full stack Pinterest clone but decided to pivot into making a recipe sharing app half way through for some odd reason. Hence the Pinterest like grid for the photos of dishes :) I decided to use NextJS and go NoSQL with MongoDB for this application's data store. I became a believer in server side rendering after making this. SSR frameworks like NextJS and Gatsby have amazing performance. If speed of that initial paint on screen is paramount, these frameworks are definitely the way to go.",
+        technologies: [
+            'MongoDB',
+            'NextJS',
+            'GraphQL',
+            'Express',
+            'JWT',
+            'Bcrypt',
+            'MLab',
+            'Heroku'
+        ],
+        repoUrl: 'https://github.com/ryasan86/foodies'
+    },
+    {
+        images: [
+            'https://i.postimg.cc/26Dp6h1H/Screen-Shot-2020-09-23-at-11-08-28-PM.png',
+            'https://i.postimg.cc/wvcCsMJ9/Screen-Shot-2020-09-23-at-11-08-10-PM.png'
+        ],
+        url: 'http://ryasan86.github.io/react_pizza_builder',
+        title: 'Mr. Pizza Builder',
+        description: "Mr. Pizza is a create-react-app application with neumorphic inputs. All animations and styling are custom. I used Tailwind CSS for the first time building Mr. Pizza. I gotta say that while Tailwind is amazing, there are some downsides when using it compared to your conventional CSS or CSS in JS. One of them being that your HTML markup becomes a little more bloated since you are using only Tailwind class names to inject styles. That separation of concern when you have individual js and css files is no longer a benefit. Some of the benefits include eliminating specificity and overriding issues and although more bloated, the markup is very simple and easy to read.", // prettier-ignore
+        technologies: [
+            'TailWind CSS',
+            'SVG',
+            'Gh-Pages',
+            'Normalize.css',
+            'TypeScript',
+            'React',
+            'SCSS'
+        ],
+        repoUrl: 'https://github.com/ryasan86/react_pizza_builder'
     },
     {
         images: [
@@ -55,8 +82,22 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'https://vibrant-leavitt-7a3709.netlify.app',
         title: 'E & S Streetwear Ecommerce Shop',
-        description: "E & S is a Fullstack ecommerce application that has everything from front to back. E & S Streetwear utilizes a GraphQL-Yoga server coupled with Prisma to perform all your CRUD operations. Some of the features include a back office component responsible for editing user permissions, Stripe payment gateway, live search as you type autocomplete search bar, cookie based authentication using JWTs, and much more!", // prettier-ignore
-        technologies
+        description: "E & S is a Fullstack ecommerce application that has everything from front to back making it one of my 'bigger' projects. E & S Streetwear utilizes a GraphQL-Yoga server coupled with Prisma to perform all your CRUD operations. Some of the features include a back office component responsible for editing user permissions, Stripe payment gateway, live search as you type autocomplete search bar, cookie based authentication using JWTs, and much more!", // prettier-ignore
+        technologies: [
+            'Gatsby',
+            'Framer Motion',
+            'Mailtrap',
+            'Stripe',
+            'Cloudinary',
+            'GraphQL',
+            'GraphQL Yoga Express',
+            'Prisma',
+            'Downshift',
+            'Netlify',
+            'Heroku',
+            'React'
+        ],
+        repoUrl: 'https://github.com/ryasan86/fashion_shop'
     },
     {
         images: [
@@ -68,8 +109,17 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'https://elegant-snyder-2d0543.netlify.app',
         title: 'Marvel Collections Price Scraper',
-        description,
-        technologies
+        description: "Marvel Collections was a full stack project employing Express, React, and some light GraphQL to take care of backend queries and frontend caching. I used Puppeteer to web scrape price information about available comics and online locations of where they could be purchased. Marvel's API is really fun to mess around with. I found that their rich photos made styling easier for this project since comic books almost style themselves!",
+        technologies: [
+            'React',
+            'GraphQL',
+            'Gatsby',
+            'Styled Components',
+            'Puppeteer',
+            'Netlify',
+            'Apollo'
+        ],
+        repoUrl: 'https://github.com/ryasan86/marvel_collections'
     },
     {
         images: [
@@ -79,18 +129,9 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'https://ryasan86.github.io/simon',
         title: 'Simon Says Game',
-        description,
-        technologies
-    },
-    {
-        images: [
-            'https://i.postimg.cc/26Dp6h1H/Screen-Shot-2020-09-23-at-11-08-28-PM.png',
-            'https://i.postimg.cc/wvcCsMJ9/Screen-Shot-2020-09-23-at-11-08-10-PM.png'
-        ],
-        url: 'http://ryasan86.github.io/react_pizza_builder',
-        title: 'Mr. Pizza Builder',
-        description: "Mr. Pizza is a create-react-app application with neumorphic inputs. All animations and styling are custom. I used Tailwind CSS for the first time building Mr. Pizza. I gotta say that while Tailwind is amazing, there are some downsides when using it compared to your conventional CSS or CSS in JS. One of them being that your HTML markup becomes a little more bloated since you are using only Tailwind class names to inject styles. That separation of concern when you have individual js and css files is no longer a benefit. Some of the benefits include eliminating specificity and overriding issues and although more bloated, the markup is very simple and easy to read.", // prettier-ignore
-        technologies
+        description: '',
+        technologies: [],
+        repoUrl: 'https://github.com/ryasan86/simon'
     },
     {
         images: [
@@ -102,7 +143,8 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'https://ryasan86.github.io/100_days_css/?day=1',
         title: '100 Days CSS',
-        description,
-        technologies
+        description: '',
+        technologies: [],
+        repoUrl: 'https://github.com/ryasan86/100_days_css'
     }
 ]
