@@ -81,7 +81,7 @@ export const projectItems: ProjectItem[] = [
             'https://i.postimg.cc/2jghfyLX/Screen-Shot-2020-09-16-at-11-42-09-PM.png'
         ],
         url: 'https://vibrant-leavitt-7a3709.netlify.app',
-        title: 'E & S Streetwear Ecommerce Shop',
+        title: 'E & S Streetwear Fullstack Ecommerce Shop',
         description: "E & S is a Fullstack ecommerce application that has everything from front to back making it one of my 'bigger' projects. E & S Streetwear utilizes a GraphQL-Yoga server coupled with Prisma to perform all your CRUD operations. Some of the features include a back office component responsible for editing user permissions, Stripe payment gateway, live search as you type autocomplete search bar, cookie based authentication using JWTs, and much more!", // prettier-ignore
         technologies: [
             'Gatsby',
@@ -109,7 +109,8 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'https://elegant-snyder-2d0543.netlify.app',
         title: 'Marvel Collections Price Scraper',
-        description: "Marvel Collections was a full stack project employing Express, React, and some light GraphQL to take care of backend queries and frontend caching. I used Puppeteer to web scrape price information about available comics and online locations of where they could be purchased. Marvel's API is really fun to mess around with. I found that their rich photos made styling easier for this project since comic books almost style themselves!",
+        description:
+            "Marvel Collections was a full stack project employing Express, React, and some light GraphQL to take care of backend queries and frontend caching. I used Puppeteer to web scrape price information about available comics and online locations of where they could be purchased. Marvel's API is really fun to mess around with. I found that their rich photos made styling easier for this project since comic books almost style themselves!",
         technologies: [
             'React',
             'GraphQL',
@@ -129,8 +130,15 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'https://ryasan86.github.io/simon',
         title: 'Simon Says Game',
-        description: '',
-        technologies: [],
+        description:
+            "Building mini games is a great way to polish and sharpen logic skills. You run into unique and interesting problems to try and solve and can get so much out of it. I feel like building a Simon Says game lends itself to a better understanding of asynchronous operations. I had initially used Redux to keep track of state. After React released the useReducer hook I decided to swap out Redux. The new hook is based on the same reducer pattern as Redux and you'll notice similarities such as the use of pure functions and dispatching of actions to manipulate state.",
+        technologies: [
+            'TypeScript',
+            'Styled Components',
+            'Redux',
+            'Redux-Thunk',
+            'Lodash'
+        ],
         repoUrl: 'https://github.com/ryasan86/simon'
     },
     {
@@ -143,8 +151,9 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'https://ryasan86.github.io/100_days_css/?day=1',
         title: '100 Days CSS',
-        description: '',
-        technologies: [],
+        description:
+            '100 Days CSS is a project to sharpen and expand my CSS knowledge. Admittedly I have not finished this challenge because it can be time consuming. But! I do plan to finish when time permits :)',
+        technologies: ['CSS', 'SCSS', 'Codepen'],
         repoUrl: 'https://github.com/ryasan86/100_days_css'
     }
 ]
