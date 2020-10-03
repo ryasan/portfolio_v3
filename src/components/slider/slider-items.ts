@@ -82,7 +82,7 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'https://vibrant-leavitt-7a3709.netlify.app',
         title: 'E & S Streetwear Fullstack Ecommerce Shop',
-        description: "E & S is a Fullstack ecommerce application that has everything from front to back making it one of my 'bigger' projects. E & S Streetwear utilizes a GraphQL-Yoga server coupled with Prisma to perform all your CRUD operations. Some of the features include a back office component responsible for editing user permissions, Stripe payment gateway, live search as you type autocomplete search bar, cookie based authentication using JWTs, and much more!", // prettier-ignore
+        description: "E & S is a Fullstack ecommerce application that has everything from front to back, the whole enchilada. E & S Streetwear utilizes a GraphQL-Yoga server coupled with Prisma to perform all your CRUD operations. Some of the features include a back office component responsible for editing products/user permissions, Stripe payment gateway, live search as you type autocomplete search bar, multilevel products dropdown, cookie based authentication using JWTs, and much more!", // prettier-ignore
         technologies: [
             'Gatsby',
             'Framer Motion',
