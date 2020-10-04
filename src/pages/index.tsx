@@ -124,17 +124,11 @@ const IndexPage: React.FC = () => {
                 ))}
             </div>
             <div className='mobile-btn-group'>
-                <button className='mobile-btn'>
-                    <IconComponent
-                        name='chevron-up'
-                        onClick={() => scrollUp()}
-                    />
+                <button className='mobile-btn' onClick={() => scrollUp()}>
+                    <IconComponent name='chevron-up' />
                 </button>
-                <button className='mobile-btn'>
-                    <IconComponent
-                        name='chevron-down'
-                        onClick={() => scrollDown()}
-                    />
+                <button className='mobile-btn' onClick={() => scrollDown()}>
+                    <IconComponent name='chevron-down' />
                 </button>
             </div>
         </Layout>
