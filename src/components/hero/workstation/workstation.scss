@@ -198,7 +198,7 @@ $horizontal-screen-width: 20em;
 $vertical-screen-height: 17em;
 $vertical-screen-width: 12em;
 
-@keyframes infiniteSlideA {
+@keyframes infinite-slide-A {
     0% {
         transform: translateY($vertical-screen-height * -2);
     }
@@ -208,7 +208,7 @@ $vertical-screen-width: 12em;
     }
 }
 
-@keyframes infiniteSlideB {
+@keyframes infinite-slide-B {
     0% {
         transform: translateY($horizontal-screen-height * -2);
     }
@@ -262,17 +262,18 @@ $vertical-screen-width: 12em;
 }
 
 .my-stuff__track {
-    animation: infiniteSlideA 20s linear infinite;
+    animation: infinite-slide-A 20s linear infinite;
     position: absolute;
     width: 100%;
 
     &--horizontal {
-        animation-name: infiniteSlideB;
+        animation-name: infinite-slide-B;
     }
 }
 
 .my-stuff__code {
     background: url('../../../static/vertical-screen.svg') center center;
+    background: blue;
     background-repeat: no-repeat;
     background-size: cover;
     height: $vertical-screen-height;
@@ -281,6 +282,7 @@ $vertical-screen-width: 12em;
 
     &--horizontal {
         background: url('../../../static/horizontal-screen.svg') center center;
+        background: blue;
         background-repeat: no-repeat;
         background-size: cover;
         height: $horizontal-screen-height;
