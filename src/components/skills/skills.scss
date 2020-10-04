@@ -25,6 +25,7 @@
     @media (max-width: $mobile) {
         flex-direction: column;
         margin-right: initial;
+        padding: 0;
     }
 }
 
@@ -44,6 +45,7 @@
     }
 
     @media (max-width: $mobile) {
+        height: 100%;
         margin-left: initial;
         width: 100%;
 
@@ -86,7 +88,7 @@
     }
 
     @media (max-width: $mobile) {
-        font-size: 3rem;
+        font-size: 4rem;
         margin: 2rem 0;
         position: relative;
         text-align: center;
@@ -111,6 +113,7 @@
     @media (max-width: $mobile) {
         font-size: 1.2rem;
         line-height: initial;
+        text-align: center;
         text-indent: initial;
         transform: initial;
     }

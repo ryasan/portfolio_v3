@@ -81,3 +81,28 @@ li {
 button {
     cursor: pointer;
 }
+
+.mobile-btn {
+    background: $teal;
+    border: 0;
+    color: $darker;
+    display: none;
+    height: 5rem;
+    outline: 0;
+    position: fixed;
+    right: 1rem;
+    width: 5rem;
+    z-index: 9999;
+
+    @media (max-width: $mobile) {
+        display: block;
+    }
+
+    &:nth-child(1) {
+        bottom: 7rem;
+    }
+
+    &:nth-child(2) {
+        bottom: 1rem;
+    }
+}

@@ -32,6 +32,8 @@ import BriefcaseIcon from './briefcase'
 import GithubIcon from './github'
 import LinkedInIcon from './linkedin'
 import CodepenIcon from './codepen'
+import UpArrowIcon from './up-arrow'
+import ChevronIcon from './chevron'
 
 export type IconInterface = {
     name: string
@@ -48,6 +50,11 @@ const IconComponent: React.FC<IconInterface> = props => {
             return <BriefcaseIcon {...props} />
         case 'cart':
             return <CartIcon {...props} />
+        case 'chevron-right':
+        case 'chevron-left':
+        case 'chevron-up':
+        case 'chevron-down':
+            return <ChevronIcon {...props} />
         case 'dollar':
             return <DollarIcon {...props} />
         case 'down-arrow':
@@ -107,12 +114,14 @@ const IconComponent: React.FC<IconInterface> = props => {
         case 'twitter-filled':
         case 'twitter-outlined':
             return <TwitterIcon {...props} />
+        case 'up-arrow':
+            return <UpArrowIcon {...props} />
         case 'upload-filled':
         case 'upload-outlined':
             return <UploadIcon {...props} />
         case 'document':
         default:
-            return <DocumentIcon {...props} />
+            throw new Error('Icon not found')
     }
 }
 

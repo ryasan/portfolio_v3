@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import { useMediaQuery } from 'react-responsive'
 
 import Dots from './dots/dots'
 import Timer from './timer/timer'
+import Icon from '../icons'
 import { projectItems as items, ProjectItem } from './slider-items'
-import { classList } from '../../utils'
+import { classList, device } from '../../utils'
 import './slider.scss'
+
+interface Props {
+    cardWidth?: number
+    modalActive?: boolean
+    setProject: (p: ProjectItem) => void
+}
 
 interface CardInterface extends Props {
     item: ProjectItem
@@ -46,20 +54,16 @@ const Card: React.FC<CardInterface> = props => {
     )
 }
 
-const cardWidth = 375
-const distances = Array.from({ length: 7 }, (_, i) => (i - 3) * -cardWidth)
-
-interface Props {
-    modalActive?: boolean
-    setProject: (p: ProjectItem) => void
-}
-
 const SliderComponent: React.FC<Props> = props => {
     const half = Math.floor(items.length / 2)
-    const { modalActive, setProject } = props
+    const { modalActive, setProject, cardWidth } = props
     const [currentIdx, setCurrentIdx] = useState<number>(half)
     const [isHovering, setIsHovering] = useState<boolean | null>(null)
     const [pct, setPct] = useState(0)
+    const distances = Array.from(
+        { length: 7 },
+        (_, i) => (i - 3) * -(cardWidth || 0)
+    )
 
     const handlePrevClick = () => {
         setCurrentIdx((prev: number) => {
@@ -108,7 +112,7 @@ const SliderComponent: React.FC<Props> = props => {
                         onClick={handlePrevClick}
                         onMouseEnter={toggleIsHovering}
                         onMouseLeave={toggleIsHovering}>
-                        &#8592;
+                        <Icon name='chevron-left' />
                     </div>
                     <div
                         className='slider__list'
@@ -131,7 +135,7 @@ const SliderComponent: React.FC<Props> = props => {
                         onClick={handleNextClick}
                         onMouseEnter={toggleIsHovering}
                         onMouseLeave={toggleIsHovering}>
-                        &#8594;
+                        <Icon name='chevron-right' />
                     </div>
                 </div>
                 <Dots
@@ -141,8 +145,16 @@ const SliderComponent: React.FC<Props> = props => {
                 />
                 <Timer pct={pct} />
             </div>
+            ∏
         </div>
     )
 }
 
-export default SliderComponent
+const withCardWidth = (Component: any) => (props: any) => {
+    const isMobile = useMediaQuery({ query: device.mobileL })
+    const cardWidth = isMobile ? 275 : 375
+
+    return <Component {...props} cardWidth={cardWidth} />
+}
+
+export default withCardWidth(SliderComponent)

@@ -16,12 +16,7 @@ $item-width: 7rem;
     z-index: 9999;
 
     @media (max-width: $mobile) {
-        bottom: 0;
-        height: $item-width;
-        left: 0;
-        right: initial;
-        top: initial;
-        width: 100%;
+        display: none;
     }
 }
 

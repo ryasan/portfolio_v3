@@ -3,6 +3,10 @@
 .dot-list {
     display: flex;
     margin-top: 5rem;
+
+    @media (max-width: $mobile) {
+        margin-top: 6rem;
+    }
 }
 
 .dot {
@@ -18,5 +22,10 @@
 
     &:not(:first-child) {
         margin-left: 0.8rem;
+    }
+
+    @media (max-width: $mobile) {
+        height: 0.3rem;
+        width: 1.5rem;
     }
 }

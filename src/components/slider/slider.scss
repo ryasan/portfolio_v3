@@ -1,9 +1,5 @@
 @import '../../globals';
 
-$card-body-height: 57px;
-$card-width: 375px;
-$card-height: 300px + $card-body-height;
-
 .slider {
     align-items: flex-end;
     display: flex;
@@ -23,7 +19,6 @@ $card-height: 300px + $card-body-height;
     display: flex;
     justify-content: center;
     left: 0;
-    max-width: $max-width;
     position: relative;
     top: 0;
     width: 100vw;
@@ -56,13 +51,32 @@ $card-height: 300px + $card-body-height;
         background: $teal;
         color: $darkest;
     }
+
+    svg {
+        height: 4rem;
+        width: 4rem;
+
+        @media (max-width: $mobile) {
+            height: 2rem;
+            width: 2rem;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 1.5rem;
+        height: 250px;
+        height: 3rem;
+        top: 35rem;
+        width: 275px;
+        width: 3rem;
+    }
 }
 
 .slider__list {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     justify-content: center;
-    max-width: var(--max-width);
+    max-width: $max-width;
     padding: 5rem 0;
     position: relative;
     transition: transform 0.5s;
@@ -70,9 +84,19 @@ $card-height: 300px + $card-body-height;
 }
 
 .slider__list-item {
+    $card-body-height: 57px;
+    $card-width: 375px;
+    $card-height: 300px + $card-body-height;
+
     height: $card-height;
     perspective: 337.5px;
     width: $card-width;
+
+    @media (max-width: $mobile) {
+        height: 250px;
+        pointer-events: none;
+        width: 275px;
+    }
 }
 
 .slider__card-face {
@@ -128,6 +152,11 @@ $card-height: 300px + $card-body-height;
     justify-content: center;
     padding: 1rem 0;
     width: 100%;
+
+    @media (max-width: $mobile) {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+    }
 }
 
 .slider__card-text {

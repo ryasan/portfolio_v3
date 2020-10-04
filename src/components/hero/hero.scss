@@ -118,6 +118,10 @@
                 display: none;
             }
         }
+
+        @media (max-width: $mobile) {
+            margin-left: 1rem;
+        }
     }
 
     @media (max-width: $mobile) {
@@ -153,7 +157,7 @@
     margin-top: 1.5rem;
 
     @media (max-width: $mobile) {
-        margin: 0;
+        font-size: 1.5rem;
         text-align: center;
     }
 }
@@ -211,6 +215,10 @@
     font-size: 6rem;
     opacity: 1;
     position: absolute;
+
+    @media (max-width: $mobile) {
+        font-size: 3rem;
+    }
 }
 
 .typed-fade-out {

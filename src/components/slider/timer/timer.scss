@@ -12,6 +12,11 @@
     height: 2.5rem;
     opacity: 0.2;
     width: 2.5rem;
+
+    @media (max-width: $mobile) {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
 }
 
 .timer__clock {
@@ -37,5 +42,9 @@
 
     &.right-active {
         border-right-color: $teal;
+    }
+
+    @media (max-width: $mobile) {
+        border-width: 0.5rem;
     }
 }

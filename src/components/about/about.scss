@@ -23,6 +23,7 @@
 
     @media (max-width: $mobile) {
         flex-direction: column;
+        height: 100%;
         margin-right: initial;
     }
 }
@@ -46,6 +47,10 @@
     @media (max-width: $mobile) {
         height: 50%;
         width: 100%;
+
+        &--right {
+            display: none;
+        }
     }
 }
 
@@ -53,6 +58,7 @@
     color: $dark;
     font-size: 20rem;
     left: -2rem;
+    margin: 0;
     position: absolute;
     top: 4rem;
 
@@ -78,7 +84,8 @@
     }
 
     @media (max-width: $mobile) {
-        font-size: 7rem;
+        font-size: 4rem;
+        font-weight: 900;
         left: 0;
         position: relative;
         top: 0;

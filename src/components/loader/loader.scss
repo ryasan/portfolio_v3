@@ -9,7 +9,7 @@
     }
 }
 
-@keyframes fadeAway {
+@keyframes fade-away {
     0% {
         opacity: 1;
         width: 100%;
@@ -39,7 +39,7 @@
     }
 }
 
-@keyframes showLine {
+@keyframes show-line {
     0% {
         width: 0;
     }
@@ -51,7 +51,7 @@
 
 .loader {
     align-items: center;
-    animation: fadeAway 0.5s linear 3s;
+    animation: fade-away 0.5s linear 3s;
     animation-fill-mode: forwards;
     background: $darker;
     display: flex;
@@ -64,6 +64,11 @@
 
     svg {
         animation: blink 1s forwards;
+
+        @media (max-width: $mobile) {
+            height: 3.5rem;
+            width: 3.5rem;
+        }
     }
 }
 
@@ -76,11 +81,15 @@
     width: 50rem;
 
     &::before {
-        animation: showLine 2s ease-in-out forwards;
+        animation: show-line 2s ease-in-out forwards;
         background: $teal;
         content: '';
         height: 100%;
         position: absolute;
+    }
+
+    @media (max-width: $mobile) {
+        width: 25rem;
     }
 }
 
@@ -90,11 +99,14 @@
     margin-top: 2rem;
     position: relative;
     text-align: center;
+    width: 100%;
 
     &::before {
         animation: percentage 2s ease-in-out forwards;
         content: '';
+        left: 50%;
         position: absolute;
         top: 0;
+        transform: translateX(calc(-50% + 0.5rem));
     }
 }

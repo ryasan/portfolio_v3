@@ -16,6 +16,7 @@ import Skills from '../components/skills/index'
 import Work from '../components/work'
 import Contact from '../components/contact'
 import Navbar from '../components/navbar'
+import IconComponent from '../components/icons'
 import { classList } from '../utils'
 import '../home.scss'
 
@@ -65,11 +66,11 @@ const IndexPage: React.FC = () => {
     })
 
     const scrollDown = (pages: number = 1): void => {
-        setPageIdx(prevIdx => prevIdx + pages)
+        setPageIdx(prevIdx => Math.min(totalSlideNumber - 1, prevIdx + pages))
     }
 
     const scrollUp = (pages: number = 1): void => {
-        setPageIdx(prevIdx => prevIdx - pages)
+        setPageIdx(prevIdx => Math.max(0, prevIdx - pages))
     }
 
     const handleNavItemClick = (idx: number) => {
@@ -93,6 +94,7 @@ const IndexPage: React.FC = () => {
     useEffect(() => {
         if (_performance?.navigation.type === 1) {
             const previousPage = JSON.parse(localStorage.getItem('page') || '')
+            console.log(Number(previousPage))
             handleNavItemClick(Number(previousPage))
         }
     }, [_performance])
@@ -115,11 +117,26 @@ const IndexPage: React.FC = () => {
                         classNames={classList({
                             section: true,
                             'down-scroll': i <= pageIdx - 1,
-                            'up-scroll': i !== totalSlideNumber - 1 && i >= pageIdx
+                            'up-scroll':
+                                i !== totalSlideNumber - 1 && i >= pageIdx
                         })}
                         handlePageClick={handleNavItemClick}
                     />
                 ))}
+            </div>
+            <div className='mobile-btn-group'>
+                <button className='mobile-btn'>
+                    <IconComponent
+                        name='chevron-up'
+                        onClick={() => scrollUp()}
+                    />
+                </button>
+                <button className='mobile-btn'>
+                    <IconComponent
+                        name='chevron-down'
+                        onClick={() => scrollDown()}
+                    />
+                </button>
             </div>
         </Layout>
     )

@@ -45,4 +45,8 @@
         position: absolute;
         right: -6rem;
     }
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
