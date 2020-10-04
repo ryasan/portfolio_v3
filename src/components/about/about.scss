@@ -22,6 +22,7 @@
     width: 90%;
 
     @media (max-width: $mobile) {
+        flex: initial;
         flex-direction: column;
         height: 100%;
         margin-right: initial;
@@ -45,8 +46,11 @@
     }
 
     @media (max-width: $mobile) {
-        height: 50%;
         width: 100%;
+
+        &--left {
+            justify-content: flex-start;
+        }
 
         &--right {
             display: none;
@@ -87,6 +91,7 @@
         font-size: 4rem;
         font-weight: 900;
         left: 0;
+        margin: 5rem 0;
         position: relative;
         top: 0;
 

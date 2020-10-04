@@ -47,6 +47,11 @@
     }
 
     @media (max-width: $mobile) {
-        display: none;
+        // display: none;
+        font-size: 4rem;
+        left: initial;
+        margin: 0;
+        position: initial;
+        top: initial;
     }
 }

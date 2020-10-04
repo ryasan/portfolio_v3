@@ -23,7 +23,7 @@
     width: 90%;
 
     @media (max-width: $mobile) {
-        flex-direction: column;
+        flex-direction: column-reverse;
         margin-right: initial;
         padding: 0;
     }
@@ -45,7 +45,7 @@
     }
 
     @media (max-width: $mobile) {
-        height: 100%;
+        height: 50%;
         margin-left: initial;
         width: 100%;
 
@@ -54,7 +54,11 @@
         }
 
         &--left {
-            display: none;
+            padding: 2rem;
+
+            svg {
+                height: 100%;
+            }
         }
     }
 }

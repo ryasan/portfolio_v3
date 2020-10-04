@@ -92,7 +92,7 @@ button {
     position: fixed;
     right: 1rem;
     width: 5rem;
-    z-index: 9999;
+    z-index: 9998;
 
     @media (max-width: $mobile) {
         display: block;
