@@ -33,11 +33,23 @@
     color: $charcoal;
     font-size: 25rem;
     left: -3rem;
+    margin: 0;
+    padding: 0;
     position: absolute;
-    top: -15rem;
+    top: 0;
+
+    &::before {
+        bottom: 5rem;
+        color: $teal;
+        content: '<h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 2rem;
+        left: 0;
+        position: absolute;
+    }
 
     &::after {
-        bottom: 5rem;
+        bottom: 12rem;
         color: $teal;
         content: '</h1>';
         font-family: 'La Belle Aurore', cursive;
