@@ -106,14 +106,14 @@ const SliderComponent: React.FC<Props> = props => {
     return (
         <div className='slider'>
             <div className='slider__container'>
+                <div
+                    className='slider__btn slider__btn--prev'
+                    onClick={handlePrevClick}
+                    onMouseEnter={toggleIsHovering}
+                    onMouseLeave={toggleIsHovering}>
+                    <Icon name='chevron-left' />
+                </div>
                 <div className='slider__track'>
-                    <div
-                        className='slider__btn'
-                        onClick={handlePrevClick}
-                        onMouseEnter={toggleIsHovering}
-                        onMouseLeave={toggleIsHovering}>
-                        <Icon name='chevron-left' />
-                    </div>
                     <div
                         className='slider__list'
                         style={{
@@ -130,13 +130,13 @@ const SliderComponent: React.FC<Props> = props => {
                             />
                         ))}
                     </div>
-                    <div
-                        className='slider__btn'
-                        onClick={handleNextClick}
-                        onMouseEnter={toggleIsHovering}
-                        onMouseLeave={toggleIsHovering}>
-                        <Icon name='chevron-right' />
-                    </div>
+                </div>
+                <div
+                    className='slider__btn slider__btn--next'
+                    onClick={handleNextClick}
+                    onMouseEnter={toggleIsHovering}
+                    onMouseLeave={toggleIsHovering}>
+                    <Icon name='chevron-right' />
                 </div>
                 <Dots
                     currentIdx={currentIdx}
@@ -145,7 +145,6 @@ const SliderComponent: React.FC<Props> = props => {
                 />
                 <Timer pct={pct} />
             </div>
-            ∏
         </div>
     )
 }

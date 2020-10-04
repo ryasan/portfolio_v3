@@ -94,7 +94,6 @@ const IndexPage: React.FC = () => {
     useEffect(() => {
         if (_performance?.navigation.type === 1) {
             const previousPage = JSON.parse(localStorage.getItem('page') || '')
-            console.log(Number(previousPage))
             handleNavItemClick(Number(previousPage))
         }
     }, [_performance])

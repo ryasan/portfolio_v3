@@ -1,18 +1,17 @@
 @import '../../globals';
 
 .slider {
-    align-items: flex-end;
-    display: flex;
     height: 100%;
-    justify-content: center;
     width: 100%;
 }
 
 .slider__container {
     align-items: center;
+    bottom: 0;
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: absolute;
+    width: 100%;
 }
 
 .slider__track {
@@ -21,7 +20,6 @@
     left: 0;
     position: relative;
     top: 0;
-    width: 100vw;
 }
 
 .slider__btn {
@@ -35,15 +33,17 @@
     font-size: 3rem;
     height: 5rem;
     justify-content: center;
-    left: 10rem;
     position: absolute;
     top: 25rem;
     transition: background 0.2s, color 0.2s;
     width: 5rem;
     z-index: 1;
 
-    &:last-child {
-        left: initial;
+    &--prev {
+        left: 10rem;
+    }
+
+    &--next {
         right: 10rem;
     }
 
@@ -64,10 +64,8 @@
 
     @media (max-width: $mobile) {
         font-size: 1.5rem;
-        height: 250px;
         height: 3rem;
         top: 35rem;
-        width: 275px;
         width: 3rem;
     }
 }
@@ -94,7 +92,6 @@
 
     @media (max-width: $mobile) {
         height: 250px;
-        pointer-events: none;
         width: 275px;
     }
 }

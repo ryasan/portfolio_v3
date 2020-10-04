@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
+import { useMediaQuery } from 'react-responsive'
 
-import { classList, sleep } from '../../utils'
+import { classList, device, sleep } from '../../utils'
 import { ProjectItem } from '../slider/slider-items'
 import Slider from '../slider'
 import Icon from '../icons'
@@ -15,6 +16,9 @@ interface ProjectProps {
 const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
     const [active, setActive] = useState<boolean>()
     const [slides, setSlides] = useState<number[]>([])
+    const isMobile = useMediaQuery({ query: device.mobileL })
+    const cardWidth = isMobile ? 32.25 : 50
+    const offset = isMobile ? 0 : 17.5
 
     const exit = async () => {
         setActive(false)
@@ -35,7 +39,7 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
                         key={idx}
                         className='project__slide-item'
                         style={{
-                            transform: `translateX(${ i === 0 ? 50 : 50 + 17.5 * i }rem)`
+                            transform: `translateX(${ i === 0 ? cardWidth : cardWidth + offset * i }rem)`
                         }}>
                         <img
                             src={project.images[idx]}
@@ -64,22 +68,28 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
                     <h2 className='project__title'>{project.title}</h2>
                     <div className='project__slider-container'>
                         {renderSlider(slides, project)}
-                        <Icon
-                            name='right-arrow'
-                            className='project__btn project__btn--slide'
-                            onClick={rotate}>
-                            rotate
-                        </Icon>
-                        <a
-                            className='project__btn project__btn--view'
-                            onClick={() => window.open(project.url, '_blank')}>
-                            VIEW PROJECT
-                        </a>
-                        <a
-                            className='project__btn project__btn--code'
-                            onClick={() => window.open(project.repoUrl, '_blank')}>
-                            VIEW CODE
-                        </a>
+                        <div className='project__btn-group'>
+                            <Icon
+                                name='right-arrow'
+                                className='project__btn project__btn--slide'
+                                onClick={rotate}>
+                                rotate
+                            </Icon>
+                            <a
+                                className='project__btn project__btn--view'
+                                onClick={() =>
+                                    window.open(project.url, '_blank')
+                                }>
+                                VIEW PROJECT
+                            </a>
+                            <a
+                                className='project__btn project__btn--code'
+                                onClick={() =>
+                                    window.open(project.repoUrl, '_blank')
+                                }>
+                                VIEW CODE
+                            </a>
+                        </div>
                     </div>
                     <div className='project__text'>
                         <div className='project__description-container'>

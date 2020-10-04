@@ -87,11 +87,11 @@ button {
     border: 0;
     color: $darker;
     display: none;
-    height: 5rem;
+    height: 3.5rem;
     outline: 0;
     position: fixed;
     right: 1rem;
-    width: 5rem;
+    width: 3.5rem;
     z-index: 9998;
 
     @media (max-width: $mobile) {
@@ -99,7 +99,7 @@ button {
     }
 
     &:nth-child(1) {
-        bottom: 7rem;
+        bottom: 5.5rem;
     }
 
     &:nth-child(2) {
