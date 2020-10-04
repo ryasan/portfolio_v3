@@ -3,7 +3,6 @@ import Typed from 'typed.js'
 
 import WorkstationIllustration from './workstation'
 import { components } from '../../pages'
-import { sleep } from '../../utils'
 import './hero.scss'
 
 interface HeroInterface {
@@ -20,10 +19,6 @@ const HeroComponent: React.FC<HeroInterface> = ({
     const [typedA, setTypedA] = useState<any>(null)
     const [typedB, setTypedB] = useState<any>(null)
 
-    const sleepThenRemoveCursor = () => {
-        sleep(2000).then(() => removeCursor(refB))
-    }
-
     const removeCursor = (ref: RefObject<HTMLSpanElement>) => {
         ref?.current?.nextSibling?.remove()
     }
@@ -35,7 +30,7 @@ const HeroComponent: React.FC<HeroInterface> = ({
                 strings: ['Ryan'],
                 typeSpeed: 50,
                 backSpeed: 50,
-                onComplete: sleepThenRemoveCursor
+                onComplete: () => removeCursor(refB)
             })
         )
     }
