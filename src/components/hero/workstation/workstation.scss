@@ -224,7 +224,7 @@ $vertical-screen-width: 12em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
+    position: absolute;
 
     &--horizontal {
         transform: translate(2em, 3.6em);
@@ -273,7 +273,6 @@ $vertical-screen-width: 12em;
 
 .my-stuff__code {
     background: url('../../../static/vertical-screen.svg') center center;
-    background: blue;
     background-repeat: no-repeat;
     background-size: cover;
     height: $vertical-screen-height;
@@ -282,7 +281,6 @@ $vertical-screen-width: 12em;
 
     &--horizontal {
         background: url('../../../static/horizontal-screen.svg') center center;
-        background: blue;
         background-repeat: no-repeat;
         background-size: cover;
         height: $horizontal-screen-height;
