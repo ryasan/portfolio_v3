@@ -17,7 +17,7 @@
         transform: scale(1);
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         width: 100%;
     }
 }
@@ -36,7 +36,7 @@
         width: 100%;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         height: 2rem;
         width: 2rem;
     }
@@ -48,7 +48,7 @@
     max-width: 120rem;
     text-align: left;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 1.5rem;
         text-align: center;
     }
@@ -62,7 +62,7 @@
     transform: translateX(-50%);
     width: 100%;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         padding: 1.5rem;
         position: initial;
         transform: initial;
@@ -74,7 +74,7 @@
     position: absolute;
     top: 27rem;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         position: initial;
     }
 }
@@ -84,7 +84,7 @@
     text-align: left;
     text-indent: 2rem;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 1rem;
         line-height: initial;
         text-indent: initial;
@@ -97,7 +97,7 @@
     margin-top: 3rem;
     text-align: left;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 1.5rem;
         letter-spacing: 0.2rem;
         margin-top: 1.5rem;
@@ -112,7 +112,7 @@
     text-align: left;
     width: 45rem;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         height: 7rem;
         width: initial;
     }
@@ -132,13 +132,13 @@
         line-height: 1;
         margin-right: 1rem;
 
-        @media (max-width: $mobile) {
+        @media (max-width: $mobile-lg) {
             font-size: 1.5rem;
             margin-right: 0.5rem;
         }
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 1rem;
         margin: 0;
     }
@@ -149,7 +149,7 @@
     position: relative;
     width: 100%;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         height: 30rem;
     }
 }
@@ -186,13 +186,13 @@
         height: 40rem;
         width: 50rem;
 
-        @media (max-width: $mobile) {
+        @media (max-width: $mobile-lg) {
             height: 24rem;
             width: 30rem;
         }
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         &:first-child {
             z-index: 1;
         }
@@ -205,7 +205,7 @@
     position: absolute;
     top: 14.8rem;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         bottom: 0;
         flex-direction: row-reverse;
         left: 50%;
@@ -240,7 +240,7 @@
         margin-right: 1rem;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         align-items: center;
         display: flex;
         font-size: 1rem;

@@ -13,7 +13,15 @@
     transform: translate(-50%, -50%);
     width: 100%;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $laptop-lg) {
+        font-size: 10px;
+    }
+
+    @media (max-width: $laptop-lg) {
+        font-size: 8px;
+    }
+
+    @media (max-width: $mobile-lg) {
         font-size: 5px;
     }
 }
@@ -22,12 +30,12 @@
     align-items: flex-end;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 50em;
 }
 
 .desk__table-top {
     background: $off-white;
-    height: 1em;
+    height: 0.75em;
     position: relative;
     transform: translateY(-0.5em);
     width: 100%;
@@ -35,21 +43,21 @@
     &::before {
         background: $off-white;
         content: '';
-        height: 15em;
-        left: 5.5em;
+        height: 13em;
         position: absolute;
-        top: 1.5em;
-        width: 1em;
+        top: 0.9em;
+        transform: translateX(-20em);
+        width: 0.75em;
     }
 
     &::after {
         background: $off-white;
         border-top: 0.1em solid $light-gray;
         content: '';
-        height: 0.5em;
+        height: 0.25em;
         left: 50%;
         position: absolute;
-        top: 1em;
+        top: 0.75em;
         transform: translateX(-50%);
         width: 90%;
     }
@@ -58,16 +66,15 @@
 .desk__drawer {
     align-items: center;
     background: $off-white;
-    bottom: -17.5em;
     display: flex;
     flex-direction: column;
-    height: 15em;
+    height: 13em;
     justify-content: space-around;
     list-style-type: none;
     margin: 0;
     padding: 0;
     position: absolute;
-    right: 7em;
+    transform: translate(-5em, 0.5em);
     width: 10em;
 }
 
@@ -93,14 +100,12 @@
 
 .chair {
     align-items: center;
-    bottom: -17.2em;
     display: flex;
     flex-direction: column;
     height: 30em;
     justify-content: flex-start;
-    left: 50%;
     position: absolute;
-    transform: translateX(-50%);
+    transform: translateY(11em);
     width: 11em;
 }
 
@@ -186,12 +191,13 @@
 }
 
 .my-stuff {
+    align-items: flex-end;
     display: flex;
+    height: 25em;
     justify-content: space-between;
     position: relative;
-    top: 0;
-    transform: translateY(-1.3em);
-    width: 80%;
+    transform: translateY(-0.6em);
+    width: 45em;
 }
 
 $horizontal-screen-height: 10em;
@@ -225,14 +231,14 @@ $vertical-screen-width: 12em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
+    position: relative;
 
     &--horizontal {
-        transform: translate(2em, -11.6em);
+        // transform: translate(2em, -11.3em);
     }
 
     &--vertical {
-        transform: translate(25em, -18.6em);
+        // transform: translate(25em, -18.4em);
     }
 }
 
@@ -310,19 +316,17 @@ $vertical-screen-width: 12em;
 
 .my-stuff__coffee {
     background: $off-white;
-    border-radius: 0.2em 0.2em 1em 1em;
-    height: 4em;
-    position: absolute;
-    right: 3em;
-    top: -3.3em;
-    width: 3em;
+    border-radius: 0.2em 0.2em 0.5em 0.5em;
+    height: 3em;
+    position: relative;
+    width: 2.5em;
 
     &::before {
         background: $light-gray;
         border-radius: 3em;
         content: '';
-        height: 80%;
-        left: 2.2em;
+        height: 60%;
+        left: 2em;
         position: absolute;
         transform: translateY(0.5em);
         width: 0.4em;
@@ -331,10 +335,10 @@ $vertical-screen-width: 12em;
     &::after {
         background: $light-gray;
         border-radius: 3em;
-        bottom: 0.1em;
+        bottom: 0.2em;
         content: '';
-        height: 0.5em;
-        left: 2em;
+        height: 0.7em;
+        left: 1.8em;
         position: absolute;
         transform: rotate(35deg);
         width: 0.4em;
@@ -348,7 +352,7 @@ $vertical-screen-width: 12em;
     height: 2.5em;
     position: absolute;
     right: -1.3em;
-    top: 0.5em;
+    top: 0;
     width: 2em;
     z-index: -1;
 
@@ -372,31 +376,19 @@ $vertical-screen-width: 12em;
     left: 50%;
     margin: 0;
     position: absolute;
-    top: -3.5em;
+    top: -1em;
     transform: translateX(-50%);
 
-    &::before {
-        background: $dark;
-        border-radius: 50%;
-        content: '';
-        height: 0.5em;
-        position: absolute;
-        right: 0.3em;
-        top: 2.3em;
-        width: 1em;
-    }
-
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         top: -1em;
     }
 }
 
 .board {
-    background: url('../../../static/workboard.svg') center center no-repeat;
+    background: url('../../../static/board.svg') center center no-repeat;
     background-size: contain;
     height: 20em;
-    left: 5em;
     position: absolute;
-    top: -35em;
+    transform: translate(-10em, -12em);
     width: 28em;
 }

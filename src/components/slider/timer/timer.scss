@@ -13,7 +13,7 @@
     opacity: 0.2;
     width: 2.5rem;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         height: 1.5rem;
         width: 1.5rem;
     }
@@ -44,7 +44,7 @@
         border-right-color: $teal;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         border-width: 0.5rem;
     }
 }

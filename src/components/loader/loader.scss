@@ -65,7 +65,7 @@
     svg {
         animation: blink 1s forwards;
 
-        @media (max-width: $mobile) {
+        @media (max-width: $mobile-lg) {
             height: 3.5rem;
             width: 3.5rem;
         }
@@ -88,7 +88,7 @@
         position: absolute;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         width: 25rem;
     }
 }

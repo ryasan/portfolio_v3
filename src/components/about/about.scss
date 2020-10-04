@@ -21,7 +21,7 @@
     max-width: $max-width;
     width: 90%;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         flex: initial;
         flex-direction: column;
         height: 100%;
@@ -45,7 +45,7 @@
         justify-content: center;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         width: 100%;
 
         &--left {
@@ -87,7 +87,7 @@
         top: 2rem;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 4rem;
         font-weight: 900;
         left: 0;
@@ -118,7 +118,7 @@
         transform: translateX(6rem);
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 1.2rem;
         line-height: 1.5;
         text-align: center;
@@ -142,7 +142,7 @@
 .about__me {
     width: 100%;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         height: 50%;
         width: 100%;
     }

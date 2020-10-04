@@ -8,9 +8,13 @@ $teal: #0cfdd7;
 
 $max-width: 1400rem;
 
-$mobile: 425px;
+$mobile-sm: 320px;
+$mobile-md: 375px;
+$mobile-lg: 425px;
 $tablet: 768px;
 $laptop: 1024px;
+$laptop-lg: 1440px;
+$desktop: 2560px;
 
 @mixin transition($time, $property: all, $easing: ease-in) {
     transition: $property $time $easing !important;
@@ -95,7 +99,7 @@ button {
     width: 3.5rem;
     z-index: 9998;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         display: block;
     }
 

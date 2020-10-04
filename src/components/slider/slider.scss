@@ -56,13 +56,13 @@
         height: 4rem;
         width: 4rem;
 
-        @media (max-width: $mobile) {
+        @media (max-width: $mobile-lg) {
             height: 2rem;
             width: 2rem;
         }
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 1.5rem;
         height: 3rem;
         top: 35rem;
@@ -90,7 +90,7 @@
     perspective: 337.5px;
     width: $card-width;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         height: 250px;
         width: 275px;
     }
@@ -150,7 +150,7 @@
     padding: 1rem 0;
     width: 100%;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 1rem;
         padding: 0.5rem 0;
     }

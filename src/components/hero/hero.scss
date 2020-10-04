@@ -37,7 +37,7 @@
     max-width: $max-width;
     width: 90%;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         flex-direction: column-reverse;
         margin-right: initial;
     }
@@ -60,7 +60,7 @@
         justify-content: center;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         height: 50%;
         width: 100%;
     }
@@ -89,7 +89,7 @@
         position: absolute;
         top: 5rem;
 
-        @media (max-width: $mobile) {
+        @media (max-width: $mobile-lg) {
             display: none;
         }
     }
@@ -110,17 +110,17 @@
             right: -5rem;
             top: 5rem;
 
-            @media (max-width: $mobile) {
+            @media (max-width: $mobile-lg) {
                 display: none;
             }
         }
 
-        @media (max-width: $mobile) {
+        @media (max-width: $mobile-lg) {
             margin-left: 1rem;
         }
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 3.5rem;
         text-align: center;
 
@@ -138,7 +138,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 3rem;
         text-align: center;
         text-indent: initial;
@@ -152,7 +152,7 @@
     font-weight: inherit;
     margin-top: 1.5rem;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 1.5rem;
         text-align: center;
     }
@@ -166,7 +166,7 @@
     margin-bottom: 0;
     white-space: nowrap;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 1.1rem;
         letter-spacing: 0.5rem;
         text-align: center;
@@ -174,10 +174,11 @@
 }
 
 .hero__svg-container {
+    height: 100%;
     position: relative;
     width: 100%;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         left: 50%;
         position: absolute;
         top: 50%;
@@ -200,7 +201,7 @@
         color: white;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 1.1rem;
     }
 }
@@ -212,7 +213,7 @@
     opacity: 1;
     position: absolute;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         font-size: 3rem;
     }
 }

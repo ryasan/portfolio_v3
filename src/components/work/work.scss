@@ -23,7 +23,7 @@
     position: relative;
     width: 90%;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         flex-direction: column;
         margin-right: initial;
     }
@@ -46,7 +46,7 @@
         right: -6rem;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         // display: none;
         font-size: 4rem;
         left: initial;

@@ -15,7 +15,7 @@ $item-width: 7rem;
     width: $item-width;
     z-index: 9999;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         display: none;
     }
 }
@@ -37,7 +37,7 @@ $item-width: 7rem;
     justify-content: center;
     position: relative;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         flex-direction: row;
     }
 
@@ -133,7 +133,7 @@ $item-width: 7rem;
     transform: translateX($item-width);
     width: $item-width;
 
-    @media (max-width: $mobile) {
+    @media (max-width: $mobile-lg) {
         display: none;
     }
 }
