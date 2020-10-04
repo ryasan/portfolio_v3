@@ -5,12 +5,11 @@ import './workstation.scss'
 const WorkstationIllustration: React.FC = () => {
     return (
         <div className='wrapper'>
-            {/* <div className='board'>
+            <div className='board'>
                 <div className='board__stacked-papers'></div>
-            </div> */}
+            </div>
 
             <div className='my-stuff'>
-                {/* <div></div> */}
                 <div className='my-stuff__screen my-stuff__screen--horizontal'>
                     <div className='my-stuff__screen-inner my-stuff__screen-inner--horizontal'>
                         <div className='my-stuff__track my-stuff__track--horizontal'>

@@ -58,6 +58,7 @@
 .desk__drawer {
     align-items: center;
     background: $off-white;
+    bottom: -17.5em;
     display: flex;
     flex-direction: column;
     height: 15em;
@@ -65,8 +66,8 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    position: relative;
-    right: 5.5em;
+    position: absolute;
+    right: 7em;
     width: 10em;
 }
 
@@ -227,11 +228,11 @@ $vertical-screen-width: 12em;
     position: absolute;
 
     &--horizontal {
-        transform: translate(2em, 3.6em);
+        transform: translate(2em, -11.6em);
     }
 
     &--vertical {
-        transform: translate(-2em, 0.1em);
+        transform: translate(25em, -18.6em);
     }
 }
 
@@ -310,10 +311,10 @@ $vertical-screen-width: 12em;
 .my-stuff__coffee {
     background: $off-white;
     border-radius: 0.2em 0.2em 1em 1em;
-    bottom: -15.4em;
     height: 4em;
-    position: relative;
+    position: absolute;
     right: 3em;
+    top: -3.3em;
     width: 3em;
 
     &::before {

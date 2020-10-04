@@ -4,7 +4,7 @@
     position: relative;
 
     &::before {
-        @include fade-in(9.5s);
+        @include fade-in(7s);
 
         color: $charcoal;
         content: '<body>';
@@ -18,7 +18,7 @@
     }
 
     &::after {
-        @include fade-in(9.5s);
+        @include fade-in(7s);
 
         bottom: 3.5rem;
         color: $charcoal;

@@ -78,7 +78,7 @@
     text-align: left;
 
     &--1::before {
-        @include fade-in(9s);
+        @include fade-in(7s);
 
         color: $charcoal;
         content: '<h1>';
@@ -99,7 +99,7 @@
         margin-left: 2rem;
 
         &::after {
-            @include fade-in(9s);
+            @include fade-in(7s);
 
             color: $charcoal;
             content: '</h1>';
