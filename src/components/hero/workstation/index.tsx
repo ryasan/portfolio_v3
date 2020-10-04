@@ -13,11 +13,11 @@ const WorkstationIllustration: React.FC = () => {
                 {/* <div></div> */}
                 <div className='my-stuff__screen my-stuff__screen--horizontal'>
                     <div className='my-stuff__screen-inner my-stuff__screen-inner--horizontal'>
-                        {/* <div className='my-stuff__track my-stuff__track--horizontal'>
+                        <div className='my-stuff__track my-stuff__track--horizontal'>
                             <div className='my-stuff__code my-stuff__code--horizontal'></div>
                             <div className='my-stuff__code my-stuff__code--horizontal'></div>
                             <div className='my-stuff__code my-stuff__code--horizontal'></div>
-                        </div> */}
+                        </div>
                         <div className='my-stuff__frame my-stuff__frame--horizontal'></div>
                     </div>
                     <div className='my-stuff__base my-stuff__base--horizontal'>
@@ -37,13 +37,13 @@ const WorkstationIllustration: React.FC = () => {
                         <div className='my-stuff__base-bottom my-stuff__base-bottom--vertical'></div>
                     </div>
                 </div>
-                {/* <div className='my-stuff__coffee'>
+                <div className='my-stuff__coffee'>
                     <div className='my-stuff__coffee-steam'>S</div>
                     <div className='my-stuff__coffee-handle'></div>
-                </div> */}
+                </div>
             </div>
 
-            {/* <div className='desk'>
+            <div className='desk'>
                 <div className='desk__table-top'></div>
                 <ul className='desk__drawer'>
                     <li className='desk__drawer-face'></li>
@@ -60,7 +60,7 @@ const WorkstationIllustration: React.FC = () => {
                     <div className='chair__tripod-center'></div>
                     <div className='chair__tripod-leg chair__tripod-leg--right'></div>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }
