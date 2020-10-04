@@ -16,6 +16,22 @@ $laptop: 1024px;
     transition: $property $time $easing !important;
 }
 
+@keyframes typed-js-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+@mixin fade-in($delay: 0) {
+    animation: fade-in 1s $delay forwards;
+}
+
 *,
 *::before,
 *::after {
