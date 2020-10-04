@@ -54,10 +54,10 @@
         }
 
         &--left {
-            padding: 2rem;
+            align-items: flex-end;
 
             svg {
-                height: 100%;
+                height: 80%;
             }
         }
     }
