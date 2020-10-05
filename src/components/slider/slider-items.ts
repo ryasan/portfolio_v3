@@ -60,7 +60,7 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'http://ryasan86.github.io/react_pizza_builder',
         title: 'Mr. Pizza Builder',
-        description: "Mr. Pizza is a create-react-app application with neumorphic inputs. All animations and styling are custom. I used Tailwind CSS for the first time building Mr. Pizza. I gotta say that while Tailwind is amazing, there are some downsides when using it compared to your conventional CSS or CSS in JS. One of them being that your HTML markup becomes a little more bloated since you are using only Tailwind class names to inject styles. That separation of concern when you have individual js and css files is no longer a benefit. Some of the benefits include eliminating specificity and overriding issues and although more bloated, the markup is very simple and easy to read.", // prettier-ignore
+        description: "Mr. Pizza was made with create-react-app. All animations and styling are custom with a neumorphic flavor. I used Tailwind CSS here which is great, but there are some downsides when using it compared to your conventional CSS or CSS in JS. That separation of concern when you have individual JS and CSS files is no longer a benefit.  However, I like how convenient it is to just inject styles with easy to remember utility class names. Other benefits include eliminating specificity issues and self explanatory markup. ", // prettier-ignore
         technologies: [
             'TailWind CSS',
             'SVG',
@@ -82,7 +82,7 @@ export const projectItems: ProjectItem[] = [
         ],
         url: 'https://vibrant-leavitt-7a3709.netlify.app',
         title: 'E & S Streetwear Fullstack Ecommerce Shop',
-        description: "E & S is a Fullstack ecommerce application that has everything from front to back, the whole enchilada. E & S Streetwear utilizes a GraphQL-Yoga server coupled with Prisma to perform all your CRUD operations. Some of the features include a back office component responsible for editing products/user permissions, Stripe payment gateway, live search as you type autocomplete search bar, multilevel products dropdown, cookie based authentication using JWTs, and much more!", // prettier-ignore
+        description: "E & S is a Fullstack ecommerce application that has everything from front to back, the whole enchilada. E & S Streetwear utilizes a GraphQL-Yoga server which is coupled with a Prisma DB to perform all your CRUD operations. Some of the features include a back office component responsible for editing products/user permissions, Stripe payment gateway, live search as you type autocomplete search bar, multilevel products dropdown, cookie based authentication using JWTs, and much more!", // prettier-ignore
         technologies: [
             'Gatsby',
             'Framer Motion',
@@ -110,7 +110,7 @@ export const projectItems: ProjectItem[] = [
         url: 'https://elegant-snyder-2d0543.netlify.app',
         title: 'Marvel Collections Price Scraper',
         description:
-            "Marvel Collections was a full stack project employing Express, React, and some light GraphQL to take care of backend queries and frontend caching. I used Puppeteer to web scrape price information about available comics and online locations of where they could be purchased. Marvel's API is really fun to mess around with. I found that their rich photos made styling easier for this project since comic books almost style themselves!",
+            'Marvel Collections was a full stack project that employed Express, React, and some light GraphQL to take care of backend queries and frontend caching. I used Puppeteer to scrape price information about available comics and online locations of where they could be purchased. Search for you favorite superhero comic book!',
         technologies: [
             'React',
             'GraphQL',
@@ -131,7 +131,7 @@ export const projectItems: ProjectItem[] = [
         url: 'https://ryasan86.github.io/simon',
         title: 'Simon Says Game',
         description:
-            "Building mini games is a great way to polish and sharpen logic skills. You run into unique and interesting problems to try and solve and can get so much out of it. I feel like building a Simon Says game lends itself to a better understanding of asynchronous operations. I had initially used Redux to keep track of state. After React released the useReducer hook I decided to swap out Redux. The new hook is based on the same reducer pattern as Redux and you'll notice similarities such as the use of pure functions and dispatching of actions to manipulate state.",
+            "I like building mini games when I can. You run into interesting problems and can get a lot out of it. I feel like building a Simon Says game lends itself to a better understanding of asynchronous operations. I had initially used Redux to keep track of state. After React released the useReducer hook I decided to swap out Redux. The new hook is based on the same reducer pattern as Redux and you'll notice similarities such as the use of pure functions and dispatching of actions to manipulate state.",
         technologies: [
             'TypeScript',
             'Styled Components',
