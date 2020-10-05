@@ -220,6 +220,7 @@
     color: $teal;
     cursor: pointer;
     height: 4rem;
+    margin-right: 1rem;
     min-width: 5rem;
     padding: 1rem;
     transition: all 0.2s;
@@ -234,10 +235,6 @@
         border-color: $teal;
         color: $teal;
         transform: scale(1.1);
-    }
-
-    &:not(:first-child) {
-        margin-left: 1rem;
     }
 
     @media (max-width: $mobile-lg) {
