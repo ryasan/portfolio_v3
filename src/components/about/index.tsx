@@ -29,12 +29,12 @@ const AboutComponent: React.FC<AboutInterface> = ({ classNames }) => (
                                 development & design!
                             </p>
                             <p className='about__paragraph'>
-                                When I'm not on my never ending quest to improve
-                                my coding techniques you'll most likely find me
-                                at the local billiards room playing pool, eating
-                                something with a bunch of sugar in it, or taking
-                                care of my 2 little ones, a chihuahua named Max
-                                and a french bulldog named Bandit.
+                                When I'm not polishing my coding techniques
+                                you'll most likely find me at the local
+                                billiards room playing pool, eating something
+                                with a bunch of sugar in it, or taking care of
+                                my 2 little ones, a chihuahua named Max and a
+                                french bulldog named Bandit.
                             </p>
                         </div>
                     </div>
