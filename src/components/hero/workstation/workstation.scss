@@ -4,6 +4,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    font-size: 13px;
     height: 100%;
     justify-content: center;
     left: 50%;
@@ -13,11 +14,7 @@
     transform: translate(-50%, -50%);
     width: 100%;
 
-    @media (max-width: $laptop-lg) {
-        font-size: 10px;
-    }
-
-    @media (max-width: $laptop-lg) {
+    @media (max-width: $tablet) {
         font-size: 8px;
     }
 
