@@ -5,7 +5,7 @@ import Dots from './dots/dots'
 import Timer from './timer/timer'
 import Icon from '../icons'
 import { projectItems as _items, ProjectItem } from './slider-items'
-import { classList, device } from '../../utils'
+import { classList, device, sleep } from '../../utils'
 import './slider.scss'
 
 interface Props {
@@ -138,11 +138,7 @@ const SliderComponent: React.FC<Props> = props => {
     }, [isHovering])
 
     useEffect(() => {
-        if (isTicking) {
-            setTimeout(() => {
-                setIsTicking(false)
-            }, 300)
-        }
+        if (isTicking) sleep(300).then(() => setIsTicking(false))
     }, [isTicking])
 
     useEffect(() => {

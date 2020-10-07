@@ -17,7 +17,7 @@ import Work from '../components/work'
 import Contact from '../components/contact'
 import Navbar from '../components/navbar'
 import IconComponent from '../components/icons'
-import { classList } from '../utils'
+import { classList, sleep } from '../utils'
 import '../home.scss'
 
 interface ComponentInterface {
@@ -38,28 +38,28 @@ export const components = [
 const transitionDuration: number = 600
 
 const IndexPage: React.FC = () => {
-    const [isBusy, setIsBusy] = useState(false)
+    const [isTicking, setIsTicking] = useState(false)
     const [pageIdx, setPageIdx] = useState<number>(0)
     const [_performance, setPerformance] = useState<any>(null)
     const firstRender = useRef<boolean>(true)
     const totalSlideNumber = components.length
 
     const slideDurationTimeout = (slideDuration: number) => {
-        setTimeout(() => setIsBusy(false), slideDuration)
+        sleep(slideDuration).then(() => setIsTicking(false))
     }
 
     const parallaxScroll = throttle((e: any) => {
         if (googleMapsRef?.current?.contains(e.target)) return
         const isWheelingDown = -e.deltaY <= 0
 
-        if (isWheelingDown && !isBusy) {
-            setIsBusy(true)
+        if (isWheelingDown && !isTicking) {
+            setIsTicking(true)
             if (pageIdx !== totalSlideNumber - 1) scrollDown()
             slideDurationTimeout(transitionDuration)
         }
 
-        if (!isWheelingDown && !isBusy) {
-            setIsBusy(true)
+        if (!isWheelingDown && !isTicking) {
+            setIsTicking(true)
             if (pageIdx !== 0) scrollUp()
             slideDurationTimeout(transitionDuration)
         }
