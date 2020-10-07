@@ -2,10 +2,11 @@
 
 .dot-list {
     display: flex;
-    margin-top: 5rem;
+    margin-top: 2rem;
+    position: relative;
 
     @media (max-width: $mobile-lg) {
-        margin-top: 6rem;
+        margin-top: 0;
     }
 }
 

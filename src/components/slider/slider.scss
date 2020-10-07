@@ -1,55 +1,91 @@
 @import '../../globals';
 
-.slider {
+$card-body-height: 57px;
+$card-width: 500px;
+$card-height: 400px + $card-body-height;
+$card-count: 7;
+
+.carousel {
+    align-items: center;
+    display: flex;
     height: 100%;
+    justify-content: center;
+    position: relative;
     width: 100%;
 }
 
-.slider__container {
+.carousel__inner {
     align-items: center;
-    bottom: 0;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: calc(#{$card-width * 3});
+}
+
+.carousel__track {
+    height: $card-height;
+    position: relative;
     width: 100%;
 }
 
-.slider__track {
-    display: flex;
-    justify-content: center;
-    left: 0;
-    position: relative;
-    top: 0;
+.carousel__item-list {
+    height: 100%;
+    left: 50%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    transform: translateX(-50%);
+
+    &.odd {
+        width: calc(#{$card-count * $card-width});
+
+        @media (max-width: $mobile-lg) {
+            width: calc(#{$card-count * 300px});
+        }
+    }
+
+    &.even {
+        width: calc(#{$card-count * $card-width + $card-width});
+
+        @media (max-width: $mobile-lg) {
+            width: calc(#{$card-count * 300px});
+        }
+    }
 }
 
-.slider__btn {
+.carousel__btn {
     align-items: center;
-    background: $darker;
+    background: $teal;
     border: 0.2rem solid $teal;
     border-radius: 50%;
-    color: $teal;
+    color: $darker;
     cursor: pointer;
     display: flex;
     font-size: 3rem;
     height: 5rem;
     justify-content: center;
+    left: 50%;
+    outline: 0;
     position: absolute;
-    top: 25rem;
+    top: 50%;
     transition: background 0.2s, color 0.2s;
     width: 5rem;
     z-index: 1;
 
     &--prev {
-        left: 10rem;
+        transform: translate(calc(-50% - 40vw), -50%);
     }
 
     &--next {
-        right: 10rem;
+        transform: translate(calc(-50% + 40vw), -50%);
     }
 
     &:hover {
-        background: $teal;
-        color: $darkest;
+        background: $dark;
+        color: $teal;
     }
 
     svg {
@@ -70,76 +106,107 @@
     }
 }
 
-.slider__list {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    justify-content: center;
-    max-width: $max-width;
-    padding: 5rem 0;
-    position: relative;
-    transition: transform 0.5s;
-    width: 100%;
+.carousel__btn-arrow {
+    border: solid $teal;
+    border-width: 0 0.4rem 0.4rem 0;
+    height: 6rem;
+    padding: 3px;
+    width: 6rem;
+    z-index: 10;
+
+    &--left {
+        transform: rotate(135deg);
+    }
+
+    &--right {
+        transform: rotate(-45deg);
+    }
 }
 
-.slider__list-item {
-    $card-body-height: 57px;
-    $card-width: 375px;
-    $card-height: 300px + $card-body-height;
+.carousel__dots {
+    display: inline-block;
+    left: 50%;
+    margin-top: 2rem;
+    position: absolute;
+    transform: translateX(-50%);
 
-    height: $card-height;
+    .dot {
+        background: #ccc;
+        border: 0;
+        border-radius: 50%;
+        height: 2rem;
+        margin: 0 0.3rem;
+        outline: none;
+        transform: scale(0.5);
+        width: 2rem;
+
+        &.active {
+            background: black;
+        }
+    }
+}
+
+.card {
+    height: 100%;
+    margin: 0;
+    padding: 1rem;
     perspective: 337.5px;
+    position: absolute;
+    transition: all 0.3s;
     width: $card-width;
 
     @media (max-width: $mobile-lg) {
-        height: 250px;
-        width: 275px;
+        width: 300px;
     }
 }
 
-.slider__card-face {
-    align-items: center;
-    backface-visibility: hidden;
+.card__inner {
+    transform-style: preserve-3d;
+    transition: all 0.3s;
+}
+
+.card__img-container {
+    cursor: zoom-in;
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-}
-
-.slider__card-header {
-    flex: 9;
+    height: 25rem;
     height: 100%;
     overflow: hidden;
     position: relative;
     width: 100%;
 
-    &::before {
+    img {
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+        width: 100%;
+    }
+
+    &::after {
         align-items: center;
-        background: rgba(0, 0, 0, 0.8);
-        content: 'View Details';
+        background: rgba(black, 0.5);
+        color: white;
+        content: 'view project';
         display: flex;
-        height: calc(100% + 4px);
+        height: 100%;
         justify-content: center;
-        left: -2px;
         opacity: 0;
-        overflow: hidden;
         position: absolute;
-        top: -2px;
-        transition: all 0.3s;
-        width: calc(100% + 4px);
+        transition: all 0.5s ease;
+        width: 100%;
+    }
+
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+
+        img {
+            transform: scale(1.2);
+        }
     }
 }
 
-.slider__card-image {
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
-    transition: 0.3s ease;
-    width: 100%;
-}
-
-.slider__card-body {
+.card__body {
     align-items: center;
     background: $dark;
     display: flex;
@@ -153,55 +220,5 @@
     @media (max-width: $mobile-lg) {
         font-size: 1rem;
         padding: 0.5rem 0;
-    }
-}
-
-.slider__card-text {
-    font-weight: 400;
-
-    &:last-child {
-        font-weight: 500;
-    }
-}
-
-.slider__card {
-    background: $dark;
-    box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    transform: scale(0.8);
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    width: 100%;
-
-    &.is-center {
-        transform: scale(1.2);
-    }
-
-    &.is-center:hover .slider__card-header::before {
-        opacity: 1;
-        z-index: 999;
-    }
-
-    &.is-center:hover .slider__card-image {
-        transform: scale(1.2);
-    }
-
-    &.is-left-outer-card {
-        transform: rotateY(30deg) scale(0.78);
-    }
-
-    &.is-right-outer-card {
-        transform: rotateY(-30deg) scale(0.78);
-    }
-
-    &.is-left-inner-card {
-        transform: rotateY(30deg) scale(0.8);
-    }
-
-    &.is-right-inner-card {
-        transform: rotateY(-30deg) scale(0.8);
     }
 }

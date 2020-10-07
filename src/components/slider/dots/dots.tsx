@@ -14,18 +14,20 @@ const DotsComponent: React.FC<DotsInfoInterface> = ({
     numberOfDots,
     onClick
 }) => (
-    <div className='dot-list'>
-        {Array.from({ length: numberOfDots }).map((_, i) => (
-            <div
-                key={i}
-                className={classList({
-                    dot: true,
-                    active: i === currentIdx
-                })}
-                onClick={() => onClick(i)}
-            />
-        ))}
-    </div>
+    <ul className='dot-list'>
+        {Array.from({ length: numberOfDots })
+            .map((_, i) => (
+                <li
+                    key={i}
+                    className={classList({
+                        dot: true,
+                        active: i === currentIdx
+                    })}
+                    onClick={() => onClick(i)}
+                />
+            ))
+            .reverse()}
+    </ul>
 )
 
 export default DotsComponent

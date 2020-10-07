@@ -9,7 +9,6 @@ interface TimerInterface {
 
 const TimerComponent: React.FC<TimerInterface> = ({ pct }) => (
     <div className='timer'>
-        <div className='timer__bg' />
         <div
             className={classList({
                 timer__clock: true,
