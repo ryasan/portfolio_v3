@@ -72,9 +72,7 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
                             <Icon
                                 name='right-arrow'
                                 className='project__btn project__btn--slide'
-                                onClick={rotate}>
-                                rotate
-                            </Icon>
+                                onClick={rotate}></Icon>
                             <a
                                 className='project__btn project__btn--view'
                                 onClick={() =>
