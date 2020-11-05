@@ -16,23 +16,26 @@ const AboutComponent: React.FC<AboutInterface> = ({ classNames }) => (
                         <h1 className='about__title'>About</h1>
                         <div className='about__paragraph-container'>
                             <p className='about__paragraph'>
-                                My name is Ryan and I'm a frontend
-                                developer, pool player, and proud father of 2 *a
-                                chihuahua named Baymax and french bulldog named
-                                Bandit. I try my best to pursue interests that
-                                are meaningful to me and coding just so happens
-                                to be on that list.
+                                My name is Ryan Santos and I'm a frontend
+                                developer, pool player, and proud father of a
+                                chihuahua and french bulldog. I always aim to
+                                pursue interests that are meaningful to me and
+                                coding is one of the items on that list.
                             </p>
                             <p className='about__paragraph'>
-                                The origins of career has been rooted in
-                                hardware and support and I haven't always been
+                                My career background has actually been rooted in
+                                support and hardware. I haven't always been
                                 interested in software. To me, it seemed like a
                                 path for the intellectually gifted and I never
-                                thought of myself the type. But as time went on
-                                I was gradually exposed to the software industry
-                                and discovered an unexpected passion in it. Fast
-                                forward to today and now I'm into all things
-                                development & design!
+                                thought of myself the type.
+                            </p>
+                            <p className='about__paragraph'>
+                                While working as a hardware guy and as time
+                                passed, I was gradually exposed to the software
+                                side of things. I quickly found development to
+                                be much more fulfilling so I started a new
+                                chapter in my life. Fast forward to today and
+                                now I'm into all things development & design!
                             </p>
                         </div>
                     </div>
