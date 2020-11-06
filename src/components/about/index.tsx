@@ -23,9 +23,9 @@ const AboutComponent: React.FC<AboutInterface> = ({ classNames }) => (
                                 coding is one of the items on that list.
                             </p>
                             <p className='about__paragraph'>
-                                My career background has actually been rooted in
-                                support and hardware. I haven't always been
-                                interested in software. To me, it seemed like a
+                                I haven't always been interested in software. My
+                                career background has actually been rooted in
+                                support and hardware. To me, it seemed like a
                                 path for the intellectually gifted and I never
                                 thought of myself the type.
                             </p>
