@@ -33,6 +33,17 @@ export const projectItems: ProjectItem[] = [
     },
     {
         images: [
+            'https://i.postimg.cc/hPWyYQcZ/space-invaders.png'
+        ],
+        url: 'https://ryasan86.github.io/space_invaders_typescript/',
+        title: 'Space Invaders',
+        description:
+            'Space Invader game built with TypeScript and SCSS',
+        technologies: ['TypeScript', 'SCSS'],
+        repoUrl: 'https://github.com/ryasan86/space_invaders_typescript'
+    },
+    {
+        images: [
             'https://i.postimg.cc/90K7mbKx/Screen-Shot-2020-10-02-at-6-54-32-PM-min.png',
             'https://i.postimg.cc/KjRThwqk/Screen-Shot-2020-10-02-at-6-55-35-PM-min.png',
             'https://i.postimg.cc/qRmKY4LH/Screen-Shot-2020-10-02-at-6-56-57-PM-min.png'
