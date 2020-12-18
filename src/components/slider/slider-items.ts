@@ -39,7 +39,7 @@ export const projectItems: ProjectItem[] = [
         url: 'https://ryasan86.github.io/space_invaders_typescript/',
         title: 'Space Invaders',
         description:
-            "Space Invader game built with good ol JavaScript, well TypeScript technically I guess. I had a lot of fun building this game. As I've always emphasized, building games is a great way to challenge yourself and improve on thought process and logic. I found myself using a few different patterns building this app, most notably the observer pattern and the decorator pattern. Go ahead and play a game or two.",
+            'Space Invader game built with good ol JavaScript, well TypeScript technically I guess. I always like to emphasized that building games is a great way to challenge yourself and improve on thought process and logic. I found myself using a few different patterns building this app, most notably the observer pattern and the decorator pattern. Go ahead and play a game or two.',
         technologies: ['TypeScript', 'SCSS'],
         repoUrl: 'https://github.com/ryasan86/space_invaders_typescript'
     },
@@ -86,13 +86,13 @@ export const projectItems: ProjectItem[] = [
     },
     {
         images: [
-            'https://i.postimg.cc/W1LvTC47/photos.png',
-            'https://i.postimg.cc/xTbQrn9C/landing.png'
+            'https://i.postimg.cc/xTbQrn9C/landing.png',
+            'https://i.postimg.cc/W1LvTC47/photos.png'
         ],
         url: 'https://ryasan86.github.io/daewon',
         title: 'Daewon Song Skater Bio',
         description:
-            "Portfolio of one my favorite skaters, Daewon Song. Daewon is one of the coolest dudes I've ever met. He's local to where I'm from and I would often see him at the same skate spots I used to go to. He's been such a big inspiration as a skater and as a human being. But I digress. This is portfolio I created in his name and honor. I don't use Jquery as much as I used to but I did this time for old time's sake.",
+            "Portfolio of one my favorite skaters, Daewon Song. He's local to where I'm from and I would often see him at the same skate spots I used to go to. He's been such a big inspiration as a skater and as a human being to me. But I digress. This is a tiny portfolio I created in his name and honor. I don't use Jquery as much as I used to but I did this time for old time's sake.",
         technologies: ['Jquery', 'SCSS', 'Bootstrap 4', 'AOS'],
         repoUrl: 'https://github.com/ryasan86/daewon'
     },
