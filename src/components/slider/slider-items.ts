@@ -32,13 +32,10 @@ export const projectItems: ProjectItem[] = [
         repoUrl: 'https://github.com/ryasan86/mars_rovers'
     },
     {
-        images: [
-            'https://i.postimg.cc/hPWyYQcZ/space-invaders.png'
-        ],
+        images: ['https://i.postimg.cc/hPWyYQcZ/space-invaders.png'],
         url: 'https://ryasan86.github.io/space_invaders_typescript/',
         title: 'Space Invaders',
-        description:
-            'Space Invader game built with TypeScript and SCSS',
+        description: 'Space Invader game built with TypeScript and SCSS',
         technologies: ['TypeScript', 'SCSS'],
         repoUrl: 'https://github.com/ryasan86/space_invaders_typescript'
     },
@@ -82,6 +79,18 @@ export const projectItems: ProjectItem[] = [
             'SCSS'
         ],
         repoUrl: 'https://github.com/ryasan86/react_pizza_builder'
+    },
+    {
+        images: [
+            'https://i.postimg.cc/W1LvTC47/photos.png',
+            'https://i.postimg.cc/xTbQrn9C/landing.png'
+        ],
+        url: 'https://ryasan86.github.io/daewon',
+        title: 'Daewon Song Skater Bio',
+        description:
+            "Portfolio of one my favorite skaters, Daewon Song. Daewon is one of the coolest dudes I've ever met. He's local to where I'm from and I would often see him at the same skate spots I used to go to. He's been such a big inspiration as a skater and as a human being. But I digress. This is portfolio I created in his name and honor. I don't use Jquery as much as I used to but I did this time for old time's sake.",
+        technologies: ['Jquery', 'SCSS', 'Bootstrap 4', 'AOS'],
+        repoUrl: 'https://github.com/ryasan86/daewon'
     },
     {
         images: [
