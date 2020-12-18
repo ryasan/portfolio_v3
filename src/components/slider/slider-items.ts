@@ -32,7 +32,10 @@ export const projectItems: ProjectItem[] = [
         repoUrl: 'https://github.com/ryasan86/mars_rovers'
     },
     {
-        images: ['https://i.postimg.cc/hPWyYQcZ/space-invaders.png'],
+        images: [
+            'https://i.postimg.cc/ZnP5SmhX/space-invaders-menu.png',
+            'https://i.postimg.cc/hPWyYQcZ/space-invaders.png'
+        ],
         url: 'https://ryasan86.github.io/space_invaders_typescript/',
         title: 'Space Invaders',
         description:
