@@ -35,7 +35,8 @@ export const projectItems: ProjectItem[] = [
         images: ['https://i.postimg.cc/hPWyYQcZ/space-invaders.png'],
         url: 'https://ryasan86.github.io/space_invaders_typescript/',
         title: 'Space Invaders',
-        description: 'Space Invader game built with TypeScript and SCSS',
+        description:
+            "Space Invader game built with good ol JavaScript, well TypeScript technically I guess. I had a lot of fun building this game. As I've always emphasized, building games is a great way to challenge yourself and improve on thought process and logic. I found myself using a few different patterns building this app, most notably the observer pattern and the decorator pattern. Go ahead and play a game or two.",
         technologies: ['TypeScript', 'SCSS'],
         repoUrl: 'https://github.com/ryasan86/space_invaders_typescript'
     },
@@ -160,20 +161,5 @@ export const projectItems: ProjectItem[] = [
             'Lodash'
         ],
         repoUrl: 'https://github.com/ryasan86/simon'
-    },
-    {
-        images: [
-            'https://i.postimg.cc/MKBWZvRn/Screen-Shot-2020-09-17-at-11-34-31-PM.png',
-            'https://i.postimg.cc/ryhrSJqt/Screen-Shot-2020-09-24-at-12-10-38-AM.png',
-            'https://i.postimg.cc/BbvPr8B6/Screen-Shot-2020-09-24-at-12-11-12-AM.png',
-            'https://i.postimg.cc/0jHKP8VC/Screen-Shot-2020-09-24-at-12-11-39-AM.png',
-            'https://i.postimg.cc/fTJ059bq/Screen-Shot-2020-09-24-at-12-12-58-AM.png'
-        ],
-        url: 'https://ryasan86.github.io/100_days_css/?day=1',
-        title: '100 Days CSS',
-        description:
-            '100 Days CSS is a project to sharpen and expand my CSS knowledge. Admittedly I have not finished this challenge because it can be time consuming. But! I do plan to finish when time permits :)',
-        technologies: ['CSS', 'SCSS', 'Codepen'],
-        repoUrl: 'https://github.com/ryasan86/100_days_css'
     }
 ]
