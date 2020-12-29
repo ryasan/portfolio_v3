@@ -33,7 +33,7 @@ export const projectItems: ProjectItem[] = [
     },
     {
         images: [
-            'https://i.postimg.cc/XvHQ9nLW/Screen-Shot-2020-12-18-at-11-13-53-PM.png',
+            'https://i.postimg.cc/0rgH99NY/space-invaders.png',
             'https://i.postimg.cc/hPWyYQcZ/space-invaders.png'
         ],
         url: 'https://ryasan86.github.io/space_invaders_typescript/',
