@@ -17,10 +17,10 @@ const AboutComponent: React.FC<AboutInterface> = ({ classNames }) => (
                         <div className='about__paragraph-container'>
                             <p className='about__paragraph'>
                                 My name is Ryan Santos and I'm a frontend
-                                developer, skater, pool player, and proud father of a
-                                chihuahua and french bulldog. I always aim to
-                                pursue interests that are meaningful to me and
-                                coding is one of the items on that list.
+                                developer, skater, pool player, and proud father
+                                of a chihuahua mix and french bulldog. I always
+                                aim to pursue interests that are meaningful to
+                                me and coding is one of the items on that list.
                             </p>
                             <p className='about__paragraph'>
                                 I haven't always been interested in software. My
