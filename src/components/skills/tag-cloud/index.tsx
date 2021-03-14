@@ -21,10 +21,10 @@ export const skills: string[] = [
     'GraphQL',
     'TypeScript',
     'Prisma',
-    'Apollo',
+    'OOP',
     'NodeJS',
-    'Express',
-    'JWT',
+    'Laravel',
+    'Functional',
     'Figma',
     'Git',
     'Netlify',
@@ -36,11 +36,11 @@ export const skills: string[] = [
     'Redux',
     'REST',
     'Cloudinary',
-    'Firebase',
+    'Design Patterns',
     'SCSS',
     'TDD',
-    'Data Visualization',
-    'MongoDB'
+    'D3',
+    'PHP'
 ]
 
 const createInitialState = (size: number) => {
@@ -49,11 +49,11 @@ const createInitialState = (size: number) => {
     })
 }
 
-const { radius, maxSpeed, initSpeed, direction } = {
-    radius: 300 as number,
-    maxSpeed: 20 as number,
-    initSpeed: 40 as number,
-    direction: 135 as number
+const { radius, maxSpeed, initSpeed, direction }: { [key: string]: number } = {
+    radius: 300,
+    maxSpeed: 20,
+    initSpeed: 40,
+    direction: 135
 }
 
 const size: number = 1.5 * radius
