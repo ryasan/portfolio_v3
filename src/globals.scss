@@ -32,8 +32,18 @@ $desktop: 2560px;
   }
 }
 
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
 @mixin fade-in($delay: 0) {
   animation: fade-in 1s $delay forwards;
+}
+
+@mixin fade-out($delay: 0) {
+  animation: fade-out 1s $delay forwards;
 }
 
 *,
@@ -72,7 +82,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f5f5f5;
+  background: whitesmoke;
 }
 
 ul,
