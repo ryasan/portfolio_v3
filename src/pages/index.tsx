@@ -1,10 +1,4 @@
-import React, {
-    useState,
-    useLayoutEffect,
-    useEffect,
-    useRef,
-    createRef
-} from 'react'
+import React, { useState, createRef } from 'react'
 import { throttle } from 'lodash'
 
 import Layout from '../components/layout'
@@ -40,8 +34,6 @@ const transitionDuration: number = 600
 const IndexPage: React.FC = () => {
     const [isTicking, setIsTicking] = useState(false)
     const [pageIdx, setPageIdx] = useState<number>(0)
-    const [_performance, setPerformance] = useState<any>(null)
-    const firstRender = useRef<boolean>(true)
     const totalSlideNumber = components.length
 
     const slideDurationTimeout = (slideDuration: number) => {
@@ -66,11 +58,11 @@ const IndexPage: React.FC = () => {
     })
 
     const scrollDown = (pages: number = 1): void => {
-        setPageIdx(prevIdx => Math.min(totalSlideNumber - 1, prevIdx + pages))
+        setPageIdx((prevIdx) => Math.min(totalSlideNumber - 1, prevIdx + pages))
     }
 
     const scrollUp = (pages: number = 1): void => {
-        setPageIdx(prevIdx => Math.max(0, prevIdx - pages))
+        setPageIdx((prevIdx) => Math.max(0, prevIdx - pages))
     }
 
     const handleNavItemClick = (idx: number) => {
@@ -78,26 +70,7 @@ const IndexPage: React.FC = () => {
         if (idx < pageIdx) scrollUp(pageIdx - idx)
     }
 
-    useLayoutEffect(() => {
-        if (firstRender.current) firstRender.current = false
-        else localStorage.setItem('page', JSON.stringify(pageIdx))
-    }, [pageIdx])
-
-    useEffect(() => setPerformance(performance), [])
-
-    useEffect(() => {
-        if (window?.onbeforeunload) {
-            window.onbeforeunload = (): void => localStorage.removeItem('page')
-        }
-    }, [])
-
-    useEffect(() => {
-        if (_performance?.navigation.type === 1) {
-            const previousPage = JSON.parse(localStorage.getItem('page') || '')
-            handleNavItemClick(Number(previousPage))
-        }
-    }, [_performance])
-
+    // prettier-ignore
     return (
         <Layout>
             <SEO title='Ryan Santos - Frontend Developer' />
@@ -114,10 +87,9 @@ const IndexPage: React.FC = () => {
                         key={i}
                         componentRef={props.componentRef}
                         classNames={classList({
-                            section: true,
+                            'section': true,
                             'down-scroll': i <= pageIdx - 1,
-                            'up-scroll':
-                                i !== totalSlideNumber - 1 && i >= pageIdx
+                            'up-scroll': (i !== totalSlideNumber - 1) && (i >= pageIdx)
                         })}
                         handlePageClick={handleNavItemClick}
                     />
