@@ -1,5 +1,5 @@
-import React, { useState, createRef } from 'react'
-import { throttle, delay } from 'lodash'
+import React, {useState, createRef} from 'react'
+import {throttle, delay} from 'lodash'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -11,7 +11,7 @@ import Work from '../components/work'
 import Contact from '../components/contact'
 import Navbar from '../components/navbar'
 import Icon from '../components/icons'
-import { classList } from '../utils'
+import {classList} from '../utils'
 import '../home.scss'
 
 interface SectionInterface {
@@ -22,11 +22,11 @@ interface SectionInterface {
 const googleMapsRef: React.RefObject<HTMLDivElement> = createRef()
 
 export const sections = [
-  { section: Hero },
-  { section: About },
-  { section: Skills },
-  { section: Work },
-  { section: Contact, sectionRef: googleMapsRef }
+  {section: Hero},
+  {section: About},
+  {section: Skills},
+  {section: Work},
+  {section: Contact, sectionRef: googleMapsRef}
 ]
 
 const IndexPage: React.FC = () => {

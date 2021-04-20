@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
 import Maps from './maps'
 import Icon from '../icons'
-import { classList } from '../../utils'
+import {classList} from '../../utils'
 import './contact.scss'
 
 interface FieldInterface {
@@ -23,10 +23,10 @@ interface ContactInterface {
 }
 
 const fields: FieldInterface[] = [
-  { El: 'input', props: { name: 'name', placeholder: 'Name' } },
-  { El: 'input', props: { name: 'email', placeholder: 'Email' } },
-  { El: 'input', props: { name: 'subject', placeholder: 'Subject' } },
-  { El: 'textarea', props: { name: 'message', placeholder: 'Message', rows: 3 } }
+  {El: 'input', props: {name: 'name', placeholder: 'Name'}},
+  {El: 'input', props: {name: 'email', placeholder: 'Email'}},
+  {El: 'input', props: {name: 'subject', placeholder: 'Subject'}},
+  {El: 'textarea', props: {name: 'message', placeholder: 'Message', rows: 3}}
 ]
 
 const ContactComponent: React.FC<ContactInterface> = (props) => {
@@ -37,7 +37,7 @@ const ContactComponent: React.FC<ContactInterface> = (props) => {
     e.persist()
     const target = e.target as HTMLInputElement | HTMLTextAreaElement
 
-    setState((prev) => ({ ...prev, [target.name]: target.value }))
+    setState((prev) => ({...prev, [target.name]: target.value}))
   }
 
   return (
@@ -52,7 +52,7 @@ const ContactComponent: React.FC<ContactInterface> = (props) => {
               about whatever!
             </p>
             <form method='post' className='contact__form'>
-              {fields.map(({ El, props }, i) => (
+              {fields.map(({El, props}, i) => (
                 <div
                   key={i}
                   className={classList({

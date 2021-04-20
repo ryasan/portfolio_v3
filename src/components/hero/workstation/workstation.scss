@@ -1,200 +1,200 @@
 @import '../../../globals';
 
 .wrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    font-size: 13px;
-    height: 100%;
-    justify-content: center;
-    left: 50%;
-    max-width: calc(1400em / 2);
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  height: 100%;
+  justify-content: center;
+  left: 50%;
+  max-width: calc(1400em / 2);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 
-    @media (max-width: $tablet) {
-        font-size: 8px;
-    }
+  @media (max-width: $tablet) {
+    font-size: 8px;
+  }
 
-    @media (max-width: $mobile-lg) {
-        font-size: 5px;
-    }
+  @media (max-width: $mobile-lg) {
+    font-size: 5px;
+  }
 }
 
 .desk {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-    width: 50em;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  width: 50em;
 }
 
 .desk__table-top {
+  background: $off-white;
+  height: 0.75em;
+  position: relative;
+  transform: translateY(-0.5em);
+  width: 100%;
+
+  &::before {
     background: $off-white;
-    height: 0.75em;
-    position: relative;
-    transform: translateY(-0.5em);
-    width: 100%;
+    content: '';
+    height: 13em;
+    position: absolute;
+    top: 0.9em;
+    transform: translateX(-20em);
+    width: 0.75em;
+  }
 
-    &::before {
-        background: $off-white;
-        content: '';
-        height: 13em;
-        position: absolute;
-        top: 0.9em;
-        transform: translateX(-20em);
-        width: 0.75em;
-    }
-
-    &::after {
-        background: $off-white;
-        border-top: 0.1em solid $light-gray;
-        content: '';
-        height: 0.25em;
-        left: 50%;
-        position: absolute;
-        top: 0.75em;
-        transform: translateX(-50%);
-        width: 90%;
-    }
+  &::after {
+    background: $off-white;
+    border-top: 0.1em solid $light-gray;
+    content: '';
+    height: 0.25em;
+    left: 50%;
+    position: absolute;
+    top: 0.75em;
+    transform: translateX(-50%);
+    width: 90%;
+  }
 }
 
 .desk__drawer {
-    align-items: center;
-    background: $off-white;
-    display: flex;
-    flex-direction: column;
-    height: 13em;
-    justify-content: space-around;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    transform: translate(-5em, 0.5em);
-    width: 10em;
+  align-items: center;
+  background: $off-white;
+  display: flex;
+  flex-direction: column;
+  height: 13em;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transform: translate(-5em, 0.5em);
+  width: 10em;
 }
 
 .desk__drawer-face {
-    background: $dark;
-    height: 3em;
-    list-style-type: none;
-    position: relative;
-    width: 8em;
+  background: $dark;
+  height: 3em;
+  list-style-type: none;
+  position: relative;
+  width: 8em;
 
-    &::before {
-        background: $off-white;
-        border-radius: 0 0 0.75em 0.75em;
-        content: '';
-        height: 1em;
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 2.5em;
-    }
+  &::before {
+    background: $off-white;
+    border-radius: 0 0 0.75em 0.75em;
+    content: '';
+    height: 1em;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.5em;
+  }
 }
 
 .chair {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 30em;
-    justify-content: flex-start;
-    position: absolute;
-    transform: translateY(11em);
-    width: 11em;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 30em;
+  justify-content: flex-start;
+  position: absolute;
+  transform: translateY(11em);
+  width: 11em;
 }
 
 .chair__back-post {
-    background: $darker;
-    border-radius: 1em;
-    height: 65%;
-    position: relative;
-    width: 100%;
+  background: $darker;
+  border-radius: 1em;
+  height: 65%;
+  position: relative;
+  width: 100%;
 
-    &::before {
-        background: $light-gray;
-        bottom: -1.5em;
-        content: '';
-        height: 1.5em;
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%);
-        width: 1em;
-    }
+  &::before {
+    background: $light-gray;
+    bottom: -1.5em;
+    content: '';
+    height: 1.5em;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 1em;
+  }
 }
 
 .chair__seat {
-    background: $darker;
-    border-radius: 0 0 1.5em 1.5em;
-    height: 1.5em;
-    transform: translateY(1.5em);
-    width: 100%;
+  background: $darker;
+  border-radius: 0 0 1.5em 1.5em;
+  height: 1.5em;
+  transform: translateY(1.5em);
+  width: 100%;
 
-    &::before {
-        background: $light-gray;
-        bottom: -0.3em;
-        content: '';
-        height: 0.3em;
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%);
-        width: 80%;
-    }
+  &::before {
+    background: $light-gray;
+    bottom: -0.3em;
+    content: '';
+    height: 0.3em;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 80%;
+  }
 
-    &::after {
-        background: $light-gray;
-        bottom: -1.3em;
-        content: '';
-        height: 1em;
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%);
-        width: 1.5em;
-    }
+  &::after {
+    background: $light-gray;
+    bottom: -1.3em;
+    content: '';
+    height: 1em;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 1.5em;
+  }
 }
 
 .chair__tripod {
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  position: absolute;
 }
 
 .chair__tripod-center {
-    background: $light-gray;
-    clip-path: polygon(20% 0%, 80% 0%, 60% 100%, 40% 100%);
-    height: 6.2em;
-    width: 1.7em;
+  background: $light-gray;
+  clip-path: polygon(20% 0%, 80% 0%, 60% 100%, 40% 100%);
+  height: 6.2em;
+  width: 1.7em;
 }
 
 .chair__tripod-leg {
-    background: $light-gray;
-    bottom: 0;
-    clip-path: polygon(100% 39%, 100% 58%, 46% 100%, 40% 100%);
-    height: 4em;
-    left: -3.4em;
-    position: absolute;
-    width: 4em;
-    z-index: 100;
+  background: $light-gray;
+  bottom: 0;
+  clip-path: polygon(100% 39%, 100% 58%, 46% 100%, 40% 100%);
+  height: 4em;
+  left: -3.4em;
+  position: absolute;
+  width: 4em;
+  z-index: 100;
 
-    &--right {
-        background: $light-gray;
-        left: initial;
-        right: -3.3em;
-        transform: rotateY(180deg);
-    }
+  &--right {
+    background: $light-gray;
+    left: initial;
+    right: -3.3em;
+    transform: rotateY(180deg);
+  }
 }
 
 .my-stuff {
-    align-items: flex-end;
-    display: flex;
-    height: 25em;
-    justify-content: space-between;
-    position: relative;
-    transform: translateY(-0.6em);
-    width: 45em;
+  align-items: flex-end;
+  display: flex;
+  height: 25em;
+  justify-content: space-between;
+  position: relative;
+  transform: translateY(-0.6em);
+  width: 45em;
 }
 
 $horizontal-screen-height: 10em;
@@ -203,189 +203,189 @@ $vertical-screen-height: 17em;
 $vertical-screen-width: 12em;
 
 @keyframes infinite-slide-A {
-    0% {
-        transform: translateY($vertical-screen-height * -2);
-    }
+  0% {
+    transform: translateY($vertical-screen-height * -2);
+  }
 
-    100% {
-        transform: translateY(0);
-    }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes infinite-slide-B {
-    0% {
-        transform: translateY($horizontal-screen-height * -2);
-    }
+  0% {
+    transform: translateY($horizontal-screen-height * -2);
+  }
 
-    100% {
-        transform: translateY(0);
-    }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .my-stuff__screen {
-    align-items: center;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
+  align-items: center;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 
-    &--horizontal {
-        // transform: translate(2em, -11.3em);
-    }
+  &--horizontal {
+    // transform: translate(2em, -11.3em);
+  }
 
-    &--vertical {
-        // transform: translate(25em, -18.4em);
-    }
+  &--vertical {
+    // transform: translate(25em, -18.4em);
+  }
 }
 
 .my-stuff__screen-inner {
-    border-radius: 0.3em;
-    height: $vertical-screen-height;
-    overflow: hidden;
-    position: relative;
-    width: $vertical-screen-width;
+  border-radius: 0.3em;
+  height: $vertical-screen-height;
+  overflow: hidden;
+  position: relative;
+  width: $vertical-screen-width;
 
-    &--horizontal {
-        height: $horizontal-screen-height;
-        width: $horizontal-screen-width;
-    }
+  &--horizontal {
+    height: $horizontal-screen-height;
+    width: $horizontal-screen-width;
+  }
 }
 
 .my-stuff__frame {
-    background: transparent;
-    border: 0.6em solid $darker;
-    height: $vertical-screen-height;
-    position: absolute;
-    width: 100%;
-    z-index: 100;
+  background: transparent;
+  border: 0.6em solid $darker;
+  height: $vertical-screen-height;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
 
-    &--horizontal {
-        height: $horizontal-screen-height;
-    }
+  &--horizontal {
+    height: $horizontal-screen-height;
+  }
 }
 
 .my-stuff__track {
-    animation: infinite-slide-A 20s linear infinite;
-    position: absolute;
-    width: 100%;
+  animation: infinite-slide-A 20s linear infinite;
+  position: absolute;
+  width: 100%;
 
-    &--horizontal {
-        animation-name: infinite-slide-B;
-    }
+  &--horizontal {
+    animation-name: infinite-slide-B;
+  }
 }
 
 .my-stuff__code {
-    background: url('../../../static/vertical-screen.svg') center center;
+  background: url('../../../static/vertical-screen.svg') center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: $vertical-screen-height;
+  position: relative;
+  width: 100%;
+
+  &--horizontal {
+    background: url('../../../static/horizontal-screen.svg') center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: $vertical-screen-height;
-    position: relative;
-    width: 100%;
-
-    &--horizontal {
-        background: url('../../../static/horizontal-screen.svg') center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: $horizontal-screen-height;
-    }
+    height: $horizontal-screen-height;
+  }
 }
 
 .my-stuff__base {
-    background: $darker;
-    border: 0.7em solid $darkest;
-    border-left-color: $dark;
-    border-right-color: $dark;
-    border-top: 0;
-    height: 1.5em;
-    position: relative;
-    width: 4em;
+  background: $darker;
+  border: 0.7em solid $darkest;
+  border-left-color: $dark;
+  border-right-color: $dark;
+  border-top: 0;
+  height: 1.5em;
+  position: relative;
+  width: 4em;
 }
 
 .my-stuff__base-bottom {
-    background: $darker;
-    bottom: -1.3em;
-    height: 0.6em;
-    position: absolute;
-    transform: translateX(-0.7em);
-    width: 4em;
+  background: $darker;
+  bottom: -1.3em;
+  height: 0.6em;
+  position: absolute;
+  transform: translateX(-0.7em);
+  width: 4em;
 }
 
 .my-stuff__coffee {
-    background: $off-white;
-    border-radius: 0.2em 0.2em 0.5em 0.5em;
-    height: 3em;
-    position: relative;
-    width: 2.5em;
+  background: $off-white;
+  border-radius: 0.2em 0.2em 0.5em 0.5em;
+  height: 3em;
+  position: relative;
+  width: 2.5em;
 
-    &::before {
-        background: $light-gray;
-        border-radius: 3em;
-        content: '';
-        height: 60%;
-        left: 2em;
-        position: absolute;
-        transform: translateY(0.5em);
-        width: 0.4em;
-    }
+  &::before {
+    background: $light-gray;
+    border-radius: 3em;
+    content: '';
+    height: 60%;
+    left: 2em;
+    position: absolute;
+    transform: translateY(0.5em);
+    width: 0.4em;
+  }
 
-    &::after {
-        background: $light-gray;
-        border-radius: 3em;
-        bottom: 0.2em;
-        content: '';
-        height: 0.7em;
-        left: 1.8em;
-        position: absolute;
-        transform: rotate(35deg);
-        width: 0.4em;
-    }
+  &::after {
+    background: $light-gray;
+    border-radius: 3em;
+    bottom: 0.2em;
+    content: '';
+    height: 0.7em;
+    left: 1.8em;
+    position: absolute;
+    transform: rotate(35deg);
+    width: 0.4em;
+  }
 }
 
 .my-stuff__coffee-handle {
-    background: $off-white;
+  background: $off-white;
+  border-radius: 50%;
+  content: '';
+  height: 2.5em;
+  position: absolute;
+  right: -1.3em;
+  top: 0;
+  width: 2em;
+  z-index: -1;
+
+  &::before {
+    background: $dark;
     border-radius: 50%;
     content: '';
-    height: 2.5em;
+    height: 1.4em;
+    left: 50%;
     position: absolute;
-    right: -1.3em;
-    top: 0;
-    width: 2em;
-    z-index: -1;
-
-    &::before {
-        background: $dark;
-        border-radius: 50%;
-        content: '';
-        height: 1.4em;
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 1em;
-    }
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1em;
+  }
 }
 
 .my-stuff__coffee-steam {
-    color: $off-white;
-    font-family: 'Caveat', cursive;
-    font-size: 3em;
-    left: 50%;
-    margin: 0;
-    position: absolute;
-    top: -1em;
-    transform: translateX(-50%);
+  color: $off-white;
+  font-family: 'Caveat', cursive;
+  font-size: 3em;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top: -1em;
+  transform: translateX(-50%);
 
-    @media (max-width: $mobile-lg) {
-        top: -1em;
-    }
+  @media (max-width: $mobile-lg) {
+    top: -1em;
+  }
 }
 
 .board {
-    background: url('../../../static/board.svg') center center no-repeat;
-    background-size: contain;
-    height: 20em;
-    position: absolute;
-    transform: translate(-10em, -12em);
-    width: 28em;
+  background: url('../../../static/board.svg') center center no-repeat;
+  background-size: contain;
+  height: 20em;
+  position: absolute;
+  transform: translate(-10em, -12em);
+  width: 28em;
 }

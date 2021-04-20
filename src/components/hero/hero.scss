@@ -1,225 +1,225 @@
 @import '../../globals';
 
 @keyframes typed-js-blink {
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes fade-in {
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 @mixin fade-in($delay: 0) {
-    animation: fade-in 1s $delay forwards;
+  animation: fade-in 1s $delay forwards;
 }
 
 .hero {
-    background: $dark;
+  background: $dark;
 }
 
 .hero__outer {
-    align-items: center;
-    background: $dark;
-    display: flex;
-    height: 100%;
-    justify-content: center;
+  align-items: center;
+  background: $dark;
+  display: flex;
+  height: 100%;
+  justify-content: center;
 }
 
 .hero__inner {
-    align-items: center;
-    display: flex;
-    height: 90%;
-    justify-content: center;
-    margin-right: 7rem;
-    max-width: $max-width;
-    width: 90%;
+  align-items: center;
+  display: flex;
+  height: 90%;
+  justify-content: center;
+  margin-right: 7rem;
+  max-width: $max-width;
+  width: 90%;
 
-    @media (max-width: $mobile-lg) {
-        flex-direction: column-reverse;
-        margin-right: initial;
-    }
+  @media (max-width: $mobile-lg) {
+    flex-direction: column-reverse;
+    margin-right: initial;
+  }
 }
 
 .hero__column {
-    display: flex;
-    height: 100%;
-    width: 50%;
+  display: flex;
+  height: 100%;
+  width: 50%;
 
-    &--left {
-        align-items: center;
-        justify-content: flex-end;
-        position: relative;
-    }
+  &--left {
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
 
-    &--right {
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-    }
+  &--right {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    @media (max-width: $mobile-lg) {
-        height: 50%;
-        width: 100%;
-    }
+  @media (max-width: $mobile-lg) {
+    height: 50%;
+    width: 100%;
+  }
 }
 
 .hero__text-container {
-    font-weight: 300;
-    width: 100%;
+  font-weight: 300;
+  width: 100%;
 }
 
 .hero__title {
-    font-size: 7rem;
-    font-weight: 800;
-    position: relative;
-    text-align: left;
+  font-size: 7rem;
+  font-weight: 800;
+  position: relative;
+  text-align: left;
 
-    &--1::before {
-        @include fade-in(7s);
+  &--1::before {
+    @include fade-in(7s);
 
-        color: $charcoal;
-        content: '<h1>';
-        font-family: 'La Belle Aurore', cursive;
-        font-size: 2rem;
-        left: -4rem;
-        opacity: 0;
-        position: absolute;
-        top: 5rem;
+    color: $charcoal;
+    content: '<h1>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    left: -4rem;
+    opacity: 0;
+    position: absolute;
+    top: 5rem;
 
-        @media (max-width: $mobile-lg) {
-            display: none;
-        }
+    @media (max-width: $mobile-lg) {
+      display: none;
     }
+  }
 
-    &--2 {
-        color: $teal;
-        margin-left: 2rem;
+  &--2 {
+    color: $teal;
+    margin-left: 2rem;
 
-        &::after {
-            @include fade-in(7s);
+    &::after {
+      @include fade-in(7s);
 
-            color: $charcoal;
-            content: '</h1>';
-            font-family: 'La Belle Aurore', cursive;
-            font-size: 2rem;
-            opacity: 0;
-            position: absolute;
-            right: -5rem;
-            top: 5rem;
+      color: $charcoal;
+      content: '</h1>';
+      font-family: 'La Belle Aurore', cursive;
+      font-size: 2rem;
+      opacity: 0;
+      position: absolute;
+      right: -5rem;
+      top: 5rem;
 
-            @media (max-width: $mobile-lg) {
-                display: none;
-            }
-        }
-
-        @media (max-width: $mobile-lg) {
-            margin-left: 1rem;
-        }
+      @media (max-width: $mobile-lg) {
+        display: none;
+      }
     }
 
     @media (max-width: $mobile-lg) {
-        font-size: 3.5rem;
-        text-align: center;
-
-        &::before,
-        &::after {
-            display: none;
-        }
+      margin-left: 1rem;
     }
+  }
+
+  @media (max-width: $mobile-lg) {
+    font-size: 3.5rem;
+    text-align: center;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .hero__title-newline {
-    display: inline;
-    overflow: hidden;
-    text-indent: 4rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  display: inline;
+  overflow: hidden;
+  text-indent: 4rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
-    @media (max-width: $mobile-lg) {
-        font-size: 3rem;
-        text-align: center;
-        text-indent: initial;
-    }
+  @media (max-width: $mobile-lg) {
+    font-size: 3rem;
+    text-align: center;
+    text-indent: initial;
+  }
 }
 
 .hero__title-ampersand {
-    color: $teal;
-    display: block;
-    font-size: 2.5rem;
-    font-weight: inherit;
-    margin-top: 1.5rem;
+  color: $teal;
+  display: block;
+  font-size: 2.5rem;
+  font-weight: inherit;
+  margin-top: 1.5rem;
 
-    @media (max-width: $mobile-lg) {
-        font-size: 1.5rem;
-        text-align: center;
-    }
+  @media (max-width: $mobile-lg) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 
 .hero__subtitle {
-    color: $charcoal;
-    font-size: 1.8rem;
-    font-weight: inherit;
-    letter-spacing: 0.9rem;
-    margin-bottom: 0;
-    white-space: nowrap;
+  color: $charcoal;
+  font-size: 1.8rem;
+  font-weight: inherit;
+  letter-spacing: 0.9rem;
+  margin-bottom: 0;
+  white-space: nowrap;
 
-    @media (max-width: $mobile-lg) {
-        font-size: 1.1rem;
-        letter-spacing: 0.5rem;
-        text-align: center;
-    }
+  @media (max-width: $mobile-lg) {
+    font-size: 1.1rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+  }
 }
 
 .hero__svg-container {
-    height: 100%;
-    position: relative;
-    width: 100%;
+  height: 100%;
+  position: relative;
+  width: 100%;
 
-    @media (max-width: $mobile-lg) {
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
+  @media (max-width: $mobile-lg) {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .hero__btn {
-    align-self: center;
-    background: transparent;
-    border: 0.2rem solid $teal;
-    color: $teal;
-    letter-spacing: 0.9rem;
-    margin: 4rem;
-    padding: 1rem 2rem;
-    transition: background 0.2s, color 0.2s;
+  align-self: center;
+  background: transparent;
+  border: 0.2rem solid $teal;
+  color: $teal;
+  letter-spacing: 0.9rem;
+  margin: 4rem;
+  padding: 1rem 2rem;
+  transition: background 0.2s, color 0.2s;
 
-    &:hover {
-        background: $teal;
-        color: white;
-    }
+  &:hover {
+    background: $teal;
+    color: white;
+  }
 
-    @media (max-width: $mobile-lg) {
-        font-size: 1.1rem;
-    }
+  @media (max-width: $mobile-lg) {
+    font-size: 1.1rem;
+  }
 }
 
 .typed-cursor {
-    animation: typed-js-blink 0.7s infinite;
-    color: $teal;
-    font-size: 6rem;
-    opacity: 1;
-    position: absolute;
+  animation: typed-js-blink 0.7s infinite;
+  color: $teal;
+  font-size: 6rem;
+  opacity: 1;
+  position: absolute;
 
-    @media (max-width: $mobile-lg) {
-        font-size: 3rem;
-    }
+  @media (max-width: $mobile-lg) {
+    font-size: 3rem;
+  }
 }
 
 .typed-fade-out {
-    animation: 0;
-    opacity: 0;
-    transition: opacity 0.25s;
+  animation: 0;
+  opacity: 0;
+  transition: opacity 0.25s;
 }

@@ -1,47 +1,47 @@
 @import '../globals';
 
 .layout {
-    position: relative;
+  position: relative;
 
+  &::before {
+    @include fade-in(7s);
+
+    color: $charcoal;
+    content: '<body>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    left: 4rem;
+    opacity: 0;
+    position: fixed;
+    top: 3.5rem;
+    z-index: 10;
+  }
+
+  &::after {
+    @include fade-in(7s);
+
+    bottom: 3.5rem;
+    color: $charcoal;
+    content: '</body>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    left: 4rem;
+    opacity: 0;
+    position: fixed;
+    z-index: 10;
+  }
+
+  @media (max-width: $mobile-lg) {
     &::before {
-        @include fade-in(7s);
-
-        color: $charcoal;
-        content: '<body>';
-        font-family: 'La Belle Aurore', cursive;
-        font-size: 2rem;
-        left: 4rem;
-        opacity: 0;
-        position: fixed;
-        top: 3.5rem;
-        z-index: 10;
+      display: none;
     }
 
     &::after {
-        @include fade-in(7s);
-
-        bottom: 3.5rem;
-        color: $charcoal;
-        content: '</body>';
-        font-family: 'La Belle Aurore', cursive;
-        font-size: 2rem;
-        left: 4rem;
-        opacity: 0;
-        position: fixed;
-        z-index: 10;
+      display: none;
     }
-
-    @media (max-width: $mobile-lg) {
-        &::before {
-            display: none;
-        }
-
-        &::after {
-            display: none;
-        }
-    }
+  }
 }
 
 .layout__main {
-    position: relative;
+  position: relative;
 }

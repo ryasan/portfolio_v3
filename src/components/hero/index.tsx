@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect, RefObject } from 'react'
+import React, {useRef, useState, useEffect, RefObject} from 'react'
 import Typed from 'typed.js'
 
 import WorkstationIllustration from './workstation'
-import { sections } from '../../pages'
+import {sections} from '../../pages'
 import './hero.scss'
 
 interface HeroInterface {
@@ -10,7 +10,7 @@ interface HeroInterface {
   handlePageClick: (idx: number) => void
 }
 
-const HeroComponent: React.FC<HeroInterface> = ({ classNames, handlePageClick }) => {
+const HeroComponent: React.FC<HeroInterface> = ({classNames, handlePageClick}) => {
   const refA = useRef<HTMLSpanElement>(null)
   const refB = useRef<HTMLSpanElement>(null)
   const [typedA, setTypedA] = useState<any>(null)

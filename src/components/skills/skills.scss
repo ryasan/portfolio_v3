@@ -1,133 +1,133 @@
 @import '../../globals';
 
 .skills {
-    background: $dark;
+  background: $dark;
 }
 
 .skills__outer {
-    align-items: center;
-    background: $dark;
-    display: flex;
-    height: 100%;
-    justify-content: center;
+  align-items: center;
+  background: $dark;
+  display: flex;
+  height: 100%;
+  justify-content: center;
 }
 
 .skills__inner {
-    align-items: center;
-    display: flex;
-    height: 90%;
-    justify-content: center;
-    margin-right: 7rem;
-    max-width: $max-width;
-    padding: 0 5rem;
-    width: 90%;
+  align-items: center;
+  display: flex;
+  height: 90%;
+  justify-content: center;
+  margin-right: 7rem;
+  max-width: $max-width;
+  padding: 0 5rem;
+  width: 90%;
 
-    @media (max-width: $mobile-lg) {
-        flex-direction: column-reverse;
-        margin-right: initial;
-        padding: 0;
-    }
+  @media (max-width: $mobile-lg) {
+    flex-direction: column-reverse;
+    margin-right: initial;
+    padding: 0;
+  }
 }
 
 .skills__column {
-    align-items: center;
-    display: flex;
+  align-items: center;
+  display: flex;
+
+  &--right {
+    flex-direction: column;
+    margin-left: 5rem;
+    position: relative;
+    width: 60%;
+  }
+
+  &--left {
+    width: 40%;
+  }
+
+  @media (max-width: $mobile-lg) {
+    height: 50%;
+    margin-left: initial;
+    width: 100%;
 
     &--right {
-        flex-direction: column;
-        margin-left: 5rem;
-        position: relative;
-        width: 60%;
+      flex-direction: column;
     }
 
     &--left {
-        width: 40%;
+      align-items: flex-end;
+
+      svg {
+        height: 80%;
+      }
     }
-
-    @media (max-width: $mobile-lg) {
-        height: 50%;
-        margin-left: initial;
-        width: 100%;
-
-        &--right {
-            flex-direction: column;
-        }
-
-        &--left {
-            align-items: flex-end;
-
-            svg {
-                height: 80%;
-            }
-        }
-    }
+  }
 }
 
 .skills__title {
-    color: $teal;
-    font-size: 6rem;
-    font-weight: 900;
+  color: $teal;
+  font-size: 6rem;
+  font-weight: 900;
+  position: relative;
+  text-align: left;
+  width: 100%;
+
+  &::before {
+    color: $charcoal;
+    content: '<h1>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    left: 0;
+    position: absolute;
+    top: -1.5rem;
+  }
+
+  &::after {
+    bottom: -2.5rem;
+    color: $charcoal;
+    content: '</h1>';
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    left: -2rem;
+    position: absolute;
+  }
+
+  @media (max-width: $mobile-lg) {
+    font-size: 4rem;
+    margin: 2rem 0;
     position: relative;
-    text-align: left;
-    width: 100%;
+    text-align: center;
+    top: 0;
+    transform: initial;
 
-    &::before {
-        color: $charcoal;
-        content: '<h1>';
-        font-family: 'La Belle Aurore', cursive;
-        font-size: 2rem;
-        left: 0;
-        position: absolute;
-        top: -1.5rem;
-    }
-
+    &::before,
     &::after {
-        bottom: -2.5rem;
-        color: $charcoal;
-        content: '</h1>';
-        font-family: 'La Belle Aurore', cursive;
-        font-size: 2rem;
-        left: -2rem;
-        position: absolute;
+      display: none;
     }
-
-    @media (max-width: $mobile-lg) {
-        font-size: 4rem;
-        margin: 2rem 0;
-        position: relative;
-        text-align: center;
-        top: 0;
-        transform: initial;
-
-        &::before,
-        &::after {
-            display: none;
-        }
-    }
+  }
 }
 
 .skills__paragraph {
-    line-height: 2;
-    margin: initial 0;
-    position: relative;
-    text-align: left;
-    text-indent: 3rem;
-    z-index: 1;
+  line-height: 2;
+  margin: initial 0;
+  position: relative;
+  text-align: left;
+  text-indent: 3rem;
+  z-index: 1;
 
-    @media (max-width: $mobile-lg) {
-        font-size: 1.2rem;
-        line-height: initial;
-        text-align: center;
-        text-indent: initial;
-        transform: initial;
-    }
+  @media (max-width: $mobile-lg) {
+    font-size: 1.2rem;
+    line-height: initial;
+    text-align: center;
+    text-indent: initial;
+    transform: initial;
+  }
 }
 
 .skills__tag-cloud-container {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    position: relative;
-    width: 100%;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }
