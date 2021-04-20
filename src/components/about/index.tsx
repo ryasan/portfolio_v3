@@ -3,11 +3,7 @@ import React from 'react'
 import './about.scss'
 import SvgImage from '../svgs'
 
-interface AboutInterface {
-	classNames: string
-}
-
-const AboutComponent: React.FC<AboutInterface> = ({classNames}) => (
+const AboutComponent: React.FC<{classNames: string}> = ({classNames}) => (
 	<section className={`about ${classNames}`}>
 		<div className='parallax-wrapper'>
 			<div className='about__outer'>

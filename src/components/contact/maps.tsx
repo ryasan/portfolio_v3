@@ -209,7 +209,7 @@ const MapsComponent: React.FC<MapsInterface> = compose(
 )((props: MapsInterface) => (
 	<GoogleMap defaultZoom={12} defaultCenter={{lat: 34.079425, lng: -118.134693}} defaultOptions={{styles}}>
 		{props.markerIsShowing && (
-			<Marker position={{lat: 34.079425, lng: -118.134693}} icon={require('../../../static/marker.svg')} />
+			<Marker position={{lat: 34.079425, lng: -118.134693}} icon={require('../../static/marker.svg')} />
 		)}
 	</GoogleMap>
 ))

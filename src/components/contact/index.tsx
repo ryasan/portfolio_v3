@@ -5,21 +5,26 @@ import Icon from '../icons'
 import {classList} from '../../utils'
 import './contact.scss'
 
-interface ContactInterface {
-	classNames: string
-	sectionRef: React.RefObject<HTMLDivElement>
+interface FieldProps {
+	El: React.JSXElementConstructor<HTMLInputElement | HTMLTextAreaElement> | string
+	props?: any
 }
 
-const fields: {El: React.JSXElementConstructor<HTMLInputElement | HTMLTextAreaElement> | string; props?: any}[] = [
+const fields: FieldProps[] = [
 	{El: 'input', props: {name: 'name', placeholder: 'Name'}},
 	{El: 'input', props: {name: 'email', placeholder: 'Email'}},
 	{El: 'input', props: {name: 'subject', placeholder: 'Subject'}},
 	{El: 'textarea', props: {name: 'message', placeholder: 'Message', rows: 3}}
 ]
 
-const ContactComponent: React.FC<ContactInterface> = (props) => {
+interface Props {
+	classNames: string
+	sectionRef: React.RefObject<HTMLDivElement>
+}
+
+const ContactComponent: React.FC<Props> = (props) => {
 	const [activeIdx, setActiveIdx] = useState<number | null>(null)
-	const [state, setState] = useState<{[name: string]: string}>({name: '', mail: '', subject: '', message: ''})
+	const [state, setState] = useState<{[name: string]: string}>({name: '', email: '', subject: '', message: ''})
 
 	const handleChange = (e: React.FormEvent): void => {
 		e.persist()
