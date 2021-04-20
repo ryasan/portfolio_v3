@@ -1,7 +1,8 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { useMediaQuery } from 'react-responsive'
+import { delay } from 'lodash'
 
-import { classList, device, sleep } from '../../utils'
+import { classList, device } from '../../utils'
 import { ProjectItem } from '../slider/slider-items'
 import Slider from '../slider'
 import Icon from '../icons'
@@ -23,7 +24,7 @@ const ProjectDetails: React.FC<ProjectProps> = ({ setProject, project }) => {
     const exit = async () => {
         setActive(false)
         setSlides([])
-        sleep(200).then(() => setProject(null))
+        delay(setProject, 200, null)
     }
 
     const rotate = () => {

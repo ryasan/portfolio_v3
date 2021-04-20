@@ -1,11 +1,12 @@
 import React, { useState, useEffect, CSSProperties } from 'react'
 import { useMediaQuery } from 'react-responsive'
+import { delay } from 'lodash'
 
 import Dots from './dots/dots'
 import Timer from './timer/timer'
 import Icon from '../icons'
 import { projectItems as _items, ProjectItem } from './slider-items'
-import { classList, device, sleep } from '../../utils'
+import { classList, device } from '../../utils'
 import './slider.scss'
 
 interface Props {
@@ -88,10 +89,7 @@ const middle = (arr: any[]) => Math.floor(arr.length / 2)
 
 const activeIdx = middle(_items)
 
-const positions = Array.from(
-    { length: _items.length },
-    (_, i) => (i + activeIdx) % _items.length
-)
+const positions = Array.from({ length: _items.length }, (_, i) => (i + activeIdx) % _items.length)
 
 const SliderComponent: React.FC<Props> = props => {
     const { modalActive, setProject, cardWidth } = props
@@ -138,7 +136,7 @@ const SliderComponent: React.FC<Props> = props => {
     }, [isHovering])
 
     useEffect(() => {
-        if (isTicking) sleep(300).then(() => setIsTicking(false))
+        if (isTicking) delay(setIsTicking, 300, false)
     }, [isTicking])
 
     useEffect(() => {

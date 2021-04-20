@@ -5,10 +5,6 @@ export const classList = (classes: object) => {
         .join(' ')
 }
 
-export const sleep = (ms = 0): Promise<any> => {
-    return new Promise((resolve) => setTimeout(resolve, ms))
-}
-
 // prettier-ignore
 export function curry <T extends any[], R> (fn: (...args: T) => R): <T extends any[]>(...args: T) => any {
     const arity = fn.length
