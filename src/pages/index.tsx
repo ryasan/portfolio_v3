@@ -1,5 +1,5 @@
 import React, { useState, createRef } from 'react'
-import { throttle } from 'lodash'
+import { throttle, delay } from 'lodash'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -11,7 +11,7 @@ import Work from '../components/work'
 import Contact from '../components/contact'
 import Navbar from '../components/navbar'
 import IconComponent from '../components/icons'
-import { classList, sleep } from '../utils'
+import { classList } from '../utils'
 import '../home.scss'
 
 interface ComponentInterface {
@@ -21,7 +21,7 @@ interface ComponentInterface {
 
 const googleMapsRef: React.RefObject<HTMLDivElement> = createRef()
 
-export const components = [
+export const sections = [
     { component: Hero },
     { component: About },
     { component: Skills },
@@ -29,16 +29,10 @@ export const components = [
     { component: Contact, componentRef: googleMapsRef }
 ]
 
-const transitionDuration: number = 600
-
 const IndexPage: React.FC = () => {
     const [isTicking, setIsTicking] = useState(false)
     const [pageIdx, setPageIdx] = useState<number>(0)
-    const totalSlideNumber = components.length
-
-    const slideDurationTimeout = (slideDuration: number) => {
-        sleep(slideDuration).then(() => setIsTicking(false))
-    }
+    const totalSlideNumber = sections.length
 
     const parallaxScroll = throttle((e: any) => {
         if (googleMapsRef?.current?.contains(e.target)) return
@@ -47,13 +41,13 @@ const IndexPage: React.FC = () => {
         if (isWheelingDown && !isTicking) {
             setIsTicking(true)
             if (pageIdx !== totalSlideNumber - 1) scrollDown()
-            slideDurationTimeout(transitionDuration)
+            delay(setIsTicking, 600, false)
         }
 
         if (!isWheelingDown && !isTicking) {
             setIsTicking(true)
             if (pageIdx !== 0) scrollUp()
-            slideDurationTimeout(transitionDuration)
+            delay(setIsTicking, 600, false)
         }
     })
 
@@ -82,16 +76,16 @@ const IndexPage: React.FC = () => {
             />
             <Loader />
             <div className='sections-container' onWheel={parallaxScroll}>
-                {components.map((props: ComponentInterface, i) => (
+                {sections.map((props: ComponentInterface, i) => (
                     <props.component
                         key={i}
                         componentRef={props.componentRef}
+                        handlePageClick={handleNavItemClick}
                         classNames={classList({
                             'section': true,
                             'down-scroll': i <= pageIdx - 1,
                             'up-scroll': (i !== totalSlideNumber - 1) && (i >= pageIdx)
                         })}
-                        handlePageClick={handleNavItemClick}
                     />
                 ))}
             </div>
