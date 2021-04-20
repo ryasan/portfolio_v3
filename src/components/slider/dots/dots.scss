@@ -1,32 +1,32 @@
 @import '../../../globals';
 
 .dot-list {
-  display: flex;
-  margin-top: 2rem;
-  position: relative;
+	display: flex;
+	margin-top: 2rem;
+	position: relative;
 
-  @media (max-width: $mobile-lg) {
-    margin-top: -10rem;
-  }
+	@media (max-width: $mobile-lg) {
+		margin-top: -10rem;
+	}
 }
 
 .dot {
-  background: $teal;
-  cursor: pointer;
-  height: 0.5rem;
-  opacity: 0.2;
-  width: 3rem;
+	background: $teal;
+	cursor: pointer;
+	height: 0.5rem;
+	opacity: 0.2;
+	width: 3rem;
 
-  &.active {
-    opacity: 1;
-  }
+	&.active {
+		opacity: 1;
+	}
 
-  &:not(:first-child) {
-    margin-left: 0.8rem;
-  }
+	&:not(:first-child) {
+		margin-left: 0.8rem;
+	}
 
-  @media (max-width: $mobile-lg) {
-    height: 0.3rem;
-    width: 1.5rem;
-  }
+	@media (max-width: $mobile-lg) {
+		height: 0.3rem;
+		width: 1.5rem;
+	}
 }

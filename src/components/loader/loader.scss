@@ -1,112 +1,112 @@
 @import '../../globals';
 
 @keyframes percentage {
-  @for $i from 1 through 100 {
-    $value: $i + '%';
-    #{$value} {
-      content: '#{$i}%';
-    }
-  }
+	@for $i from 1 through 100 {
+		$value: $i + '%';
+		#{$value} {
+			content: '#{$i}%';
+		}
+	}
 }
 
 @keyframes fade-away {
-  0% {
-    opacity: 1;
-    width: 100%;
-  }
+	0% {
+		opacity: 1;
+		width: 100%;
+	}
 
-  99% {
-    width: 100%;
-  }
+	99% {
+		width: 100%;
+	}
 
-  100% {
-    opacity: 0;
-    width: 0;
-  }
+	100% {
+		opacity: 0;
+		width: 0;
+	}
 }
 
 @keyframes blink {
-  0% {
-    color: $teal;
-  }
+	0% {
+		color: $teal;
+	}
 
-  50% {
-    color: #12473f;
-  }
+	50% {
+		color: #12473f;
+	}
 
-  100% {
-    color: $teal;
-  }
+	100% {
+		color: $teal;
+	}
 }
 
 @keyframes show-line {
-  0% {
-    width: 0;
-  }
+	0% {
+		width: 0;
+	}
 
-  100% {
-    width: 100%;
-  }
+	100% {
+		width: 100%;
+	}
 }
 
 .loader {
-  align-items: center;
-  animation: fade-away 0.5s linear 3s;
-  animation-fill-mode: forwards;
-  background: $darker;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  z-index: 9999;
+	align-items: center;
+	animation: fade-away 0.5s linear 3s;
+	animation-fill-mode: forwards;
+	background: $darker;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+	z-index: 9999;
 
-  svg {
-    animation: blink 1s forwards;
+	svg {
+		animation: blink 1s forwards;
 
-    @media (max-width: $mobile-lg) {
-      height: 3.5rem;
-      width: 3.5rem;
-    }
-  }
+		@media (max-width: $mobile-lg) {
+			height: 3.5rem;
+			width: 3.5rem;
+		}
+	}
 }
 
 .loader__bar {
-  background: #12473f;
-  border-radius: 5rem;
-  height: 0.2rem;
-  margin-top: 2rem;
-  position: relative;
-  width: 50rem;
+	background: #12473f;
+	border-radius: 5rem;
+	height: 0.2rem;
+	margin-top: 2rem;
+	position: relative;
+	width: 50rem;
 
-  &::before {
-    animation: show-line 2s ease-in-out forwards;
-    background: $teal;
-    content: '';
-    height: 100%;
-    position: absolute;
-  }
+	&::before {
+		animation: show-line 2s ease-in-out forwards;
+		background: $teal;
+		content: '';
+		height: 100%;
+		position: absolute;
+	}
 
-  @media (max-width: $mobile-lg) {
-    width: 25rem;
-  }
+	@media (max-width: $mobile-lg) {
+		width: 25rem;
+	}
 }
 
 .loader__pct-text {
-  color: $teal;
-  display: inline-block;
-  margin-top: 2rem;
-  position: relative;
-  text-align: center;
-  width: 100%;
+	color: $teal;
+	display: inline-block;
+	margin-top: 2rem;
+	position: relative;
+	text-align: center;
+	width: 100%;
 
-  &::before {
-    animation: percentage 2s ease-in-out forwards;
-    content: '';
-    left: 50%;
-    position: absolute;
-    top: 0;
-    transform: translateX(calc(-50% + 0.5rem));
-  }
+	&::before {
+		animation: percentage 2s ease-in-out forwards;
+		content: '';
+		left: 50%;
+		position: absolute;
+		top: 0;
+		transform: translateX(calc(-50% + 0.5rem));
+	}
 }

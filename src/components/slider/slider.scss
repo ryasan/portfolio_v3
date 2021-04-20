@@ -6,227 +6,227 @@ $card-height: 400px + $card-body-height;
 $card-count: 8;
 
 .carousel {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  position: relative;
-  width: 100%;
+	align-items: center;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	position: relative;
+	width: 100%;
 }
 
 .carousel__inner {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  position: relative;
-  width: calc(#{$card-width * 3});
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	position: relative;
+	width: calc(#{$card-width * 3});
 }
 
 .carousel__track {
-  height: $card-height;
-  position: relative;
-  width: 100%;
+	height: $card-height;
+	position: relative;
+	width: 100%;
 }
 
 .carousel__item-list {
-  height: 100%;
-  left: 50%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  transform: translateX(-50%);
+	height: 100%;
+	left: 50%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	transform: translateX(-50%);
 
-  &.odd {
-    width: calc(#{$card-count * $card-width});
+	&.odd {
+		width: calc(#{$card-count * $card-width});
 
-    @media (max-width: $mobile-lg) {
-      width: calc(#{$card-count * 300px});
-    }
-  }
+		@media (max-width: $mobile-lg) {
+			width: calc(#{$card-count * 300px});
+		}
+	}
 
-  &.even {
-    width: calc(#{$card-count * $card-width + $card-width});
+	&.even {
+		width: calc(#{$card-count * $card-width + $card-width});
 
-    @media (max-width: $mobile-lg) {
-      width: calc(#{$card-count * 300px});
-    }
-  }
+		@media (max-width: $mobile-lg) {
+			width: calc(#{$card-count * 300px});
+		}
+	}
 }
 
 .carousel__btn {
-  align-items: center;
-  background: $teal;
-  border: 0.2rem solid $teal;
-  border-radius: 50%;
-  color: $darker;
-  cursor: pointer;
-  display: flex;
-  font-size: 3rem;
-  height: 5rem;
-  justify-content: center;
-  left: 50%;
-  outline: 0;
-  position: absolute;
-  top: 50%;
-  transition: background 0.2s, color 0.2s;
-  width: 5rem;
-  z-index: 1;
+	align-items: center;
+	background: $teal;
+	border: 0.2rem solid $teal;
+	border-radius: 50%;
+	color: $darker;
+	cursor: pointer;
+	display: flex;
+	font-size: 3rem;
+	height: 5rem;
+	justify-content: center;
+	left: 50%;
+	outline: 0;
+	position: absolute;
+	top: 50%;
+	transition: background 0.2s, color 0.2s;
+	width: 5rem;
+	z-index: 1;
 
-  &--prev {
-    transform: translate(calc(-50% - 40vw), -50%);
-  }
+	&--prev {
+		transform: translate(calc(-50% - 40vw), -50%);
+	}
 
-  &--next {
-    transform: translate(calc(-50% + 40vw), -50%);
-  }
+	&--next {
+		transform: translate(calc(-50% + 40vw), -50%);
+	}
 
-  &:hover {
-    background: $dark;
-    color: $teal;
-  }
+	&:hover {
+		background: $dark;
+		color: $teal;
+	}
 
-  svg {
-    height: 4rem;
-    width: 4rem;
+	svg {
+		height: 4rem;
+		width: 4rem;
 
-    @media (max-width: $mobile-lg) {
-      height: 2rem;
-      width: 2rem;
-    }
-  }
+		@media (max-width: $mobile-lg) {
+			height: 2rem;
+			width: 2rem;
+		}
+	}
 
-  @media (max-width: $mobile-lg) {
-    font-size: 1.5rem;
-    height: 3rem;
-    top: 30rem;
-    width: 3rem;
+	@media (max-width: $mobile-lg) {
+		font-size: 1.5rem;
+		height: 3rem;
+		top: 30rem;
+		width: 3rem;
 
-    &--prev {
-      transform: translate(calc(-50% - 5rem), -50%);
-    }
+		&--prev {
+			transform: translate(calc(-50% - 5rem), -50%);
+		}
 
-    &--next {
-      transform: translate(calc(-50% + 5rem), -50%);
-    }
-  }
+		&--next {
+			transform: translate(calc(-50% + 5rem), -50%);
+		}
+	}
 }
 
 .carousel__btn-arrow {
-  border: solid $teal;
-  border-width: 0 0.4rem 0.4rem 0;
-  height: 6rem;
-  padding: 3px;
-  width: 6rem;
-  z-index: 10;
+	border: solid $teal;
+	border-width: 0 0.4rem 0.4rem 0;
+	height: 6rem;
+	padding: 3px;
+	width: 6rem;
+	z-index: 10;
 
-  &--left {
-    transform: rotate(135deg);
-  }
+	&--left {
+		transform: rotate(135deg);
+	}
 
-  &--right {
-    transform: rotate(-45deg);
-  }
+	&--right {
+		transform: rotate(-45deg);
+	}
 }
 
 .carousel__dots {
-  display: inline-block;
-  left: 50%;
-  margin-top: 2rem;
-  position: absolute;
-  transform: translateX(-50%);
+	display: inline-block;
+	left: 50%;
+	margin-top: 2rem;
+	position: absolute;
+	transform: translateX(-50%);
 
-  .dot {
-    background: #ccc;
-    border: 0;
-    border-radius: 50%;
-    height: 2rem;
-    margin: 0 0.3rem;
-    outline: none;
-    transform: scale(0.5);
-    width: 2rem;
+	.dot {
+		background: #ccc;
+		border: 0;
+		border-radius: 50%;
+		height: 2rem;
+		margin: 0 0.3rem;
+		outline: none;
+		transform: scale(0.5);
+		width: 2rem;
 
-    &.active {
-      background: black;
-    }
-  }
+		&.active {
+			background: black;
+		}
+	}
 }
 
 .card {
-  height: 100%;
-  margin: 0;
-  padding: 1rem;
-  perspective: 337.5px;
-  position: absolute;
-  transition: all 0.3s;
-  width: $card-width;
+	height: 100%;
+	margin: 0;
+	padding: 1rem;
+	perspective: 337.5px;
+	position: absolute;
+	transition: all 0.3s;
+	width: $card-width;
 
-  @media (max-width: $mobile-lg) {
-    width: 300px;
-  }
+	@media (max-width: $mobile-lg) {
+		width: 300px;
+	}
 }
 
 .card__inner {
-  transform-style: preserve-3d;
-  transition: all 0.3s;
+	transform-style: preserve-3d;
+	transition: all 0.3s;
 }
 
 .card__img-container {
-  cursor: zoom-in;
-  display: flex;
-  height: 25rem;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+	cursor: zoom-in;
+	display: flex;
+	height: 25rem;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
 
-  img {
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.5s ease;
-    width: 100%;
-  }
+	img {
+		height: 100%;
+		object-fit: cover;
+		transition: all 0.5s ease;
+		width: 100%;
+	}
 
-  &::after {
-    align-items: center;
-    background: rgba(black, 0.5);
-    color: white;
-    content: 'view project';
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    opacity: 0;
-    position: absolute;
-    transition: all 0.5s ease;
-    width: 100%;
-  }
+	&::after {
+		align-items: center;
+		background: rgba(black, 0.5);
+		color: white;
+		content: 'view project';
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		opacity: 0;
+		position: absolute;
+		transition: all 0.5s ease;
+		width: 100%;
+	}
 
-  &:hover {
-    &::after {
-      opacity: 1;
-    }
+	&:hover {
+		&::after {
+			opacity: 1;
+		}
 
-    img {
-      transform: scale(1.2);
-    }
-  }
+		img {
+			transform: scale(1.2);
+		}
+	}
 }
 
 .card__body {
-  align-items: center;
-  background: $dark;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  font-size: 1.5rem;
-  justify-content: center;
-  padding: 1rem 0;
-  width: 100%;
+	align-items: center;
+	background: $dark;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	font-size: 1.5rem;
+	justify-content: center;
+	padding: 1rem 0;
+	width: 100%;
 
-  @media (max-width: $mobile-lg) {
-    font-size: 1rem;
-    padding: 0.5rem 0;
-  }
+	@media (max-width: $mobile-lg) {
+		font-size: 1rem;
+		padding: 0.5rem 0;
+	}
 }

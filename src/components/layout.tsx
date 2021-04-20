@@ -4,10 +4,10 @@ import 'normalize.css'
 import '../globals.scss'
 import './layout.scss'
 
-const Layout: React.FC = ({ children }) => (
-  <div className='layout'>
-    <main className='layout__main'>{children}</main>
-  </div>
+const Layout: React.FC = ({children}) => (
+	<div className='layout'>
+		<main className='layout__main'>{children}</main>
+	</div>
 )
 
 export default Layout

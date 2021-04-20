@@ -4,94 +4,94 @@ $transition-speed: 1.2s;
 $slide-number: 5;
 
 @mixin transition($time, $property: all, $easing: ease-in) {
-  transition: $property $time $easing !important;
+	transition: $property $time $easing !important;
 }
 
 .parallax-wrapper {
-  @include transition(
-    $transition-speed + 0.5,
-    all,
-    cubic-bezier(0.22, 0.44, 0, 1)
-  );
+	@include transition(
+		$transition-speed + 0.5,
+		all,
+		cubic-bezier(0.22, 0.44, 0, 1)
+	);
 
-  backface-visibility: hidden;
-  color: white;
-  display: flex;
-  flex-flow: column nowrap;
-  height: 100vh;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  transform: translateY($content-offset);
-  will-change: transform;
+	backface-visibility: hidden;
+	color: white;
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100vh;
+	justify-content: center;
+	position: relative;
+	text-align: center;
+	transform: translateY($content-offset);
+	will-change: transform;
 }
 
 .section {
-  @include transition($transition-speed, all, cubic-bezier(0.22, 0.44, 0, 1));
+	@include transition($transition-speed, all, cubic-bezier(0.22, 0.44, 0, 1));
 
-  backface-visibility: hidden;
-  height: 100vh + $parallax-offset;
-  overflow: hidden;
-  position: fixed;
-  transform: translateY($parallax-offset);
-  width: 100%;
-  will-change: transform;
+	backface-visibility: hidden;
+	height: 100vh + $parallax-offset;
+	overflow: hidden;
+	position: fixed;
+	transform: translateY($parallax-offset);
+	width: 100%;
+	will-change: transform;
 
-  &::before {
-    background-color: rgba(0, 0, 0, 0.3);
-    bottom: 0;
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-  }
+	&::before {
+		background-color: rgba(0, 0, 0, 0.3);
+		bottom: 0;
+		content: '';
+		height: 100%;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100%;
+	}
 
-  &:first-child {
-    transform: translateY(-$parallax-offset / 2);
+	&:first-child {
+		transform: translateY(-$parallax-offset / 2);
 
-    .parallax-wrapper {
-      transform: translateY($parallax-offset / 2);
-    }
-  }
+		.parallax-wrapper {
+			transform: translateY($parallax-offset / 2);
+		}
+	}
 }
 
 @for $i from 1 to ($slide-number + 1) {
-  .section:nth-child(#{$i}) {
-    z-index: ($slide-number + 1) - $i;
-  }
+	.section:nth-child(#{$i}) {
+		z-index: ($slide-number + 1) - $i;
+	}
 }
 
 .section.up-scroll {
-  transform: translate3d(0, -$parallax-offset / 2, 0);
+	transform: translate3d(0, -$parallax-offset / 2, 0);
 
-  .parallax-wrapper {
-    transform: translateY($parallax-offset / 2);
-  }
+	.parallax-wrapper {
+		transform: translateY($parallax-offset / 2);
+	}
 
-  + .section {
-    transform: translate3d(0, $parallax-offset, 0);
+	+ .section {
+		transform: translate3d(0, $parallax-offset, 0);
 
-    .parallax-wrapper {
-      transform: translateY($parallax-offset);
-    }
-  }
+		.parallax-wrapper {
+			transform: translateY($parallax-offset);
+		}
+	}
 }
 
 .section.down-scroll {
-  transform: translate3d(0, -(100vh + $parallax-offset), 0);
+	transform: translate3d(0, -(100vh + $parallax-offset), 0);
 
-  .parallax-wrapper {
-    transform: translateY($content-offset);
-  }
+	.parallax-wrapper {
+		transform: translateY($content-offset);
+	}
 
-  + .section:not(.down-scroll) {
-    transform: translate3d(0, -$parallax-offset / 2, 0);
+	+ .section:not(.down-scroll) {
+		transform: translate3d(0, -$parallax-offset / 2, 0);
 
-    .parallax-wrapper {
-      transform: translateY($parallax-offset / 2);
-    }
-  }
+		.parallax-wrapper {
+			transform: translateY($parallax-offset / 2);
+		}
+	}
 }

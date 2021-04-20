@@ -1,10 +1,10 @@
 export interface ProjectItem {
-  title: string
-  description: string
-  technologies: string[]
-  images: string[]
-  url: string
-  repoUrl: string
+	title: string
+	description: string
+	technologies: string[]
+	images: string[]
+	url: string
+	repoUrl: string
 }
 
 // prettier-ignore

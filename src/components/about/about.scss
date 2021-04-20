@@ -1,172 +1,172 @@
 @import '../../globals';
 
 .about {
-  background: $darker;
+	background: $darker;
 }
 
 .about__outer {
-  align-items: center;
-  background: $darker;
-  display: flex;
-  height: 100%;
-  justify-content: center;
+	align-items: center;
+	background: $darker;
+	display: flex;
+	height: 100%;
+	justify-content: center;
 }
 
 .about__inner {
-  align-items: center;
-  display: flex;
-  height: 90%;
-  justify-content: center;
-  margin-right: 7rem;
-  max-width: $max-width;
-  width: 90%;
+	align-items: center;
+	display: flex;
+	height: 90%;
+	justify-content: center;
+	margin-right: 7rem;
+	max-width: $max-width;
+	width: 90%;
 
-  @media (max-width: $mobile-lg) {
-    flex: initial;
-    flex-direction: column;
-    height: 100%;
-    margin-right: initial;
-  }
+	@media (max-width: $mobile-lg) {
+		flex: initial;
+		flex-direction: column;
+		height: 100%;
+		margin-right: initial;
+	}
 }
 
 .about__column {
-  display: flex;
-  height: 100%;
-  width: 50%;
+	display: flex;
+	height: 100%;
+	width: 50%;
 
-  &--left {
-    flex-direction: column;
-    justify-content: center;
-  }
+	&--left {
+		flex-direction: column;
+		justify-content: center;
+	}
 
-  &--right {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
+	&--right {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
 
-  @media (max-width: $mobile-lg) {
-    width: 100%;
+	@media (max-width: $mobile-lg) {
+		width: 100%;
 
-    &--left {
-      justify-content: flex-start;
-    }
+		&--left {
+			justify-content: flex-start;
+		}
 
-    &--right {
-      display: none;
-    }
-  }
+		&--right {
+			display: none;
+		}
+	}
 }
 
 .about__title {
-  color: $dark;
-  font-size: 20rem;
-  left: -2rem;
-  margin: 0;
-  position: absolute;
-  top: 4rem;
+	color: $dark;
+	font-size: 20rem;
+	left: -2rem;
+	margin: 0;
+	position: absolute;
+	top: 4rem;
 
-  &::before {
-    color: $charcoal;
-    content: '<h1>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
-    left: 2rem;
-    position: absolute;
-    top: 2rem;
-  }
+	&::before {
+		color: $charcoal;
+		content: '<h1>';
+		font-family: 'La Belle Aurore', cursive;
+		font-size: 2rem;
+		left: 2rem;
+		position: absolute;
+		top: 2rem;
+	}
 
-  &::after {
-    bottom: 1rem;
-    color: $charcoal;
-    content: '</h1>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
-    position: absolute;
-    right: -2rem;
-    top: 2rem;
-  }
+	&::after {
+		bottom: 1rem;
+		color: $charcoal;
+		content: '</h1>';
+		font-family: 'La Belle Aurore', cursive;
+		font-size: 2rem;
+		position: absolute;
+		right: -2rem;
+		top: 2rem;
+	}
 
-  @media (max-width: $mobile-lg) {
-    font-size: 4rem;
-    font-weight: 900;
-    left: 0;
-    margin: 5rem 0;
-    position: relative;
-    top: 0;
+	@media (max-width: $mobile-lg) {
+		font-size: 4rem;
+		font-weight: 900;
+		left: 0;
+		margin: 5rem 0;
+		position: relative;
+		top: 0;
 
-    &::before,
-    &::after {
-      display: none;
-    }
-  }
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
 }
 
 .about__paragraph {
-  color: $teal;
-  line-height: 2;
-  position: relative;
-  text-align: left;
-  text-indent: 3rem;
-  z-index: 1;
+	color: $teal;
+	line-height: 2;
+	position: relative;
+	text-align: left;
+	text-indent: 3rem;
+	z-index: 1;
 
-  &:nth-child(2) {
-    transform: translateX(3rem);
-  }
+	&:nth-child(2) {
+		transform: translateX(3rem);
+	}
 
-  &:nth-child(3) {
-    transform: translateX(6rem);
-  }
+	&:nth-child(3) {
+		transform: translateX(6rem);
+	}
 
-  @media (max-width: $mobile-lg) {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    text-align: center;
-    text-indent: initial;
+	@media (max-width: $mobile-lg) {
+		font-size: 1.2rem;
+		line-height: 1.5;
+		text-align: center;
+		text-indent: initial;
 
-    &:nth-child(2) {
-      transform: translateX(0);
-    }
+		&:nth-child(2) {
+			transform: translateX(0);
+		}
 
-    &:last-child {
-      transform: translateX(0);
-    }
-  }
+		&:last-child {
+			transform: translateX(0);
+		}
+	}
 }
 
 .about__illustration {
-  position: relative;
-  width: 80%;
+	position: relative;
+	width: 80%;
 }
 
 .about__me {
-  width: 100%;
+	width: 100%;
 
-  @media (max-width: $mobile-lg) {
-    height: 50%;
-    width: 100%;
-  }
+	@media (max-width: $mobile-lg) {
+		height: 50%;
+		width: 100%;
+	}
 }
 
 @keyframes flail {
-  0% {
-    transform: translateY(0);
-  }
+	0% {
+		transform: translateY(0);
+	}
 
-  50% {
-    transform: translateY(1rem);
-  }
+	50% {
+		transform: translateY(1rem);
+	}
 
-  100% {
-    transform: translateY(0);
-  }
+	100% {
+		transform: translateY(0);
+	}
 }
 
 .rectangle-filled {
-  animation: flail 2s ease-in-out infinite;
+	animation: flail 2s ease-in-out infinite;
 }
 
 .circle-filled {
-  animation: flail 2s ease-in-out infinite;
-  animation-delay: 1s;
+	animation: flail 2s ease-in-out infinite;
+	animation-delay: 1s;
 }

@@ -1,254 +1,252 @@
 @import '../../globals';
 
 .project {
-  background: rgba(0, 0, 0, 0.7);
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  overflow-y: auto;
-  position: fixed;
-  top: 0;
-  transform: scale(0);
-  transition: all 0.2s;
-  width: calc(100% - 7rem);
+	background: rgba(0, 0, 0, 0.7);
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	overflow-y: auto;
+	position: fixed;
+	top: 0;
+	transform: scale(0);
+	transition: all 0.2s;
+	width: calc(100% - 7rem);
 
-  &.active {
-    opacity: 1;
-    transform: scale(1);
-  }
+	&.active {
+		opacity: 1;
+		transform: scale(1);
+	}
 
-  @media (max-width: $mobile-lg) {
-    width: 100%;
-  }
+	@media (max-width: $mobile-lg) {
+		width: 100%;
+	}
 }
 
 .project__icon-container {
-  color: $teal;
-  cursor: pointer;
-  height: 4rem;
-  position: absolute;
-  right: 1.5rem;
-  top: 1.5rem;
-  width: 4rem;
-  z-index: 1;
+	color: $teal;
+	cursor: pointer;
+	height: 4rem;
+	position: absolute;
+	right: 1.5rem;
+	top: 1.5rem;
+	width: 4rem;
+	z-index: 1;
 
-  .project__close-icon {
-    height: 100%;
-    width: 100%;
-  }
+	.project__close-icon {
+		height: 100%;
+		width: 100%;
+	}
 
-  @media (max-width: $mobile-lg) {
-    height: 2rem;
-    width: 2rem;
-  }
+	@media (max-width: $mobile-lg) {
+		height: 2rem;
+		width: 2rem;
+	}
 }
 
 .project__title {
-  font-size: 3rem;
-  left: 50%;
-  max-width: 120rem;
-  text-align: left;
+	font-size: 3rem;
+	left: 50%;
+	max-width: 120rem;
+	text-align: left;
 
-  @media (max-width: $mobile-lg) {
-    font-size: 1.5rem;
-    text-align: center;
-  }
+	@media (max-width: $mobile-lg) {
+		font-size: 1.5rem;
+		text-align: center;
+	}
 }
 
 .project__inner {
-  height: 100%;
-  left: 50%;
-  max-width: 120rem;
-  position: absolute;
-  transform: translateX(-50%);
-  width: 100%;
+	height: 100%;
+	left: 50%;
+	max-width: 120rem;
+	position: absolute;
+	transform: translateX(-50%);
+	width: 100%;
 
-  @media (max-width: $mobile-lg) {
-    padding: 1.5rem;
-    position: initial;
-    transform: initial;
-  }
+	@media (max-width: $mobile-lg) {
+		padding: 1.5rem;
+		position: initial;
+		transform: initial;
+	}
 }
 
 .project__text {
-  left: 52rem;
-  position: absolute;
-  top: 27rem;
+	left: 52rem;
+	position: absolute;
+	top: 27rem;
 
-  @media (max-width: $mobile-lg) {
-    position: initial;
-  }
+	@media (max-width: $mobile-lg) {
+		position: initial;
+	}
 }
 
 .project__description {
-  line-height: 3rem;
-  text-align: left;
-  text-indent: 2rem;
+	line-height: 3rem;
+	text-align: left;
+	text-indent: 2rem;
 
-  @media (max-width: $mobile-lg) {
-    font-size: 1rem;
-    line-height: initial;
-    text-indent: initial;
-  }
+	@media (max-width: $mobile-lg) {
+		font-size: 1rem;
+		line-height: initial;
+		text-indent: initial;
+	}
 }
 
 .project__text-title {
-  color: $teal;
-  letter-spacing: 0.5rem;
-  margin-top: 3rem;
-  text-align: left;
+	color: $teal;
+	letter-spacing: 0.5rem;
+	margin-top: 3rem;
+	text-align: left;
 
-  @media (max-width: $mobile-lg) {
-    font-size: 1.5rem;
-    letter-spacing: 0.2rem;
-    margin-top: 1.5rem;
-  }
+	@media (max-width: $mobile-lg) {
+		font-size: 1.5rem;
+		letter-spacing: 0.2rem;
+		margin-top: 1.5rem;
+	}
 }
 
 .project__tech-list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 20rem;
-  text-align: left;
-  width: 45rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 20rem;
+	text-align: left;
+	width: 45rem;
 
-  @media (max-width: $mobile-lg) {
-    height: 7rem;
-    width: initial;
-  }
+	@media (max-width: $mobile-lg) {
+		height: 7rem;
+		width: initial;
+	}
 }
 
 .project__tech-item {
-  align-items: center;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  width: 50%;
+	align-items: center;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	width: 50%;
 
-  &::before {
-    color: $teal;
-    content: '• ';
-    font-size: 3rem;
-    line-height: 1;
-    margin-right: 1rem;
+	&::before {
+		color: $teal;
+		content: '• ';
+		font-size: 3rem;
+		line-height: 1;
+		margin-right: 1rem;
 
-    @media (max-width: $mobile-lg) {
-      font-size: 1.5rem;
-      margin-right: 0.5rem;
-    }
-  }
+		@media (max-width: $mobile-lg) {
+			font-size: 1.5rem;
+			margin-right: 0.5rem;
+		}
+	}
 
-  @media (max-width: $mobile-lg) {
-    font-size: 1rem;
-    margin: 0;
-  }
+	@media (max-width: $mobile-lg) {
+		font-size: 1rem;
+		margin: 0;
+	}
 }
 
 .project__slider-container {
-  height: 50rem;
-  position: relative;
-  width: 100%;
+	height: 50rem;
+	position: relative;
+	width: 100%;
 
-  @media (max-width: $mobile-lg) {
-    height: 30rem;
-  }
+	@media (max-width: $mobile-lg) {
+		height: 30rem;
+	}
 }
 
 .project__slider {
-  position: relative;
-  transition: all 0.3s;
-  width: 100%;
+	position: relative;
+	transition: all 0.3s;
+	width: 100%;
 }
 
 .project__slide-item {
-  position: absolute;
-  transition: transform 0.2s;
-  will-change: transform;
+	position: absolute;
+	transition: transform 0.2s;
+	will-change: transform;
 
-  .project__slide-img {
-    box-shadow:
-      1rem 1rem 2rem rgba(0, 0, 0, 0.25),
-      0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.35);
-    height: 12.8rem;
-    object-fit: cover;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: width 0.5s, height 0.5s;
-    width: 15.5rem;
-    will-change: width, height;
-  }
+	.project__slide-img {
+		box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.25),
+			0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.35);
+		height: 12.8rem;
+		object-fit: cover;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: width 0.5s, height 0.5s;
+		width: 15.5rem;
+		will-change: width, height;
+	}
 
-  &:first-child .project__slide-img {
-    box-shadow:
-      1.9rem 1.9rem 3.8rem rgba(0, 0, 0, 0.5),
-      1.5rem 1.5rem 1.2rem rgba(0, 0, 0, 0.3);
-    height: 40rem;
-    width: 50rem;
+	&:first-child .project__slide-img {
+		box-shadow: 1.9rem 1.9rem 3.8rem rgba(0, 0, 0, 0.5),
+			1.5rem 1.5rem 1.2rem rgba(0, 0, 0, 0.3);
+		height: 40rem;
+		width: 50rem;
 
-    @media (max-width: $mobile-lg) {
-      height: 24rem;
-      width: 30rem;
-    }
-  }
+		@media (max-width: $mobile-lg) {
+			height: 24rem;
+			width: 30rem;
+		}
+	}
 
-  @media (max-width: $mobile-lg) {
-    &:first-child {
-      z-index: 1;
-    }
-  }
+	@media (max-width: $mobile-lg) {
+		&:first-child {
+			z-index: 1;
+		}
+	}
 }
 
 .project__btn-group {
-  display: flex;
-  left: 52rem;
-  position: absolute;
-  top: 14.8rem;
+	display: flex;
+	left: 52rem;
+	position: absolute;
+	top: 14.8rem;
 
-  @media (max-width: $mobile-lg) {
-    bottom: 0;
-    flex-direction: row-reverse;
-    left: 50%;
-    top: initial;
-    transform: translateX(-50%);
-  }
+	@media (max-width: $mobile-lg) {
+		bottom: 0;
+		flex-direction: row-reverse;
+		left: 50%;
+		top: initial;
+		transform: translateX(-50%);
+	}
 }
 
 .project__btn {
-  background: 0;
-  border: 0.2rem solid $teal;
-  color: $teal;
-  cursor: pointer;
-  height: 4rem;
-  margin-right: 1rem;
-  min-width: 5rem;
-  padding: 1rem;
-  transition: all 0.2s;
-  white-space: nowrap;
+	background: 0;
+	border: 0.2rem solid $teal;
+	color: $teal;
+	cursor: pointer;
+	height: 4rem;
+	margin-right: 1rem;
+	min-width: 5rem;
+	padding: 1rem;
+	transition: all 0.2s;
+	white-space: nowrap;
 
-  &:hover {
-    border-color: lighten($teal, 25%);
-    color: lighten($teal, 25%);
-  }
+	&:hover {
+		border-color: lighten($teal, 25%);
+		color: lighten($teal, 25%);
+	}
 
-  &:active {
-    border-color: $teal;
-    color: $teal;
-    transform: scale(1.1);
-  }
+	&:active {
+		border-color: $teal;
+		color: $teal;
+		transform: scale(1.1);
+	}
 
-  @media (max-width: $mobile-lg) {
-    align-items: center;
-    display: flex;
-    font-size: 1rem;
-    height: 3rem;
-    justify-content: center;
-    min-width: 2.5rem;
-    padding: 0.5rem;
+	@media (max-width: $mobile-lg) {
+		align-items: center;
+		display: flex;
+		font-size: 1rem;
+		height: 3rem;
+		justify-content: center;
+		min-width: 2.5rem;
+		padding: 0.5rem;
 
-    &:nth-child(2) {
-      display: none;
-    }
-  }
+		&:nth-child(2) {
+			display: none;
+		}
+	}
 }

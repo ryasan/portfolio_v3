@@ -1,68 +1,68 @@
 @import '../../globals';
 
 .work {
-  background: $darker;
+	background: $darker;
 }
 
 .work__outer {
-  align-items: center;
-  background: $darker;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
+	align-items: center;
+	background: $darker;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	width: 100%;
 
-  &.hidden {
-    filter: blur(8px) grayscale(1);
-  }
+	&.hidden {
+		filter: blur(8px) grayscale(1);
+	}
 }
 
 .work__inner {
-  height: 90%;
-  margin-right: 7rem;
-  position: relative;
-  width: 90%;
+	height: 90%;
+	margin-right: 7rem;
+	position: relative;
+	width: 90%;
 
-  @media (max-width: $mobile-lg) {
-    flex-direction: column;
-    margin-right: initial;
-  }
+	@media (max-width: $mobile-lg) {
+		flex-direction: column;
+		margin-right: initial;
+	}
 }
 
 .work__title {
-  color: $charcoal;
-  font-size: 25rem;
-  left: -3rem;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
+	color: $charcoal;
+	font-size: 25rem;
+	left: -3rem;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
 
-  &::before {
-    bottom: 5rem;
-    color: $teal;
-    content: '<h1>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
-    left: 0;
-    position: absolute;
-  }
+	&::before {
+		bottom: 5rem;
+		color: $teal;
+		content: '<h1>';
+		font-family: 'La Belle Aurore', cursive;
+		font-size: 2rem;
+		left: 0;
+		position: absolute;
+	}
 
-  &::after {
-    bottom: 12rem;
-    color: $teal;
-    content: '</h1>';
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 2rem;
-    position: absolute;
-    right: -6rem;
-  }
+	&::after {
+		bottom: 12rem;
+		color: $teal;
+		content: '</h1>';
+		font-family: 'La Belle Aurore', cursive;
+		font-size: 2rem;
+		position: absolute;
+		right: -6rem;
+	}
 
-  @media (max-width: $mobile-lg) {
-    font-size: 4rem;
-    left: initial;
-    margin: 0;
-    position: initial;
-    top: initial;
-  }
+	@media (max-width: $mobile-lg) {
+		font-size: 4rem;
+		left: initial;
+		margin: 0;
+		position: initial;
+		top: initial;
+	}
 }

@@ -1,14 +1,14 @@
 .tag-cloud__inner {
-    cursor: pointer;
-    position: relative;
+	cursor: pointer;
+	position: relative;
 }
 
 .tag-cloud__item {
-    font-weight: 800;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform-origin: 50% 50%;
-    transition: all 0.1s;
-    will-change: transform, opacity, filter;
+	font-weight: 800;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform-origin: 50% 50%;
+	transition: all 0.1s;
+	will-change: transform, opacity, filter;
 }
