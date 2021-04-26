@@ -43,7 +43,7 @@ const ContactComponent: React.FC<Props> = (props) => {
 							I am interested in freelance, contract, and full time opportunities. I love being an active participant in
 							cool and ambitious projects. But please feel free to contact me about whatever!
 						</p>
-						<form method='post' className='contact__form'>
+						<form action='mailto:ryansantos86@gmail.com' method='post' encType='text/plain' className='contact__form'>
 							{fields.map(({El, props}, i) => (
 								<div
 									key={i}
@@ -61,6 +61,9 @@ const ContactComponent: React.FC<Props> = (props) => {
 									/>
 								</div>
 							))}
+							<button type='submit' className='contact__submit-btn'>
+								<Icon name='send' />
+							</button>
 						</form>
 					</div>
 					<div className='contact__column contact__column--right'>

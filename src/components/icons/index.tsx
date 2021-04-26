@@ -34,6 +34,7 @@ import LinkedInIcon from './linkedin'
 import CodepenIcon from './codepen'
 import UpArrowIcon from './up-arrow'
 import ChevronIcon from './chevron'
+import SendIcon from './send'
 
 export type IconInterface = {
 	name: string
@@ -101,6 +102,8 @@ const IconComponent: React.FC<IconInterface> = (props) => {
 			return <PersonAddIcon {...props} />
 		case 'right-arrow':
 			return <RightArrowIcon {...props} />
+		case 'send':
+			return <SendIcon {...props} />
 		case 'settings':
 			return <SettingsIcon {...props} />
 		case 'shopping-bag':
@@ -120,6 +123,7 @@ const IconComponent: React.FC<IconInterface> = (props) => {
 		case 'upload-outlined':
 			return <UploadIcon {...props} />
 		case 'document':
+			return <DocumentIcon {...props} />
 		default:
 			throw new Error('Icon not found')
 	}

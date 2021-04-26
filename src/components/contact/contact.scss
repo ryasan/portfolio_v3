@@ -207,3 +207,31 @@
 		margin: 0;
 	}
 }
+
+.contact__submit-btn {
+	background-color: $teal;
+	border: 0;
+	border: 0.1rem solid $teal;
+	border-radius: 0.2rem;
+	color: white;
+	justify-self: flex-end;
+	max-width: $mobile-sm;
+	padding: 0.5rem 0;
+	transition: all 0.2s;
+	width: 100%;
+
+	svg {
+		height: 4rem;
+		width: 4rem;
+	}
+
+	&:hover {
+		background-color: transparent;
+		color: $teal;
+	}
+
+	&:active {
+		background-color: darken($teal, 0.5);
+		color: whitesmoke;
+	}
+}
